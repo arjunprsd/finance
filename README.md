@@ -10,17 +10,18 @@
 ```
 finance/
 ├── README.md                      ← YOU ARE HERE (Master Index)
+├── my-investment-strategy.md      ← ★★ THE PLAN: Personal strategy with full reasoning
 ├── portfolio-snapshot.md          ← Current holdings summary
 ├── net-worth-statement.md         ← Consolidated net worth & cash flows
-├── portfolio-analytics.md         ← ★ NEW: Deep-dive analytics & graphs
+├── portfolio-analytics.md         ← Deep-dive analytics & graphs
 ├── market-conditions-may2026.md   ← Market research & analysis
 ├── tax-rules-reference.md         ← Indian tax rules for investors
 ├── mf-holdings-analysis.md        ← Mutual fund detailed analysis
 ├── stock-holdings-analysis.md     ← Stock portfolio & SGBs analysis
-├── sip-recommendation.md          ← ★ MAIN: SIP allocation plan
+├── sip-recommendation.md          ← SIP allocation plan
 ├── risk-management.md             ← Emergency fund, insurance, contingency
 ├── future-projections.md          ← Retirement planning & wealth projection
-└── action-plan.md                 ← ★ START HERE: Immediate action items
+└── action-plan.md                 ← Immediate action items
 ```
 
 ---
