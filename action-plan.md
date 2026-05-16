@@ -118,14 +118,17 @@
 ║                        BEFORE                    AFTER                       ║
 ╠══════════════════════════════════════════════════════════════════════════════╣
 ║  Monthly SIP:        ₹50,000              ₹75,000 (+₹10K emergency)        ║
-║  No. of SIP funds:   ~10-12              7 active funds                    ║
-║  Equity allocation:  100%                 67% (balanced)                    ║
-║  Debt allocation:    0%                   20% (stability)                   ║
+║  No. of SIP funds:   ~10-12              7 active funds + PPF              ║
+║  Equity allocation:  100% (in MFs)        73% of SIPs (equity-focused)     ║
+║  Debt allocation:    0% in MFs            13% SIP + ₹27K/mo EPF auto       ║
 ║  Gold allocation:    Via SGBs only        SGBs + 7% SIP                    ║
 ║  Emergency fund:     ₹2L (2 months)      Building to ₹6L (6 months)       ║
 ║  ELSS (no benefit):  5 funds, active SIP  STOPPED (hold only)              ║
 ║  Health insurance:   Corporate only       + Personal ₹10L cover            ║
 ║  Annual tax harvest: Not doing            ₹1.25L LTCG every March          ║
 ║  SIP step-up:        None                 10% annual increase              ║
+║  EPF awareness:      Ignored (₹10.57L)   = 27.5% auto debt backbone       ║
+║  Total deployment:   ₹50K visible        ₹1.02L/mo (₹75K SIP + ₹27K EPF) ║
+║  Net Worth:          ₹38.45L (EPF incl)  Growing to ₹6Cr+ by age 40       ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 ```

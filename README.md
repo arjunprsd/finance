@@ -12,6 +12,7 @@ finance/
 ├── README.md                      ← YOU ARE HERE (Master Index)
 ├── portfolio-snapshot.md          ← Current holdings summary
 ├── net-worth-statement.md         ← Consolidated net worth & cash flows
+├── portfolio-analytics.md         ← ★ NEW: Deep-dive analytics & graphs
 ├── market-conditions-may2026.md   ← Market research & analysis
 ├── tax-rules-reference.md         ← Indian tax rules for investors
 ├── mf-holdings-analysis.md        ← Mutual fund detailed analysis
@@ -31,7 +32,8 @@ finance/
 | **Age** | 27 |
 | **Income** | ₹2L/month (post-EPF) |
 | **Expenses** | ₹1L/month (incl. ₹45K EMI) |
-| **Net Worth** | ₹34.12L |
+| **Net Worth** | **₹38.45L** (incl. EPF ₹10.57L) |
+| **EPF Balance** | ₹10,57,066 (27.5% of net worth) |
 | **Risk Profile** | Medium |
 | **Tax Regime** | New |
 | **Goal** | Flexible Early Retirement |
@@ -44,7 +46,7 @@ finance/
 |---|-------|----------|-----|
 | 1 | Emergency fund = 2 months (need 6) | 🔴 Critical | Build ₹6L over next 6-30 months |
 | 2 | 5 ELSS funds with NO tax benefit | 🟡 Waste | Stop SIPs, hold existing |
-| 3 | 100% equity in MFs, 0% debt | 🟡 Risky | Add 20% debt allocation |
+| 3 | MFs are 100% equity, 0% accessible debt | 🟡 Risky | Add 13% accessible debt SIP |
 | 4 | 14 MF funds (over-diversified) | 🟡 Inefficient | Consolidate to 7 active |
 | 5 | No personal health insurance | 🟠 Gap | Buy ₹10L cover (~₹10K/year) |
 
@@ -55,30 +57,35 @@ finance/
 | # | Strength | Impact |
 |---|----------|--------|
 | 1 | 50% savings rate — excellent discipline | Compounds massively over time |
-| 2 | SGBs (best gold vehicle, tax-free at maturity) | ₹1.75L growing tax-efficiently |
-| 3 | Started at 27 — TIME is on your side | 3 extra years = ₹6Cr more at 45 |
-| 4 | Direct plans only — saving 0.5-1% TER | Saves ₹10-20L over lifetime |
-| 5 | Term insurance + corporate health in place | Protection foundation exists |
+| 2 | EPF ₹10.57L — strong debt backbone (27.5%) | Auto-pilot guaranteed wealth |
+| 3 | SGBs (best gold vehicle, tax-free at maturity) | ₹1.75L growing tax-efficiently |
+| 4 | Started at ~23 — 4-5 years of compounding done | Time is your biggest edge |
+| 5 | Direct plans only — saving 0.5-1% TER | Saves ₹10-20L over lifetime |
 
 ---
 
 ## 📊 Recommended New Allocation
 
 ```
-MONTHLY DEPLOYMENT: ₹85,000 (of ₹1L surplus)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+MONTHLY DEPLOYMENT: ₹85,000 visible (of ₹1L surplus) + ₹27K EPF auto
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-SIPs (₹75,000):
-  ├── UTI Nifty 50 Index Fund .............. ₹15,000  (Large Cap)
-  ├── Parag Parikh Flexi Cap ............... ₹15,000  (Flexi Cap)
+Voluntary SIPs (₹75,000):
+  ├── UTI Nifty 50 Index Fund .............. ₹20,000  (Large Cap — ANCHOR)
+  ├── Parag Parikh Flexi Cap ............... ₹15,000  (Flexi Cap + International)
   ├── PGIM India Midcap .................... ₹12,000  (Mid Cap)
   ├── Bandhan Small Cap ....................  ₹8,000  (Small Cap)
-  ├── HDFC Short Term Debt .................₹10,000  (Debt)
-  ├── PPF (Bank) ...........................  ₹5,000  (Guaranteed)
+  ├── HDFC Short Term Debt .................  ₹5,000  (Accessible Debt)
+  ├── PPF (Bank) ...........................  ₹5,000  (Guaranteed 7.1%)
   ├── Gold ETF/Fund ........................  ₹5,000  (Gold)
   └── Liquid Fund (Emergency build) ........  ₹5,000  (Cash)
 
+Auto (invisible):
+  └── EPF (employer + employee) ............ ₹27,000  (8.25% guaranteed)
+
 Buffer: ₹15,000 stays in savings (expense cushion)
+
+TOTAL EFFECTIVE: ₹1,02,000/month being deployed for your future
 ```
 
 ---
@@ -97,13 +104,17 @@ Buffer: ₹15,000 stays in savings (expense cushion)
 
 ## 📈 Your Retirement Outlook
 
-| Scenario | Retirement Possible By | Corpus at Retirement |
-|----------|----------------------|---------------------|
-| Conservative (9%) | Age 45 | ₹12Cr |
-| **Moderate (11%)** | **Age 40-42** | **₹7.5-10Cr** |
-| Optimistic (13%) | Age 38-40 | ₹10-15Cr |
+| Scenario | Retirement Possible By | Total NW at Retirement | EPF Component |
+|----------|----------------------|------------------------|---------------|
+| Conservative (9%) | Age 45 | ₹10.1Cr | ₹1.15Cr |
+| **Moderate (11%)** | **Age 42** | **₹8.5Cr** | **₹90L** |
+| Optimistic (13%) | Age 40 | ₹7.7Cr | ₹72L |
 
-**Home loan payoff at ~42 frees ₹45K/month** → accelerates timeline further.
+**Key Accelerators:**
+- Home loan payoff at 42 → frees ₹45K/month (expenses drop 45%)
+- EPF ₹10.57L today → ₹72L at 40 → ₹1.15Cr at 45 (guaranteed!)
+- 10% SIP step-up means your SIP doubles every ~7 years
+- At age 42: Corpus ₹8.5Cr vs Need ₹5.8Cr = **47% safety margin** ✓
 
 ---
 
