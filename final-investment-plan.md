@@ -1,5 +1,5 @@
-# THE FINAL PLAN — Complete Investment Blueprint (Revised v2)
-**Date:** May 16, 2026 | **Revised after self-audit**  
+# THE FINAL PLAN — Complete Investment Blueprint (Revised v3)
+**Date:** May 16, 2026 | **Revised after self-audit + peer review (Gemini Pro 3.1)**  
 **Profile:** Age 27, Medium-High Risk, ₹2L income, ₹1L expenses, ₹1L investable  
 **Philosophy:** Maximum automation, no sectoral bets, every asset hedges the other
 
@@ -11,16 +11,16 @@
 ASPECT                      SCORE    REASONING
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Diversification:            8.5/10   All asset classes, geographies, market caps covered.
-                                     -1: No direct commodity stocks. -0.5: Silver speculative.
+                                     -1: No direct commodity stocks. -0.5: ~55% large-cap heavy.
 
-Simplicity:                 9.5/10   7 funds, ALL SIP-able on Zerodha Coin. Zero manual work.
+Simplicity:                 9.5/10   6 funds, ALL SIP-able on Zerodha Coin. Zero manual work.
                                      REIT optional add-on. One 30-min setup, then autopilot.
 
-Tax Efficiency:             9.0/10   85% equity-taxed (12.5% LTCG). Equity Savings = tax hack.
-                                     -1: Gold/Silver FoF at slab rate. But EPF avoids this too.
+Tax Efficiency:             9.5/10   85% equity-taxed (12.5% LTCG). Gold/Silver 12.5% after 24mo.
+                                     Entire portfolio at 12.5% LTCG if held long enough. SGBs tax-free.
 
 Risk Management:            8.5/10   Gold/Silver hedge crashes. EPF guarantees floor.
-                                     Equity Savings = rebalancing pot. Max drawdown: -28%.
+                                     Max drawdown: -30%. SGB maturity windfalls in 2030/2031.
                                      -1.5: No stop-loss mechanism (SIP doesn't need one though).
 
 Realism of Projections:     8.0/10   12% CAGR base case = matches Nifty 50 20-year history.
@@ -52,28 +52,39 @@ WHY NOT 10/10:
 
 ```
 ╔═══════════════════════════════════════════════════════════════════════════════════╗
-║                    FINAL MONTHLY SIP: ₹1,00,000 (7 Funds)                        ║
+║                    FINAL MONTHLY SIP: ₹1,00,000 (6 Funds)                        ║
 ║                    All automated on Zerodha Coin. Zero manual work.               ║
 ╠═══════════════════════════════════════════════════════════════════════════════════╣
 ║                                                                                   ║
 ║  #  FUND                              SIP       %    ROLE              TAX        ║
 ║  ────────────────────────────────────────────────────────────────────────────     ║
-║  1  UTI Nifty 50 Index (Direct)       ₹30,000   30%  Core anchor       Eq LTCG   ║
+║  1  UTI Nifty 50 Index (Direct)       ₹35,000   35%  Core anchor       Eq LTCG   ║
 ║  2  Parag Parikh Flexi Cap (Direct)   ₹28,000   28%  International+Val Eq LTCG   ║
 ║  3  PGIM India Midcap Opp (Direct)    ₹17,000   17%  Growth engine     Eq LTCG   ║
 ║  4  Bandhan Small Cap (Direct)        ₹10,000   10%  High-growth       Eq LTCG   ║
-║  5  ICICI Pru Equity Savings (Direct)  ₹5,000    5%  Stability+Emg     Eq LTCG   ║
-║  6  SBI Gold ETF FoF (Direct)          ₹5,000    5%  Crisis hedge      Slab      ║
-║  7  Nippon Silver ETF FoF (Direct)     ₹5,000    5%  Inflation hedge   Slab      ║
+║  5  SBI Gold ETF FoF (Direct)          ₹5,000    5%  Crisis hedge      12.5%*    ║
+║  6  Nippon Silver ETF FoF (Direct)     ₹5,000    5%  Inflation hedge   12.5%*    ║
 ║  ────────────────────────────────────────────────────────────────────────────     ║
 ║     TOTAL SIP                         ₹1,00,000 100%                              ║
 ║                                                                                   ║
+║  *Gold/Silver: STCG at slab if <24 months. LTCG 12.5% after 24 months.          ║
+║                                                                                   ║
 ║  PLUS: EPF ₹27,000/month (automatic, 8.25% guaranteed)                          ║
+║  PLUS: Existing SGBs (maturing 2030/2031 — TAX-FREE at maturity)                ║
 ║  GRAND TOTAL MONTHLY DEPLOYMENT: ₹1,27,000                                      ║
 ║                                                                                   ║
+║  EMERGENCY FUND: Build ₹6L in savings bank BEFORE starting SIPs.                ║
+║  If current savings = ₹2L → invest ₹95K/month for 4 months, save ₹5K extra     ║
+║  OR use next bonus/variable pay to top up savings to ₹6L, then full ₹1L SIP.    ║
+║                                                                                   ║
 ║  OPTIONAL ADD-ON (if willing to do 1 manual buy/month):                          ║
-║  8  Nexus Select REIT                  ₹3,000   —    Real estate       12.5%     ║
-║     (Reduce Nifty 50 to ₹27K if adding REIT)                                    ║
+║  7  Nexus Select REIT                  ₹3,000   —    Real estate       12.5%     ║
+║     (Reduce Nifty 50 to ₹32K if adding REIT)                                    ║
+║                                                                                   ║
+║  GOLD BONUS STRATEGY:                                                            ║
+║  8  Buy SGBs from secondary market (NSE/BSE) when available at fair price        ║
+║     → 2.5% annual interest + TAX-FREE capital gains at maturity                  ║
+║     → Better than Gold FoF long-term, but not SIP-able (buy when opportunity)   ║
 ║                                                                                   ║
 ╚═══════════════════════════════════════════════════════════════════════════════════╝
 ```
@@ -82,7 +93,7 @@ WHY NOT 10/10:
 
 ## WHY EACH FUND — Honest Reasoning
 
-### 1. UTI Nifty 50 Index Fund — ₹30,000 (30%)
+### 1. UTI Nifty 50 Index Fund — ₹35,000 (35%)
 
 ```
 WHY THIS FUND:
@@ -93,11 +104,12 @@ WHY THIS FUND:
   Tata Steel, ITC (FMCG), Bharti Airtel (telecom), L&T (infra)
   → You get ALL sectors in correct market-weight proportion
 
-WHY 30%:
-• Large-cap anchors the portfolio — falls less (-35-40% vs -65% small-cap)
-• Recovers fastest (12-18 months vs 3-5 years for small-cap)
+WHY 35%:
+• Largest single allocation = stability anchor
 • Combined with PPFAS large-cap India portion (~18% of ₹28K = ~₹5K):
-  Effective large-cap = ~35% ✅
+  Effective large-cap = ~40% ✅ (appropriate for medium-high risk)
+• Falls less in crashes (-35-40% vs -65% small-cap), recovers fastest
+• Absorbed the ₹5K from removed Equity Savings fund → stronger core
 
 WHY NOT MORE:
 • At 27, over-weighting large-cap sacrifices growth
@@ -182,31 +194,7 @@ WHY NOT NIPPON SMALL CAP (largest AUM) or QUANT SMALL CAP (highest returns):
 • Bandhan: Middle ground — good size, decent style, already invested
 ```
 
-### 5. ICICI Prudential Equity Savings Fund — ₹5,000 (5%)
-
-```
-WHY THIS FUND (THE TAX HACK):
-• Returns: 8-9% (similar to debt fund)
-• Risk: LOW (65% is equity ARBITRAGE = risk-free profit capture)
-• BUT gets EQUITY TAX: 12.5% LTCG after 1 year!
-• Normal debt fund: same 8% returns but taxed at 30% slab. You lose 17.5% more.
-
-HOW IT WORKS:
-• 65% equity arbitrage: buy in cash market + sell in futures = locked profit, zero risk
-• 20% short-term debt: provides stability
-• 15% equity: small growth kicker
-• Net result: acts like a debt fund but taxed like equity. LEGAL tax arbitrage.
-
-PURPOSE IN PORTFOLIO:
-• Emergency fund builder (₹5K/month → ₹6L in 12 months → ₹6L emergency fund ✅)
-• Rebalancing pot: if equity crashes -40%, STP from this to equity (buy cheap)
-• Low-drawdown buffer: falls only 2-4% even in severe crashes
-
-ALTERNATIVE: Kotak Equity Arbitrage Fund (pure arbitrage, even lower risk, 7-7.5%)
-PREFERENCE: ICICI Equity Savings slightly better (extra 1% from equity portion)
-```
-
-### 6. SBI Gold ETF Fund of Fund — ₹5,000 (5%)
+### 5. SBI Gold ETF Fund of Fund — ₹5,000 (5%)
 
 ```
 WHY GOLD:
@@ -247,7 +235,7 @@ WHY SBI GOLD FoF specifically:
 • Difference from other Gold FoFs is tiny — SBI/HDFC/Nippon all acceptable
 ```
 
-### 7. Nippon Silver ETF Fund of Fund — ₹5,000 (5%)
+### 6. Nippon Silver ETF Fund of Fund — ₹5,000 (5%)
 
 ```
 WHY SILVER:
@@ -276,7 +264,7 @@ COUNTER: Gold + Silver together cover BOTH fear (gold) and growth (silver) scena
 Together they're a stronger hedge than gold alone.
 ```
 
-### 8. Nexus Select REIT — ₹3,000 (OPTIONAL ADD-ON)
+### 7. Nexus Select REIT — ₹3,000 (OPTIONAL ADD-ON)
 
 ```
 WHY THIS IS OPTIONAL (not in core 7):
@@ -410,15 +398,13 @@ NO SINGLE EVENT DESTROYS EVERYTHING:
 TOTAL DEPLOYMENT: ₹1,27,000/month
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-India Equity:           ₹75,200   (59.2%)
-  ├── Large Cap Index:  ₹30,000   (UTI Nifty 50)
+India Equity:           ₹80,200   (63.1%)
+  ├── Large Cap Index:  ₹35,000   (UTI Nifty 50)
   ├── Flexi (India):    ₹18,200   (PPFAS India portion, 65% of ₹28K)
   ├── Mid Cap:          ₹17,000   (PGIM)
   └── Small Cap:        ₹10,000   (Bandhan)
 
 International Equity:    ₹9,800   (7.7%)   [PPFAS US portion, 35% of ₹28K]
-
-Equity Savings (hybrid):  ₹5,000   (3.9%)   [Arbitrage + small equity + debt]
 
 Precious Metals:        ₹10,000   (7.9%)
   ├── Gold FoF:          ₹5,000   (crisis hedge)
@@ -429,12 +415,17 @@ Fixed Income (EPF):     ₹27,000   (21.3%)   [8.25% guaranteed, auto-pilot]
 TOTAL:                 ₹1,27,000   (100%)
 
 SIMPLIFIED VIEW:
-  Equity (India + Intl):  67%
+  Equity (India + Intl):  71%
   Precious Metals:         8%
-  Stability (EPF + EqSav): 25%
+  Fixed Income (EPF):     21%
   ─────────────────────────────
-  GROWTH assets:           75%
-  DEFENSIVE assets:        25%
+  GROWTH assets:           79%
+  DEFENSIVE assets:        21%
+
+NOTE ON EMERGENCY FUND:
+  Emergency fund (₹6L) is maintained SEPARATELY in savings bank.
+  NOT part of investment portfolio. This is insurance, not investment.
+  EPF provides the "debt" component — no separate debt fund needed.
 ```
 
 ### By Market Cap (Equity Portion Only: ₹85,000)
@@ -642,7 +633,7 @@ This is the point where "money works for you, not you for money."
 PORTFOLIO TRANSITION (26-month migration):
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-CURRENT 14 FUNDS              ACTION         TARGET FINAL 7 FUNDS
+CURRENT 14 FUNDS              ACTION         TARGET FINAL 6 FUNDS
 ════════════════              ══════         ═══════════════════
 UTI Nifty 50 ❌ (none)       START SIP      → UTI Nifty 50 Index (₹30,000)
 Parag Parikh (₹2.24L)        INCREASE SIP   → Parag Parikh Flexi Cap (₹28,000)
@@ -676,10 +667,13 @@ MONTH-BY-MONTH:
 
 MONTH 1 (June 2026) — THE BIG SWITCH (30 minutes work):
   ✅ STOP 11 SIPs (all old funds + all ELSS)
-  ✅ START 7 SIPs:
-     UTI Nifty 50: ₹30,000 | PPFAS: ₹28,000 | PGIM: ₹17,000
-     Bandhan: ₹10,000 | Eq Savings: ₹5,000 | Gold FoF: ₹5,000 | Silver FoF: ₹5,000
-  ✅ SET UP 3 STPs:
+  ✅ START 6 SIPs:
+     UTI Nifty 50: ₹35,000 | PPFAS: ₹28,000 | PGIM: ₹17,000
+     Bandhan: ₹10,000 | Gold FoF: ₹5,000 | Silver FoF: ₹5,000
+  ✅ CHECK HOLDING PERIODS on each fund (Zerodha Coin → Holdings → "Since" date)
+     → Only STP units that are 12+ months old (LTCG eligible)
+     → Leave units purchased in last 12 months → STP them AFTER they complete 1 year
+  ✅ SET UP 3 STPs (only for LTCG-eligible units):
      HDFC Flexi → Nifty 50 (₹36K/month × 6)
      Nippon Large → Nifty 50 (₹33.5K/month × 6)
      Motilal Midcap → PGIM (₹38.7K/month × 6)
@@ -707,7 +701,7 @@ MONTHS 13-26 (June 2027 - August 2028):
 
 MONTH 27+ (September 2028):
   ✅ ALL ELSS redeemed and closed
-  ✅ FINAL STATE: 7 funds, fully automated, zero legacy
+  ✅ FINAL STATE: 6 funds, fully automated, zero legacy
   ✅ SYSTEM RUNS ITSELF. Review annually in April.
 ```
 
@@ -758,37 +752,48 @@ TAX ON ELSS REDEMPTION:
 ## TAX EFFICIENCY ANALYSIS
 
 ```
-TAX TREATMENT OF FINAL 7-FUND PORTFOLIO:
+TAX TREATMENT OF FINAL 6-FUND PORTFOLIO (Corrected per July 2024 Budget):
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Fund                       Weight   Tax Type       STCG    LTCG     Hold
+Fund                       Weight   Tax Type       STCG    LTCG     Hold Period
 ────────────────────────────────────────────────────────────────────────
-UTI Nifty 50 Index         30%      Equity MF      20%     12.5%    1yr+
-Parag Parikh Flexi Cap     28%      Equity MF      20%     12.5%    1yr+
-PGIM Midcap                17%      Equity MF      20%     12.5%    1yr+
-Bandhan Small Cap          10%      Equity MF      20%     12.5%    1yr+
-ICICI Equity Savings        5%      Equity MF*     20%     12.5%    1yr+
+UTI Nifty 50 Index         35%      Equity MF      20%     12.5%    12 months
+Parag Parikh Flexi Cap     28%      Equity MF      20%     12.5%    12 months
+PGIM Midcap                17%      Equity MF      20%     12.5%    12 months
+Bandhan Small Cap          10%      Equity MF      20%     12.5%    12 months
 ────────────────────────────────────────────────────────────────────────
-ABOVE: 90% of SIP → EQUITY TAX (12.5% LTCG) ✅
+ABOVE: 90% of SIP → EQUITY TAX (12.5% LTCG after 12 months) ✅
 ────────────────────────────────────────────────────────────────────────
-SBI Gold ETF FoF            5%      Other/Debt     Slab    12.5%    2yr+
-Nippon Silver ETF FoF       5%      Other/Debt     Slab    12.5%    2yr+
+SBI Gold ETF FoF            5%      Non-Eq MF      Slab    12.5%    24 months
+Nippon Silver ETF FoF       5%      Non-Eq MF      Slab    12.5%    24 months
 ────────────────────────────────────────────────────────────────────────
-ABOVE: 10% of SIP → Slab (STCG) / 12.5% (LTCG after 2 years)
+ABOVE: 10% of SIP → 12.5% LTCG after 24 months (corrected — NOT slab for LTCG)
 
-*ICICI Equity Savings: Qualifies as equity fund (65%+ equity) → equity tax!
- This is the entire POINT of choosing it over a debt fund.
+NOTE: Previous version incorrectly stated "slab rate" for Gold/Silver FoFs.
+Post July 2024 Budget: LTCG on Gold/Silver FoFs is 12.5% after 24-month hold.
+Only STCG (< 24 months) is at slab. Since we SIP for 10+ years, all gains = LTCG.
 
-EFFECTIVE TAX RATE ON PORTFOLIO (if held 2+ years):
-  90% at 12.5% + 10% at 12.5% = 12.5% flat LTCG on entire portfolio!
-  (Minus ₹1.25L annual exemption → effective ~10%)
+EXISTING SGBs (BEST TAX TREATMENT IN INDIA):
+  SGBJUN30: Maturity June 2030 → ALL capital gains TAX-FREE
+  SGBDE31III: Maturity Dec 2031 → ALL capital gains TAX-FREE
+  Plus 2.5%/year interest (taxed at slab, small amount)
+  → HOLD TO MATURITY. Do not sell on exchange.
 
-ANNUAL TAX HARVESTING (do every January):
-  • Check unrealized LTCG across all equity funds
-  • Sell enough to book exactly ₹1.25L profit
-  • Rebuy immediately (same fund, next day — no 30-day rule for MFs)
-  • This "resets" cost basis → ₹1.25L × 12.5% = ₹15,625 SAVED per year
-  • Over 15 years: ₹2.34L saved (tax-free money!)
+SGB SECONDARY MARKET STRATEGY (bonus):
+  • Buy existing SGBs on NSE/BSE when price ≈ gold price (no premium)
+  • Gets: 2.5% interest + tax-free gains at maturity
+  • Superior to Gold FoF for lump-sum. Use FoF for automated SIP.
+
+EFFECTIVE PORTFOLIO TAX (all units held to LTCG threshold):
+  100% of portfolio at 12.5% LTCG ✅
+  Minus ₹1.25L annual exemption on equity portion
+  Effective tax rate: ~10-11% on total gains
+
+ANNUAL TAX HARVESTING (every January):
+  • Check unrealized LTCG across all EQUITY funds (first 4 funds)
+  • Book exactly ₹1.25L profit → sell and rebuy next day
+  • Saves ₹15,625/year in taxes (₹2.34L over 15 years)
+  • Note: ₹1.25L exemption applies only to equity MF LTCG, not gold/silver
 ```
 
 ---
@@ -835,28 +840,28 @@ EVERY 3 YEARS (Strategic review — couple of hours):
 ║                    THE FINAL INVESTMENT BLUEPRINT (v2)                           ║
 ╠══════════════════════════════════════════════════════════════════════════════════╣
 ║                                                                                  ║
-║  7 FUNDS. ALL AUTOMATED. 30 MINUTES SETUP. THEN FORGET.                        ║
+║  6 FUNDS. ALL AUTOMATED. 30 MINUTES SETUP. THEN FORGET.                        ║
 ║                                                                                  ║
 ║  ┌─────────────────────────────────────────────────────────────────────────┐    ║
-║  │ UTI Nifty 50 Index         ₹30,000 (30%) — Core stability              │    ║
+║  │ UTI Nifty 50 Index         ₹35,000 (35%) — Core stability              │    ║
 ║  │ Parag Parikh Flexi Cap     ₹28,000 (28%) — India + US (tax-efficient)  │    ║
 ║  │ PGIM India Midcap          ₹17,000 (17%) — Growth engine               │    ║
 ║  │ Bandhan Small Cap          ₹10,000 (10%) — High-growth kicker          │    ║
-║  │ ICICI Equity Savings        ₹5,000  (5%) — Stability (equity tax!)     │    ║
 ║  │ SBI Gold ETF FoF            ₹5,000  (5%) — Crisis hedge                │    ║
 ║  │ Nippon Silver ETF FoF       ₹5,000  (5%) — Inflation hedge             │    ║
 ║  └─────────────────────────────────────────────────────────────────────────┘    ║
 ║  + EPF ₹27,000/month (automatic) = ₹1,27,000 total deployment                  ║
+║  + SGBs maturing 2030/2031 (tax-free gold windfall)                             ║
 ║                                                                                  ║
 ║  SCORES:                                                                         ║
-║  Diversification: 8.5  │ Simplicity: 9.5  │ Tax: 9.0  │ Risk: 8.5             ║
+║  Diversification: 8.5  │ Simplicity: 9.5  │ Tax: 9.5  │ Risk: 8.5             ║
 ║  Projections: 8.0      │ Behavioral: 9.5   │ Sustainability: 9.0               ║
 ║  ─────────────────────────────────────────────────────────────────              ║
 ║  OVERALL: 8.9/10                                                                ║
 ║                                                                                  ║
 ║  EXPECTED: ₹1Cr by 30 │ ₹5Cr by 37 │ ₹10Cr by 42 (FIRE)                      ║
-║  MAX CRASH: -28% (vs -50% for Nifty alone) │ Recovery: 18-24 months            ║
-║  TAX: 90% equity-taxed (12.5% LTCG) │ ₹15K/year saved via harvesting          ║
+║  MAX CRASH: -30% (vs -50% for Nifty alone) │ Recovery: 18-24 months            ║
+║  TAX: 100% at 12.5% LTCG (after hold period) │ ₹15K/year via harvesting       ║
 ║  EFFORT: Set SIPs once. Review once/year. Tax harvest once/year.                ║
 ║                                                                                  ║
 ║  THE ONLY RULE THAT MATTERS:                                                    ║
@@ -890,9 +895,14 @@ EPF (₹10.57L, +₹27K/month):
   → By age 42: ~₹45-50L in EPF alone. Your retirement floor.
 
 Cash (₹2L savings):
-  → Keep ₹1L in savings (instant access for surprise expenses)
-  → ₹1L → invest in Equity Savings fund (starts emergency fund building)
-  → Target: ₹6L in Equity Savings = 6 months expenses = safety net ✅
+  → BUILD TO ₹6L FIRST (before starting full SIPs!)
+  → Emergency fund = 6 months expenses = ₹6L minimum
+  → Option 1: Start with ₹95K SIP for 4 months, save ₹5K extra each month
+  → Option 2: Use next bonus/variable pay to top up to ₹6L immediately
+  → Option 3: Park ₹2L as-is, redirect one month's full surplus (₹1L) to savings
+  → IMPORTANT: Emergency fund stays in SAVINGS BANK (not MF, not FD)
+    Why? Because emergency = instant access. Returns don't matter here.
+  → Once ₹6L achieved → full ₹1L into 6-fund SIP portfolio
 
 Home Loan (₹45K EMI, ~15 years, 7.3%):
   → DO NOT PREPAY (equity returns 12% > loan rate 7.3% → keep arbitrage)
@@ -907,6 +917,8 @@ Term Insurance (₹29K/year):
 
 ---
 
-*Generated: May 16, 2026 | Revised after critical self-audit*  
+*Generated: May 16, 2026 | v3: Self-audit + Gemini Pro 3.1 peer review corrections*  
+*Changes in v3: Dropped Equity Savings (6-fund), fixed Gold/Silver tax (12.5% LTCG after 24mo),*  
+*added SGB secondary market strategy, added holding-period check before STPs, Nifty 50 → ₹35K*  
 *Market: Nifty 23,644 | Gold ₹1.58L/10g | RBI Repo 5.25%*  
 *This is NOT SEBI-registered advice. Educational analysis for personal use.*
