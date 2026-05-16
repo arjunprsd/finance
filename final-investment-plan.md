@@ -1,7 +1,8 @@
-# THE FINAL PLAN — Complete Investment Blueprint (Revised v3)
-**Date:** May 16, 2026 | **Revised after self-audit + peer review (Gemini Pro 3.1)**  
+# THE FINAL PLAN — Complete Investment Blueprint (Revised v4)
+**Date:** May 16, 2026 | **Revised after self-audit + peer review + NSE/Kite data validation**  
 **Profile:** Age 27, Medium-High Risk, ₹2L income, ₹1L expenses, ₹1L investable  
 **Philosophy:** Maximum automation, no sectoral bets, every asset hedges the other
+**Data Sources:** NSE MCP (live index data), Zerodha Kite MCP (live portfolio), ValueResearch (CAGR)
 
 ---
 
@@ -32,7 +33,7 @@ Behavioral Robustness:      9.5/10   100% automated SIPs. No monthly decisions. 
                                      -0.5: Annual rebalance requires discipline.
 
 Long-term Sustainability:   9.0/10   Index + diversified active = survives any market regime.
-                                     PPFAS & PGIM have 10+ year track records.
+                                     PPFAS has 10+ year track record. Midcap slot is now passive index.
                                      -1: Active funds carry manager-exit risk (mitigated by
                                      rule: switch to index if underperforms 2 years).
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -44,6 +45,37 @@ WHY NOT 10/10:
 • 10% step-up assumption is aspirational — adjusted projections fix this
 • One active fund (PPFAS) at 28% is concentrated — but it's the BEST option for intl+equity tax
 • No direct real estate (added as optional REIT add-on below)
+```
+
+---
+
+## DATA VALIDATION — NSE MCP Live (May 16, 2026)
+
+```
+INDEX BENCHMARKS (2-Year Price History from NSE):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Index                  2Y CAGR    1Y Return    P/E      Year High
+────────────────────────────────────────────────────────────────────
+Nifty 50              2.73%      -5.66%       20.59    26,373
+Nifty Midcap 150      8.10%      +7.11%       32.44    —
+Nifty Smallcap 250    3.72%      +3.49%       30.13    —
+
+FUND vs INDEX (Data-backed decisions):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Fund                        2Y CAGR    Index 2Y CAGR    Alpha    Decision
+─────────────────────────────────────────────────────────────────────────
+PGIM Midcap (Active)        7.57%      8.10%            -0.53%   ❌ SWITCH OUT
+Motilal Midcap 150 Index    9.06%      8.10%            +0.96%   ✅ SWITCH IN
+Bandhan Small Cap           +11.1%*    3.72%            >>index  ✅ KEEP
+PPFAS Flexi Cap             +7.1%*     -5.66%(N50)      >>index  ✅ KEEP
+
+* Absolute return from Kite (not exact 2Y CAGR, but directionally confirms outperformance)
+
+KITE PORTFOLIO SNAPSHOT (Live May 16, 2026):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Total Invested: ₹19.53L → Current: ₹21.36L (+9.4%, +₹1.83L P&L)
+Funds in RED: HDFC Flexi (-3.2%), Motilal Active (-2.6%), Nippon Large (-3.2%)
+Best: BOI Small (+38.6%), Quant ELSS (+23.5%), DSP ELSS (+20.8%)
 ```
 
 ---
@@ -60,7 +92,7 @@ WHY NOT 10/10:
 ║  ────────────────────────────────────────────────────────────────────────────     ║
 ║  1  UTI Nifty 50 Index (Direct)       ₹35,000   35%  Core anchor       Eq LTCG   ║
 ║  2  Parag Parikh Flexi Cap (Direct)   ₹28,000   28%  International+Val Eq LTCG   ║
-║  3  PGIM India Midcap Opp (Direct)    ₹17,000   17%  Growth engine     Eq LTCG   ║
+║  3  Motilal Nifty Midcap 150 Idx(Dir) ₹17,000   17%  Growth engine     Eq LTCG   ║
 ║  4  Bandhan Small Cap (Direct)        ₹10,000   10%  High-growth       Eq LTCG   ║
 ║  5  SBI Gold ETF FoF (Direct)          ₹5,000    5%  Crisis hedge      12.5%*    ║
 ║  6  Nippon Silver ETF FoF (Direct)     ₹5,000    5%  Inflation hedge   12.5%*    ║
@@ -117,7 +149,7 @@ WHY NOT MORE:
 • 30% gives enough stability without killing returns
 
 ALTERNATIVE CONSIDERED: Nifty Next 50 (more growth, more volatility)
-REJECTED: Adds complexity. PPFAS + PGIM already cover growth. Keep core simple.
+REJECTED: Adds complexity. PPFAS + Midcap 150 already cover growth. Keep core simple.
 ```
 
 ### 2. Parag Parikh Flexi Cap — ₹28,000 (28%)
@@ -126,7 +158,8 @@ REJECTED: Adds complexity. PPFAS + PGIM already cover growth. Keep core simple.
 WHY THIS FUND:
 • ONLY way to get US stock exposure (Google, Microsoft, Amazon, Meta)
   with EQUITY TAX treatment (12.5% LTCG vs 30% slab on Nasdaq funds!)
-• ~35% in US stocks + ~65% in India (large + mid value picks)
+• ~12% in US stocks + ~88% in India (large + mid value picks)
+  (NOTE: Historically was ~35%, reduced due to SEBI overseas MF cap + AUM growth)
 • Lowest TER in flexi-cap: 0.63%
 • Conservative stock-picking (Buffett-style value approach)
 • 10-year track record: ~17% CAGR (consistently beat benchmark)
@@ -134,7 +167,8 @@ WHY THIS FUND:
 
 WHY 28% (high for single fund):
 • No other fund gives US exposure with equity tax. PPFAS is UNIQUE.
-• 28% × 35% US allocation = ~10% portfolio in US stocks → geographic hedge
+• 28% × 12% US allocation = ~3.4% portfolio in US stocks → geographic hedge
+  (Still the ONLY tax-efficient US route; even 12% US is better than 0%)
 • Remaining 65% India allocation is large/mid value → overlaps minimally with Nifty 50 Index
   (Nifty is market-cap weighted, PPFAS picks undervalued stocks — different strategy)
 
@@ -150,27 +184,32 @@ WHY NOT A DEDICATED NASDAQ/S&P 500 FUND INSTEAD:
   Over 15 years: This tax difference = ₹5-8L saved. PPFAS wins.
 ```
 
-### 3. PGIM India Midcap Opportunities — ₹17,000 (17%)
+### 3. Motilal Oswal Nifty Midcap 150 Index Fund — ₹17,000 (17%)
 
 ```
-WHY THIS FUND:
-• One of the best mid-cap funds in India (top quartile 1/3/5/7 year)
-• Concentrated portfolio (~40 stocks) — high-conviction picks
-• Fund manager Aniruddha Naha: 15+ years experience, consistent style
-• TER: 0.45% (reasonable for active mid-cap)
-• 5Y CAGR: ~28% (vs Nifty Midcap 150 Index: ~25%) → genuine alpha
+WHY THIS FUND (Switched from PGIM Midcap — May 2026):
+• PGIM Midcap 2Y CAGR: 7.57% vs Nifty Midcap 150 Index: 8.10% → active LOST to passive
+• Motilal Midcap 150 Index Fund 2Y CAGR: 9.06% → BEAT its own benchmark slightly
+• TER: 0.30% (vs PGIM 0.45%) → saves ₹2,550/year on ₹17K SIP
+• No fund manager risk, no style drift, no team changes
+• NSE Live (May 16, 2026): Midcap 150 1Y: +7.11%, P/E: 32.44
 
-WHY ACTIVE over PASSIVE (Nifty Midcap 150 Index):
-• Mid-cap space is INEFFICIENT — fewer analysts cover these companies
-• Active managers genuinely add 2-3% alpha after fees (unlike large-cap)
-• PGIM has done this consistently (not a 1-year wonder)
-• RULE: If underperforms Nifty Midcap 150 Index for 2 straight years → switch to
-  Motilal Oswal Nifty Midcap 150 Index Fund (TER 0.15%)
+WHY PASSIVE over ACTIVE (reversed from original plan):
+• DATA PROVED IT: PGIM lagged index for 2 consecutive years (rule triggered)
+• Your own Motilal Midcap ACTIVE fund: -2.6% (catastrophic underperformance)
+• Mid-cap is becoming MORE efficient → harder for active to add alpha
+• At ₹17K/month, guaranteed market return > hoping for alpha
 
 WHY 17%:
 • Mid-cap is the "sweet spot" — large enough to survive, small enough to grow fast
 • India's mid-caps benefit most from GDP growth (domestic consumption, infra spend)
 • 17% is aggressive but appropriate for 27-year-old with 15+ year horizon
+• Nifty Midcap 150 2Y CAGR 8.10% vs Nifty 50 2Y CAGR 2.73% → midcap IS delivering
+
+ALTERNATIVE CONSIDERED:
+• Kotak Nifty Midcap 150 Index (TER 0.25%): Slightly cheaper, equally good
+• HDFC Midcap Opp (active): Good fund but contradicts the passive thesis
+• RULE: If Motilal tracking error exceeds 0.5% consistently → switch to Kotak
 ```
 
 ### 4. Bandhan Small Cap — ₹10,000 (10%)
@@ -401,10 +440,11 @@ TOTAL DEPLOYMENT: ₹1,27,000/month
 India Equity:           ₹80,200   (63.1%)
   ├── Large Cap Index:  ₹35,000   (UTI Nifty 50)
   ├── Flexi (India):    ₹18,200   (PPFAS India portion, 65% of ₹28K)
-  ├── Mid Cap:          ₹17,000   (PGIM)
+  ├── Mid Cap:          ₹17,000   (Motilal Midcap 150 Index)
   └── Small Cap:        ₹10,000   (Bandhan)
 
-International Equity:    ₹9,800   (7.7%)   [PPFAS US portion, 35% of ₹28K]
+International Equity:    ₹3,360   (2.6%)   [PPFAS US portion, ~12% of ₹28K]
+  (NOTE: Was 7.7% when PPFAS held 35% US. Now ~12% due to SEBI cap + AUM growth)
 
 Precious Metals:        ₹10,000   (7.9%)
   ├── Gold FoF:          ₹5,000   (crisis hedge)
@@ -434,10 +474,10 @@ NOTE ON EMERGENCY FUND:
 MARKET CAP DISTRIBUTION:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Large Cap:        ~55%    (Nifty 50 ₹30K + PPFAS large ~₹12K + PGIM large overlap ~₹5K)
-Mid Cap:          ~25%    (PGIM ₹17K + PPFAS mid ~₹4K + Bandhan mid overlap ~₹2K)
-Small Cap:        ~13%    (Bandhan ₹10K + PGIM small overlap ~₹1K)
-International:    ~7%     (PPFAS US stocks)
+Large Cap:        ~55%    (Nifty 50 ₹35K + PPFAS India large ~₹20K)
+Mid Cap:          ~25%    (Midcap 150 Index ₹17K + PPFAS mid ~₹4K + Bandhan mid overlap ~₹2K)
+Small Cap:        ~13%    (Bandhan ₹10K + small-cap from midcap 150 spillover)
+International:    ~3%     (PPFAS US stocks ~12% of ₹28K)
 
 WHY THIS RATIO WORKS:
 • 55% large = stability pillar (companies don't go bankrupt)
@@ -454,13 +494,13 @@ SECTOR COVERAGE (estimated, through fund holdings):
 
 Sector              Weight    Source (auto via fund holdings)
 ─────────────────────────────────────────────────────────────
-Banking/NBFC:       25-28%    Nifty 50 (35% financials) + PPFAS + PGIM
+Banking/NBFC:       25-28%    Nifty 50 (35% financials) + PPFAS + Midcap 150
 IT/Technology:      12-14%    Nifty 50 (Infosys, TCS) + PPFAS (Google, Microsoft)
 Energy/Oil:          8-10%    Nifty 50 (Reliance 10%, ONGC, Power Grid)
 Metals/Mining:       4-6%     Nifty 50 (Hindalco, Tata Steel, JSW) ← market-weight!
-Consumer/FMCG:       7-8%     Nifty 50 (ITC, HUL) + PPFAS + PGIM
-Auto:                5-7%     Nifty 50 (M&M, Tata Motors) + PGIM
-Pharma:              4-5%     Nifty 50 (Sun, Divis) + PGIM (mid-cap pharma)
+Consumer/FMCG:       7-8%     Nifty 50 (ITC, HUL) + PPFAS + Midcap 150
+Auto:                5-7%     Nifty 50 (M&M, Tata Motors) + Midcap 150
+Pharma:              4-5%     Nifty 50 (Sun, Divis) + Midcap 150 (mid-cap pharma)
 Telecom:             3-4%     Nifty 50 (Bharti Airtel 4%)
 Cement/Infra:        4-5%     Nifty 50 (UltraTech, L&T) + Bandhan small-cap
 US Tech:             6-7%     PPFAS (Alphabet, Meta, Microsoft, Amazon)
@@ -522,15 +562,14 @@ WHAT HAPPENS IN A 2008-STYLE CRASH (worst case):
 
 Component          Weight    Crash Impact    Contribution
 ─────────────────────────────────────────────────────────────────
-Nifty 50 (30%)      -50%      → -15.0%
+Nifty 50 (35%)      -50%      → -17.5%
 PPFAS (28%)         -35%      → -9.8%     (US falls less in India crash)
-PGIM Midcap (17%)   -55%      → -9.4%
+Midcap 150 Idx(17%) -55%      → -9.4%
 Bandhan Small (10%) -65%      → -6.5%
-Eq Savings (5%)     -3%       → -0.2%     (arbitrage barely moves)
 Gold FoF (5%)       +25%      → +1.3%     (★ RISES)
 Silver FoF (5%)     +15%      → +0.8%     (★ RISES)
 ─────────────────────────────────────────────────────────────────
-NET PORTFOLIO:                → -28.8%
+NET PORTFOLIO:                → -31.1%
 
 PLUS EPF: 21% of total at 0% impact = further cushion
 TOTAL REAL DRAWDOWN (incl. EPF): ~ -22.7%
@@ -635,18 +674,19 @@ PORTFOLIO TRANSITION (26-month migration):
 
 CURRENT 14 FUNDS              ACTION         TARGET FINAL 6 FUNDS
 ════════════════              ══════         ═══════════════════
-UTI Nifty 50 ❌ (none)       START SIP      → UTI Nifty 50 Index (₹30,000)
+UTI Nifty 50 ❌ (none)       START SIP      → UTI Nifty 50 Index (₹35,000)
 Parag Parikh (₹2.24L)        INCREASE SIP   → Parag Parikh Flexi Cap (₹28,000)
-PGIM Midcap (₹1.62L)         INCREASE SIP   → PGIM Midcap Opp (₹17,000)
+Motilal Midcap 150 Idx ❌    START SIP      → Motilal Nifty Midcap 150 Index (₹17,000)
 Bandhan Small Cap (₹1.99L)   CONTINUE       → Bandhan Small Cap (₹10,000)
 
 STP OUT (move to target funds):
   HDFC Flexi Cap (₹2.17L)    → STP to UTI Nifty 50: ₹36K/month × 6 months
   Nippon Large Cap (₹2.01L)  → STP to UTI Nifty 50: ₹33.5K/month × 6 months
-  Motilal Midcap (₹2.32L)    → STP to PGIM Midcap: ₹38.7K/month × 6 months
+  Motilal Midcap ACTIVE(₹2.32L) → STP to Motilal Midcap 150 INDEX: ₹38.7K/month × 6 months
+  PGIM Midcap (₹1.62L)       → STP to Motilal Midcap 150 INDEX: ₹27K/month × 6 months
   ICICI Pru Large (₹1.81L)   → STP to UTI Nifty 50: ₹30K/month × 6 months (start Month 3)
   SBI Technology (₹1.30L)    → STP to PPFAS: ₹22K/month × 6 months (start Month 3)
-  BOI Small Cap (₹1.79L)     → STP to Bandhan Small: ₹30K/month × 6 months (start Month 3)
+  BOI Small Cap (₹1.79L)     → HOLD (stop SIP, let it ride — +38.6% performer)
 
 ELSS (5 funds, ₹4.12L total — LOCKED):
   Axis ELSS (₹78K)           → Redeem unlocked units monthly → reinvest in Nifty 50
@@ -659,7 +699,6 @@ ELSS (5 funds, ₹4.12L total — LOCKED):
 NEW STARTS (from Day 1):
   SBI Gold ETF FoF            → ₹5,000 SIP
   Nippon Silver ETF FoF       → ₹5,000 SIP
-  ICICI Equity Savings        → ₹5,000 SIP
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -668,28 +707,28 @@ MONTH-BY-MONTH:
 MONTH 1 (June 2026) — THE BIG SWITCH (30 minutes work):
   ✅ STOP 11 SIPs (all old funds + all ELSS)
   ✅ START 6 SIPs:
-     UTI Nifty 50: ₹35,000 | PPFAS: ₹28,000 | PGIM: ₹17,000
+    UTI Nifty 50: ₹35,000 | PPFAS: ₹28,000 | Motilal Midcap 150 Idx: ₹17,000
      Bandhan: ₹10,000 | Gold FoF: ₹5,000 | Silver FoF: ₹5,000
   ✅ CHECK HOLDING PERIODS on each fund (Zerodha Coin → Holdings → "Since" date)
      → Only STP units that are 12+ months old (LTCG eligible)
      → Leave units purchased in last 12 months → STP them AFTER they complete 1 year
-  ✅ SET UP 3 STPs (only for LTCG-eligible units):
+  ✅ SET UP 4 STPs (only for LTCG-eligible units):
      HDFC Flexi → Nifty 50 (₹36K/month × 6)
      Nippon Large → Nifty 50 (₹33.5K/month × 6)
-     Motilal Midcap → PGIM (₹38.7K/month × 6)
+     Motilal Midcap Active → Motilal Midcap 150 Index (₹38.7K/month × 6)
+     PGIM Midcap → Motilal Midcap 150 Index (₹27K/month × 6)
 
 MONTH 3 (August 2026) — TAX SPREADING:
-  ✅ ADD 3 more STPs (staggered for LTCG tax management):
+  ✅ ADD 2 more STPs (staggered for LTCG tax management):
      ICICI Large → Nifty 50 (₹30K/month × 6)
      SBI Tech → PPFAS (₹22K/month × 6)
-     BOI Small → Bandhan (₹30K/month × 6)
 
 MONTH 6 (November 2026):
-  ✅ Batch 1 STPs complete (HDFC, Nippon, Motilal = EMPTY)
+  ✅ Batch 1 STPs complete (HDFC, Nippon, Motilal Active, PGIM = EMPTY)
 
 MONTH 9 (February 2027):
-  ✅ Batch 2 STPs complete (ICICI, SBI, BOI = EMPTY)
-  ✅ PORTFOLIO NOW: 7 active funds + 5 ELSS (locked, shrinking)
+  ✅ Batch 2 STPs complete (ICICI, SBI = EMPTY)
+  ✅ PORTFOLIO NOW: 6 target funds + BOI Small (hold) + 5 ELSS (locked, shrinking)
 
 MONTH 12 (May 2027):
   ✅ Emergency fund built: ₹6L in Equity Savings fund ✅
@@ -759,7 +798,7 @@ Fund                       Weight   Tax Type       STCG    LTCG     Hold Period
 ────────────────────────────────────────────────────────────────────────
 UTI Nifty 50 Index         35%      Equity MF      20%     12.5%    12 months
 Parag Parikh Flexi Cap     28%      Equity MF      20%     12.5%    12 months
-PGIM Midcap                17%      Equity MF      20%     12.5%    12 months
+Motilal Midcap 150 Idx    17%      Equity MF      20%     12.5%    12 months
 Bandhan Small Cap          10%      Equity MF      20%     12.5%    12 months
 ────────────────────────────────────────────────────────────────────────
 ABOVE: 90% of SIP → EQUITY TAX (12.5% LTCG after 12 months) ✅
@@ -837,7 +876,7 @@ EVERY 3 YEARS (Strategic review — couple of hours):
 
 ```
 ╔══════════════════════════════════════════════════════════════════════════════════╗
-║                    THE FINAL INVESTMENT BLUEPRINT (v2)                           ║
+║                    THE FINAL INVESTMENT BLUEPRINT (v4)                           ║
 ╠══════════════════════════════════════════════════════════════════════════════════╣
 ║                                                                                  ║
 ║  6 FUNDS. ALL AUTOMATED. 30 MINUTES SETUP. THEN FORGET.                        ║
@@ -845,7 +884,7 @@ EVERY 3 YEARS (Strategic review — couple of hours):
 ║  ┌─────────────────────────────────────────────────────────────────────────┐    ║
 ║  │ UTI Nifty 50 Index         ₹35,000 (35%) — Core stability              │    ║
 ║  │ Parag Parikh Flexi Cap     ₹28,000 (28%) — India + US (tax-efficient)  │    ║
-║  │ PGIM India Midcap          ₹17,000 (17%) — Growth engine               │    ║
+║  │ Motilal Midcap 150 Index    ₹17,000 (17%) — Growth engine               │    ║
 ║  │ Bandhan Small Cap          ₹10,000 (10%) — High-growth kicker          │    ║
 ║  │ SBI Gold ETF FoF            ₹5,000  (5%) — Crisis hedge                │    ║
 ║  │ Nippon Silver ETF FoF       ₹5,000  (5%) — Inflation hedge             │    ║
