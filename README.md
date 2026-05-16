@@ -11,7 +11,8 @@
 finance/
 ├── README.md                      ← YOU ARE HERE (Master Index)
 ├── my-investment-strategy.md      ← ★★ THE PLAN: Personal strategy with full reasoning
-├── portfolio-performance-report.md← ★★ PERFORMANCE: XIRR, CAGR, grading, what-if analysis
+├── reallocation-plan.md           ← ★★ 12-POINT FIX: Metals, REITs, Intl, crash analysis
+├── portfolio-performance-report.md← PERFORMANCE: XIRR, CAGR, grading, what-if analysis
 ├── portfolio-snapshot.md          ← Current holdings summary
 ├── net-worth-statement.md         ← Consolidated net worth & cash flows
 ├── portfolio-analytics.md         ← Deep-dive analytics & graphs
