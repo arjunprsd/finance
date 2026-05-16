@@ -10,8 +10,9 @@
 ```
 finance/
 ├── README.md                      ← YOU ARE HERE (Master Index)
-├── my-investment-strategy.md      ← ★★ THE PLAN: Personal strategy with full reasoning
-├── reallocation-plan.md           ← ★★ 12-POINT FIX: Metals, REITs, Intl, crash analysis
+├── final-investment-plan.md       ← ★★★ THE DEFINITIVE PLAN: 9.2/10 rated, complete blueprint
+├── my-investment-strategy.md      ← Personal strategy with reasoning (superseded by final plan)
+├── reallocation-plan.md           ← 12 different strategies compared & rated
 ├── portfolio-performance-report.md← PERFORMANCE: XIRR, CAGR, grading, what-if analysis
 ├── portfolio-snapshot.md          ← Current holdings summary
 ├── net-worth-statement.md         ← Consolidated net worth & cash flows
@@ -37,7 +38,7 @@ finance/
 | **Expenses** | ₹1L/month (incl. ₹45K EMI) |
 | **Net Worth** | **₹38.45L** (incl. EPF ₹10.57L) |
 | **EPF Balance** | ₹10,57,066 (27.5% of net worth) |
-| **Risk Profile** | Medium |
+| **Risk Profile** | Medium-High |
 | **Tax Regime** | New |
 | **Goal** | Flexible Early Retirement |
 
