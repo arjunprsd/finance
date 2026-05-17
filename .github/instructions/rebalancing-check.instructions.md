@@ -52,7 +52,7 @@ Status rules:
 - **ACTION NEEDED**: drift ≥ 5%
 
 ### Step 5: Recommend Actions
-Based on the SOP in `rebalancing-sop.md`:
+Based on the SOP in `plan/rebalancing-sop.md`:
 - If all OK → "Portfolio is balanced. No action needed. Next check: [date + 3 months]"
 - If WATCH → "Recommend adjusting SIPs for 2 months: increase [underweight] by ₹X, decrease [overweight] by ₹X"
 - If ACTION → "Threshold breach detected. Execute rebalancing hierarchy: [specific recommendation]"
@@ -80,5 +80,6 @@ Next Scheduled Check: [current date + 3 months]
 - Direct stocks (49) are excluded — legacy, no action.
 - ELSS funds are excluded — locked, rolling unlock till Aug 2028.
 - During migration phase (Jun 2026 - Feb 2027), old funds being STP'd out are NOT part of target allocation calculation.
-- Reference SOP: `/Users/arjun.prasad/finance/rebalancing-sop.md`
-- Reference plan: `/Users/arjun.prasad/finance/final-investment-plan.md`
+- Reference SOP: `/Users/arjun.prasad/finance/plan/rebalancing-sop.md`
+- Reference plan: `/Users/arjun.prasad/finance/plan/final-investment-plan.md`
+- Rebalancing logs: `/Users/arjun.prasad/finance/logs/rebalancing/`

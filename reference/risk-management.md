@@ -181,20 +181,11 @@ PHASE 2 (Months 7-30): Steady Build
 
 ## 7. Rebalancing Rules
 
-### When to Rebalance:
-
-| Trigger | Action |
-|---------|--------|
-| Equity exceeds 80% of portfolio | Shift excess to debt fund |
-| Equity drops below 60% of portfolio | Shift from debt to equity |
-| Any single fund > 25% of equity portfolio | Trim and redistribute |
-| Gold > 12% of portfolio | Stop gold SIP, redirect |
-| Emergency fund drops below ₹4L | Pause equity SIP, rebuild |
-
-### How to Rebalance (Tax-Efficient):
-1. **Preferred:** Change SIP allocation (shift new money, don't sell)
-2. **If needed:** Sell debt (slab rate anyway) → buy equity
-3. **Last resort:** Sell equity (watch ₹1.25L LTCG limit)
+> **Full SOP:** See [`plan/rebalancing-sop.md`](../plan/rebalancing-sop.md) for the complete rebalancing procedure, triggers, execution hierarchy, and pre-sell checklist.
+>
+> **Automated check:** Run `rebalance check` in Copilot CLI for live drift analysis.
+>
+> **Logs:** See [`logs/rebalancing/`](../logs/rebalancing/) for historical check records.
 
 ---
 

@@ -1,0 +1,4 @@
+# Raw NSE data (large, re-fetchable)
+*_raw.json
+# Pickle files (binary, re-generable)
+*.pkl
