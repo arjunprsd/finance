@@ -58,7 +58,8 @@ Savings Rate:       63% (incl. EPF)
 
 | File | Purpose | Status |
 |------|---------|--------|
-| [net-worth-snapshot.md](context/net-worth-snapshot.md) | Profile, income, NW breakdown, ratios, holdings | ★ Update quarterly |
+| [portfolio-dashboard.md](context/portfolio-dashboard.md) | **Holdings, P&L, target allocation, future projections** | ★ Update quarterly |
+| [net-worth-snapshot.md](context/net-worth-snapshot.md) | Profile, income, NW breakdown, ratios | ★ Update quarterly |
 
 ### `logs/` — History & Tracking
 
