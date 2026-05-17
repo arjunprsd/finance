@@ -94,8 +94,8 @@ Best: BOI Small (+38.6%), Quant ELSS (+23.5%), DSP ELSS (+20.8%)
 ║  2  Parag Parikh Flexi Cap (Direct)   ₹28,000   28%  International+Val Eq LTCG   ║
 ║  3  Motilal Nifty Midcap 150 Idx(Dir) ₹17,000   17%  Growth engine     Eq LTCG   ║
 ║  4  Bandhan Small Cap (Direct)        ₹10,000   10%  High-growth       Eq LTCG   ║
-║  5  SBI Gold ETF FoF (Direct)          ₹5,000    5%  Crisis hedge      12.5%*    ║
-║  6  Nippon Silver ETF FoF (Direct)     ₹5,000    5%  Inflation hedge   12.5%*    ║
+║  5  SBI Gold ETF FoF (Direct)          ₹7,000    7%  Crisis hedge      12.5%*    ║
+║  6  Nippon Silver ETF FoF (Direct)     ₹3,000    3%  Inflation hedge   12.5%*    ║
 ║  ────────────────────────────────────────────────────────────────────────────     ║
 ║     TOTAL SIP                         ₹1,00,000 100%                              ║
 ║                                                                                   ║
@@ -685,7 +685,7 @@ STP OUT (move to target funds):
   Motilal Midcap ACTIVE(₹2.32L) → STP to Motilal Midcap 150 INDEX: ₹38.7K/month × 6 months
   PGIM Midcap (₹1.62L)       → STP to Motilal Midcap 150 INDEX: ₹27K/month × 6 months
   ICICI Pru Large (₹1.81L)   → STP to UTI Nifty 50: ₹30K/month × 6 months (start Month 3)
-  SBI Technology (₹1.30L)    → STP to PPFAS: ₹22K/month × 6 months (start Month 3)
+  SBI Technology (₹1.30L)    → HOLD (satellite sectoral conviction bet — review quarterly)
   BOI Small Cap (₹1.79L)     → HOLD (stop SIP, let it ride — +38.6% performer)
 
 ELSS (5 funds, ₹4.12L total — LOCKED):
@@ -697,8 +697,8 @@ ELSS (5 funds, ₹4.12L total — LOCKED):
   Timeline: Rolling unlock till Aug 2028 (~₹16K/month average unlocking)
 
 NEW STARTS (from Day 1):
-  SBI Gold ETF FoF            → ₹5,000 SIP
-  Nippon Silver ETF FoF       → ₹5,000 SIP
+  SBI Gold ETF FoF            → ₹7,000 SIP
+  Nippon Silver ETF FoF       → ₹3,000 SIP
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -719,16 +719,16 @@ MONTH 1 (June 2026) — THE BIG SWITCH (30 minutes work):
      PGIM Midcap → Motilal Midcap 150 Index (₹27K/month × 6)
 
 MONTH 3 (August 2026) — TAX SPREADING:
-  ✅ ADD 2 more STPs (staggered for LTCG tax management):
+  ✅ ADD 1 more STP (staggered for LTCG tax management):
      ICICI Large → Nifty 50 (₹30K/month × 6)
-     SBI Tech → PPFAS (₹22K/month × 6)
+  ✅ SBI Tech: HOLD (satellite — no STP, review quarterly vs Nifty IT)
 
 MONTH 6 (November 2026):
   ✅ Batch 1 STPs complete (HDFC, Nippon, Motilal Active, PGIM = EMPTY)
 
 MONTH 9 (February 2027):
-  ✅ Batch 2 STPs complete (ICICI, SBI = EMPTY)
-  ✅ PORTFOLIO NOW: 6 target funds + BOI Small (hold) + 5 ELSS (locked, shrinking)
+  ✅ Batch 2 STP complete (ICICI = EMPTY)
+  ✅ PORTFOLIO NOW: 6 target funds + SBI Tech (satellite) + BOI Small (hold) + 5 ELSS (locked, shrinking)
 
 MONTH 12 (May 2027):
   ✅ Emergency fund built: ₹6L in Equity Savings fund ✅
@@ -740,7 +740,7 @@ MONTHS 13-26 (June 2027 - August 2028):
 
 MONTH 27+ (September 2028):
   ✅ ALL ELSS redeemed and closed
-  ✅ FINAL STATE: 6 funds, fully automated, zero legacy
+  ✅ FINAL STATE: 6 funds + SBI Tech (satellite), fully automated
   ✅ SYSTEM RUNS ITSELF. Review annually in April.
 ```
 
@@ -803,8 +803,8 @@ Bandhan Small Cap          10%      Equity MF      20%     12.5%    12 months
 ────────────────────────────────────────────────────────────────────────
 ABOVE: 90% of SIP → EQUITY TAX (12.5% LTCG after 12 months) ✅
 ────────────────────────────────────────────────────────────────────────
-SBI Gold ETF FoF            5%      Non-Eq MF      Slab    12.5%    24 months
-Nippon Silver ETF FoF       5%      Non-Eq MF      Slab    12.5%    24 months
+SBI Gold ETF FoF            7%      Non-Eq MF      Slab    12.5%    24 months
+Nippon Silver ETF FoF       3%      Non-Eq MF      Slab    12.5%    24 months
 ────────────────────────────────────────────────────────────────────────
 ABOVE: 10% of SIP → 12.5% LTCG after 24 months (corrected — NOT slab for LTCG)
 

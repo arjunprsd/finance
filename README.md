@@ -22,8 +22,10 @@ Savings Rate:       63% (incl. EPF)
 | Parag Parikh Flexi Cap | ₹28,000 | 28% | Active |
 | Motilal Nifty Midcap 150 Index | ₹17,000 | 17% | Index |
 | Bandhan Small Cap | ₹10,000 | 10% | Active |
-| SBI Gold FoF | ₹5,000 | 5% | Commodity |
-| Nippon Silver ETF FoF | ₹5,000 | 5% | Commodity |
+| SBI Gold FoF | ₹7,000 | 7% | Commodity |
+| Nippon Silver ETF FoF | ₹3,000 | 3% | Commodity |
+
+**Satellite (no SIP, hold & review):** SBI Tech Opportunities (₹1.30L) | BOI Small Cap (₹1.79L)
 
 ---
 

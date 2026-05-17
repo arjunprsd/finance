@@ -39,7 +39,7 @@ Cash (₹2L) → Emergency fund shortfall
 | 8 | Motilal Oswal Midcap | ₹2.32L | Active underperforming index, STP to passive |
 | 9 | PGIM India Midcap | ₹1.62L | Lagging benchmark (-0.53% alpha), STP out |
 | 10 | ICICI Pru Large Cap | ₹1.81L | Replace with pure index, STP out |
-| 11 | SBI Tech Opportunities | ₹1.30L | Sectoral bet = not in plan, STP out |
+| 11 | SBI Tech Opportunities | ₹1.30L | **SIP stop only. HOLD.** Sectoral conviction bet |
 | 12 | BOI Small Cap | ₹1.79L | **SIP stop only. DO NOT STP.** +38.6% winner, hold |
 
 > **Result:** All existing SIPs stopped. Units remain and continue to grow/shrink with market.
@@ -52,8 +52,8 @@ Cash (₹2L) → Emergency fund shortfall
 | 2 | Parag Parikh Flexi Cap (Direct) | ₹28,000 | 28% | Active | **INCREASE** from current |
 | 3 | Motilal Nifty Midcap 150 Index (Direct) | ₹17,000 | 17% | Index | **NEW** |
 | 4 | Bandhan Small Cap (Direct) | ₹10,000 | 10% | Active | **CONTINUE** (already active) |
-| 5 | SBI Gold ETF FoF (Direct) | ₹5,000 | 5% | Commodity | **NEW** |
-| 6 | Nippon Silver ETF FoF (Direct) | ₹5,000 | 5% | Commodity | **NEW** |
+| 5 | SBI Gold ETF FoF (Direct) | ₹7,000 | 7% | Commodity | **NEW** |
+| 6 | Nippon Silver ETF FoF (Direct) | ₹3,000 | 3% | Commodity | **NEW** |
 | | **TOTAL** | **₹1,00,000** | **100%** | | |
 
 > **SIP Date: ALL on 1st** (backed by 5.5Y NSE data analysis — see `analysis/sip-recommendation.md`)
@@ -86,9 +86,10 @@ Staggered start for tax spreading (uses separate FY allocation if needed).
 | # | FROM Fund | TO Fund | Monthly STP | Duration | Total Moving |
 |---|-----------|---------|-------------|----------|--------------|
 | 5 | ICICI Pru Large Cap | UTI Nifty 50 Index | ₹30,000 | 6 months | ₹1.81L |
-| 6 | SBI Tech Opportunities | Parag Parikh Flexi Cap | ₹22,000 | 6 months | ₹1.30L |
 
-**Additional outflow: ₹3.11L over 6 months (~₹52K/month)**
+**Additional outflow: ₹1.81L over 6 months (₹30K/month)**
+
+> **SBI Tech Opportunities: NOT STP'd.** Held as satellite sectoral conviction bet. See Phase 5B.
 
 ---
 
@@ -104,12 +105,11 @@ Month 6 (Nov 2026): Batch 1 STPs complete
   → PGIM India Midcap: EMPTY ✓
   → Action: Delete these 4 folios from Coin (clean up view)
 
-Month 9 (Feb 2027): Batch 2 STPs complete
+Month 9 (Feb 2027): Batch 2 STP complete
   → ICICI Pru Large Cap: EMPTY ✓
-  → SBI Tech Opportunities: EMPTY ✓
-  → Action: Delete these 2 folios from Coin
+  → Action: Delete this folio from Coin
   
-Month 9 Status: 6 target funds + BOI Small (hold) + 5 ELSS (locked, shrinking)
+Month 9 Status: 6 target funds + BOI Small (hold) + SBI Tech (hold) + 5 ELSS (locked, shrinking)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
@@ -165,6 +165,52 @@ Revisit: December 2026 quarterly review.
 
 ---
 
+## PHASE 5B: SBI TECH OPPORTUNITIES — Satellite Hold Strategy
+
+```
+Current: ₹1.30L (invested ₹1.20L, +8.2% return)
+Role: Satellite sectoral conviction bet (OUTSIDE core 6-fund allocation)
+NOT part of rebalancing drift calculation.
+```
+
+### Rules for SBI Tech
+
+| Parameter | Rule |
+|-----------|------|
+| SIP | **STOPPED** — no new money |
+| Existing units | **HOLD** — let it ride with the sector |
+| Benchmark | Nifty IT Index |
+| Review frequency | Every quarterly check (Aug/Nov/Feb/May) |
+| EXIT trigger | Underperforms Nifty IT index for **2 consecutive quarters** |
+| EXIT method | Full redemption → lump sum into UTI Nifty 50 |
+| STAY trigger | Continues matching/beating Nifty IT → hold indefinitely |
+| Max hold period | No limit (as long as thesis holds) |
+| Tax treatment | Equity MF — LTCG 12.5% after 12 months (already qualified) |
+
+### Why Keep It
+
+1. **Tech is a structural growth sector** — AI, cloud, SaaS adoption in India is early stage
+2. **PPFAS already gives international tech** (Google, Microsoft, Amazon) but NOT Indian IT
+3. **₹1.30L is small** (3.4% of NW) — not a concentration risk
+4. **Already profitable** (+8.2%) — no urgency to exit a winning position
+5. **Optionality** — if Indian IT sector re-rates, this fund captures it
+
+### When To Exit
+
+```
+QUARTERLY CHECK (during rebalancing):
+  1. Compare SBI Tech 3-month return vs Nifty IT 3-month return
+  2. If SBI Tech < Nifty IT for 2 consecutive quarters → EXIT
+  3. If SBI Tech ≥ Nifty IT → HOLD
+  
+ALSO EXIT IF:
+  • Fund AUM drops below ₹500Cr (liquidity concern)
+  • Fund manager change (active fund = manager-dependent)
+  • You need to rebalance and this is the easiest sell (tax-free within ₹1.25L)
+```
+
+---
+
 ## PHASE 6: EMERGENCY FUND BUILD — June 2026 to October 2026
 
 ```
@@ -194,10 +240,11 @@ Active SIPs (6 funds):
   2. Parag Parikh Flexi Cap   ₹28,000/month
   3. Motilal Midcap 150 Idx   ₹17,000/month
   4. Bandhan Small Cap         ₹10,000/month
-  5. SBI Gold FoF              ₹5,000/month
-  6. Nippon Silver FoF         ₹5,000/month
+  5. SBI Gold FoF              ₹7,000/month
+  6. Nippon Silver FoF         ₹3,000/month
 
 Passive Holdings (no SIP, just sitting):
+  • SBI Tech Opportunities (satellite — review quarterly)
   • BOI Small Cap (if still outperforming — else folded into Bandhan)
   • 2 SGBs (maturing 2030, 2031 — TAX-FREE windfalls)
   • 49 stocks (legacy, no action)

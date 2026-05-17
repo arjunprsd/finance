@@ -14,10 +14,14 @@ When the user says "rebalance check", "check portfolio drift", "run rebalancing"
 | Parag Parikh Flexi Cap | 28% |
 | Motilal Nifty Midcap 150 Index | 17% |
 | Bandhan Small Cap | 10% |
-| SBI Gold FoF | 5% |
-| Nippon Silver ETF FoF | 5% |
+| SBI Gold FoF | 7% |
+| Nippon Silver ETF FoF | 3% |
 
 Tolerance band: ±5 percentage points per fund.
+
+### Satellite Holdings (tracked separately, NOT in drift calculation)
+- **SBI Tech Opportunities**: Hold. Exit if underperforms Nifty IT for 2 quarters.
+- **BOI Small Cap**: Hold. Exit if underperforms Smallcap 250 for 2 quarters.
 
 ## Execution Steps
 

@@ -162,8 +162,8 @@ No commodities                          10% commodities hedge
 | Parag Parikh Flexi Cap | ₹28,000 | 28% | Active | Nifty 500 |
 | Motilal Nifty Midcap 150 Index | ₹17,000 | 17% | Index | Midcap 150 |
 | Bandhan Small Cap | ₹10,000 | 10% | Active | Smallcap 250 |
-| SBI Gold FoF | ₹5,000 | 5% | Commodity | GOLDBEES |
-| Nippon Silver ETF FoF | ₹5,000 | 5% | Commodity | SILVERBEES |
+| SBI Gold FoF | ₹7,000 | 7% | Commodity | GOLDBEES |
+| Nippon Silver ETF FoF | ₹3,000 | 3% | Commodity | SILVERBEES |
 | **TOTAL** | **₹1,00,000** | **100%** | | |
 
 ---

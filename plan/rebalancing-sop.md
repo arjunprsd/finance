@@ -15,15 +15,48 @@ UTI Nifty 50 Index      35%        30% – 40%        Never below 25%
 Parag Parikh Flexi      28%        23% – 33%        Never below 20%
 Motilal Midcap 150 Idx  17%        12% – 22%        Never above 25%
 Bandhan Small Cap       10%         7% – 13%        Never above 15%
-SBI Gold FoF             5%         3% –  8%        Never below 2%
-Nippon Silver ETF FoF    5%         3% –  8%        Never above 10%
+SBI Gold FoF             7%         4% – 10%        Never below 3%
+Nippon Silver ETF FoF    3%         1% –  6%        Never above 8%
 ─────────────────────────────────────────────────────────────────────────
 EPF (excluded from rebalancing — auto-pilot, locked asset)
 SGBs (excluded — hold to maturity, no action required)
 Direct Stocks (excluded — legacy, no additions, no sells)
+SBI Tech Opportunities (excluded — satellite bet, separate rules below)
+BOI Small Cap (excluded — legacy hold, separate rules below)
 ```
 
 **Drift** = |Current % − Target %| for any single component.
+
+---
+
+### SATELLITE HOLDINGS (Outside Core Allocation — Separate Review)
+
+These are NOT part of the 6-fund rebalancing drift calculation.
+They are reviewed quarterly using their own criteria:
+
+#### SBI Technology Opportunities (₹1.30L)
+
+| Parameter | Rule |
+|-----------|------|
+| Role | Satellite sectoral conviction (Indian IT) |
+| Benchmark | Nifty IT Index |
+| SIP | NONE (stopped, no new money) |
+| EXIT trigger | Underperforms Nifty IT for 2 consecutive quarters |
+| EXIT method | Full redemption → lump sum into UTI Nifty 50 |
+| STAY trigger | Matches or beats Nifty IT → hold indefinitely |
+| Review | Every quarterly rebalancing check |
+
+#### BOI Small Cap (₹1.79L)
+
+| Parameter | Rule |
+|-----------|------|
+| Role | Legacy outperformer (small cap) |
+| Benchmark | Nifty Smallcap 250 Index |
+| SIP | NONE (stopped) |
+| EXIT trigger | Underperforms Smallcap 250 for 2 consecutive quarters |
+| EXIT method | STP → Bandhan Small Cap (₹30K/month × 6) |
+| STAY trigger | Outperforms index → hold indefinitely |
+| Review | Every quarterly rebalancing check |
 
 ---
 
