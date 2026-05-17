@@ -52,7 +52,30 @@ Total Monthly Deployment: ₹1,27,000 (SIPs + EPF)
 
 ---
 
-## Insurance & Protection
+## Tax Regime & Implications
+
+| Parameter | Value |
+|-----------|-------|
+| Regime | **New Tax Regime** (FY 2025-26 onwards) |
+| Standard Deduction | ₹75,000 |
+| ELSS Benefit (80C) | ❌ NOT available in new regime |
+| HRA Exemption | ❌ NOT available |
+| Home Loan Interest (24b) | ❌ NOT available |
+
+**Investment Tax Rules (applicable regardless of regime):**
+
+| Income Type | Tax Rate | Exemption | Notes |
+|-------------|----------|-----------|-------|
+| Equity LTCG (>12 months) | 12.5% | ₹1.25L/year | Harvest annually in Jan |
+| Equity STCG (<12 months) | 20% | None | Avoid selling before 12 months |
+| Debt fund gains (any period) | Slab rate | None | Taxed at marginal slab |
+| Gold/Silver FoF (>24 months) | 12.5% | ₹1.25L shared with equity | Long-term after 2 years |
+| EPF interest | Tax-free up to ₹2.5L/yr | Full | No action needed |
+| SGB maturity | Tax-free | Full | Hold to maturity |
+
+**Key Decision:** Since 80C has no benefit in new regime, ELSS funds have zero tax advantage. Redeem as they unlock and move to target allocation.
+
+---
 
 | Type | Status | Details |
 |------|--------|---------|
