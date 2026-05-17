@@ -105,5 +105,7 @@ This step is NON-OPTIONAL. Every rebalancing check must be persisted as a detail
 - ELSS funds are excluded — locked, rolling unlock till Aug 2028.
 - During migration phase (Jun 2026 - Feb 2027), old funds being STP'd out are NOT part of target allocation calculation.
 - Reference SOP: `/Users/arjun.prasad/finance/plan/rebalancing-sop.md`
-- Reference plan: `/Users/arjun.prasad/finance/plan/final-investment-plan.md`
+- Reference plan: `/Users/arjun.prasad/finance/plan/investment-plan.md`
 - Rebalancing logs: `/Users/arjun.prasad/finance/logs/rebalancing/`
+- Portfolio snapshot: `/Users/arjun.prasad/finance/analytics/portfolio-snapshot.md`
+- Charts: `/Users/arjun.prasad/finance/analytics/charts/`

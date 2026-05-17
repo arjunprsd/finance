@@ -1,6 +1,6 @@
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # ACTION PLAN — Complete Execution Playbook
-# Aligned with final-investment-plan.md (v4)
+# Aligned with investment-plan.md (v4)
 # Last Updated: May 2026
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -56,7 +56,7 @@ Cash (₹2L) → Emergency fund shortfall
 | 6 | Nippon Silver ETF FoF (Direct) | ₹3,000 | 3% | Commodity | **NEW** |
 | | **TOTAL** | **₹1,00,000** | **100%** | | |
 
-> **SIP Date: ALL on 1st** (backed by 5.5Y NSE data analysis — see `analysis/sip-recommendation.md`)
+> **SIP Date: ALL on 1st** (backed by 5.5Y NSE data analysis — see `analytics/sip-date-analysis.md`)
 
 ### Step 1C: SET UP STPs — Batch 1 (June 2026)
 
@@ -299,8 +299,8 @@ Monthly action required: ZERO (post Aug 2028)
   → Term plan sum adequate? (rule: 10× annual income)
   → Health insurance still corporate? Get personal backup?
   
-□ Update context/net-worth-snapshot.md with fresh data
-□ Update context/portfolio-dashboard.md
+□ Update analytics/portfolio-snapshot.md with fresh data
+□ Update analytics/portfolio-snapshot.md
 ```
 
 ### Special Dates
@@ -363,4 +363,4 @@ MILESTONE: Month 27 (Aug 2028) — Last ELSS unlocked, portfolio 100% clean
 
 ---
 
-*This action plan is derived from `plan/final-investment-plan.md` (v4). For rebalancing rules, see `plan/rebalancing-sop.md`. For SIP date analysis, see `analysis/sip-recommendation.md`.*
+*This action plan is derived from `plan/investment-plan.md` (v4). For rebalancing rules, see `plan/rebalancing-sop.md`. For SIP date analysis, see `analytics/sip-date-analysis.md`.*

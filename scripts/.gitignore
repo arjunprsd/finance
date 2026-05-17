@@ -1,4 +1,3 @@
-# Raw NSE data (large, re-fetchable)
-*_raw.json
-# Pickle files (binary, re-generable)
-*.pkl
+# Temp files only (data moved to data/ directory)
+__pycache__/
+*.tmp

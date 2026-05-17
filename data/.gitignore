@@ -1,0 +1,5 @@
+# Keep raw data files tracked (they're reference data, not secrets)
+# Only ignore temp/intermediate files
+*.tmp
+*.bak
+__pycache__/

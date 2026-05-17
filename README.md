@@ -1,121 +1,136 @@
-# Financial Plan — Arjun Prasad
+# Personal Finance — Arjun Prasad
 
-> **Age:** 27 | **NW:** ₹38.45L | **Monthly SIP:** ₹1,00,000 | **Target Retirement:** Age 42
+> **Purpose:** Complete investment management system — plan, execute, track, rebalance.
+> Readable by any human financial advisor or AI agent managing this portfolio.
 
 ---
 
 ## Quick Numbers
 
 ```
-Monthly Income:     ₹2,00,000 (post-EPF)
-Monthly SIP:        ₹1,00,000 across 6 funds (all on 1st)
-EPF Auto-Invest:    ₹27,000/month @ 8.25%
-Total Deployment:   ₹1,27,000/month
-Savings Rate:       63% (incl. EPF)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CURRENT STATE (May 2026)         TARGETS
+────────────────────────         ──────────────────────
+Net Worth:    ₹38.45 Lakhs      FIRE:     ₹5.8 Crore
+Age:          27                 FIRE Age: 38 (Month 133)
+Monthly SIP:  ₹1,00,000         Terminal: ₹11 Crore (Age 42)
+EPF Auto:     ₹27,000/month     ₹1 Crore: Age 29.6
+Savings Rate: 63% (incl EPF)    Step-Up:  10% every April
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-### Target Allocation
+### Target Allocation (6-Fund Core)
 
-| Fund | SIP | % | Type |
-|------|-----|---|------|
-| UTI Nifty 50 Index | ₹35,000 | 35% | Index |
-| Parag Parikh Flexi Cap | ₹28,000 | 28% | Active |
-| Motilal Nifty Midcap 150 Index | ₹17,000 | 17% | Index |
-| Bandhan Small Cap | ₹10,000 | 10% | Active |
-| SBI Gold FoF | ₹7,000 | 7% | Commodity |
-| Nippon Silver ETF FoF | ₹3,000 | 3% | Commodity |
+| Fund | SIP | % | Type | Style |
+|------|-----|---|------|-------|
+| UTI Nifty 50 Index | ₹35,000 | 35% | Large Cap | Passive Index |
+| Parag Parikh Flexi Cap | ₹28,000 | 28% | Multi Cap + Intl | Active |
+| Motilal Nifty Midcap 150 Index | ₹17,000 | 17% | Mid Cap | Passive Index |
+| Bandhan Small Cap | ₹10,000 | 10% | Small Cap | Active |
+| SBI Gold ETF FoF | ₹7,000 | 7% | Gold | Commodity Hedge |
+| Nippon Silver ETF FoF | ₹3,000 | 3% | Silver | Commodity Growth |
 
-**Satellite (no SIP, hold & review):** SBI Tech Opportunities (₹1.30L) | BOI Small Cap (₹1.79L)
+**Satellites (no SIP, hold & quarterly review):** SBI Tech ₹1.30L | BOI Small Cap ₹1.79L
 
 ---
 
 ## Repository Structure
 
-### `plan/` — The Plan & Operations
-
-| File | Purpose | Status |
-|------|---------|--------|
-| [final-investment-plan.md](plan/final-investment-plan.md) | **THE master plan** — 6-fund allocation, migration timeline, projections, tax strategy | ★ Primary |
-| [rebalancing-sop.md](plan/rebalancing-sop.md) | Rebalancing triggers, execution hierarchy, pre-sell checklist, log template | ★ Active SOP |
-| [action-plan.md](plan/action-plan.md) | Step-by-step migration todo list | v1 (being updated) |
-
-### `analysis/` — Research & Data
-
-| File | Purpose | Status |
-|------|---------|--------|
-| [sip-recommendation.md](analysis/sip-recommendation.md) | SIP date analysis — 6 benchmarks × 7 periods, why all on 1st | ★ Reference |
-| [portfolio-performance-report.md](analysis/portfolio-performance-report.md) | Pre-migration XIRR, grading, benchmark comparison | Historical |
-| [portfolio-analytics.md](analysis/portfolio-analytics.md) | Sector/geography/overlap deep-dive (pre-migration 14-fund portfolio) | Historical |
-| [reallocation-plan.md](analysis/reallocation-plan.md) | 12 strategies compared — why Core-Satellite won | Decision archive |
-
-### `reference/` — Quick-Lookup Guides
-
-| File | Purpose | Status |
-|------|---------|--------|
-| [tax-rules-reference.md](reference/tax-rules-reference.md) | LTCG/STCG rules, tax slabs, harvesting calendar | ★ Reference |
-| [risk-management.md](reference/risk-management.md) | Emergency fund, insurance, crash playbook, job loss plan | ★ Reference |
-| [market-conditions-may2026.md](reference/market-conditions-may2026.md) | Point-in-time market snapshot (May 2026) | Archive |
-
-### `context/` — Personal Financial Data
-
-| File | Purpose | Status |
-|------|---------|--------|
-| [portfolio-dashboard.md](context/portfolio-dashboard.md) | **Holdings, P&L, target allocation, future projections** | ★ Update quarterly |
-| [net-worth-snapshot.md](context/net-worth-snapshot.md) | Profile, income, NW breakdown, ratios | ★ Update quarterly |
-
-### `logs/` — History & Tracking
-
-| Directory | Purpose |
-|-----------|---------|
-| [logs/rebalancing/](logs/rebalancing/) | Quarterly rebalancing check records (template + logs) |
-| [logs/snapshots/](logs/snapshots/) | NW growth tracking over time |
-
-### `archive/` — Superseded Documents
-
-| File | Purpose | Why Archived |
-|------|---------|--------------|
-| [my-investment-strategy.md](archive/my-investment-strategy.md) | First-person narrative reasoning (v1) | Superseded by final-investment-plan.md |
-| [future-projections.md](archive/future-projections.md) | Retirement projections (v1) | Merged into final plan |
-
-### `scripts/` — Tools & Charts
-
-| File | Purpose |
-|------|---------|
-| [rebalance-check.py](scripts/rebalance-check.py) | Standalone Python rebalancing calculator |
-| `sip-behaviour-*.png` | SIP date analysis charts (6 funds × 7 periods) |
-| `sip-date-*.png` | Combined heatmap, stability, profit diff charts |
-
-### `.github/instructions/` — Copilot CLI Skills
-
-| File | Trigger |
-|------|---------|
-| [rebalancing-check.instructions.md](.github/instructions/rebalancing-check.instructions.md) | Say "rebalance check" for automated portfolio drift analysis |
+```
+finance/
+├── PROFILE.md                    ← Who is this for? (read FIRST)
+├── README.md                     ← You are here
+│
+├── plan/                         ← WHAT TO DO
+│   ├── investment-plan.md        ← THE master blueprint (allocation, migration, projections)
+│   ├── action-plan.md            ← Step-by-step execution (phases 1-7)
+│   └── rebalancing-sop.md        ← Quarterly rebalancing operations manual
+│
+├── analytics/                    ← WHAT THE DATA SHOWS
+│   ├── portfolio-snapshot.md     ← Current holdings & ratios (update quarterly)
+│   ├── projections.md            ← 15-year month-by-month movement tables
+│   ├── sip-date-analysis.md      ← Why all SIPs on 1st (5.5Y NSE data proof)
+│   └── charts/                   ← 13 comprehensive visual charts
+│       └── README.md             ← Chart index with descriptions
+│
+├── reference/                    ← LOOKUP GUIDES (stable, rarely change)
+│   ├── tax-rules.md              ← LTCG/STCG rules, harvesting strategy
+│   └── risk-management.md        ← Emergency fund, insurance, crash playbook
+│
+├── data/                         ← RAW DATA (machine-readable)
+│   ├── monthly_holdings.json     ← 180-month simulation (181 data points)
+│   └── *_raw.json                ← NSE price data (5.5 years)
+│
+├── scripts/                      ← CODE
+│   ├── generate-all-charts.py    ← Regenerate all 13 charts
+│   └── rebalance-check.py        ← Standalone rebalancing calculator
+│
+├── logs/                         ← HISTORY (append-only)
+│   ├── rebalancing/              ← Quarterly check logs (template + records)
+│   └── snapshots/                ← NW tracking over time
+│
+├── archive/                      ← SUPERSEDED (decision history, not active)
+│   └── README.md                 ← Why each file was archived
+│
+└── .github/instructions/         ← AI AUTOMATION
+    └── rebalancing-check.instructions.md  ← Copilot CLI skill
+```
 
 ---
 
-## Key Dates & Schedule
+## Visual Analytics (13 Charts)
 
-| What | When | Notes |
-|------|------|-------|
-| All SIPs execute | 1st of every month | Data-backed: Day 1 is #1 across all benchmarks |
-| LTCG tax harvest | Every January | Book ₹1.25L gains → save ₹15,625/year |
-| Quarterly rebalance check | Feb / May / Aug / Nov | Run `rebalance check` → log in `logs/rebalancing/` |
-| Annual deep review | Every May | Review strategy, step-up SIPs, update projections |
-| Emergency fund target | ₹6L (currently ₹2L) | Priority: build before optimizing investments |
+| Category | Charts | Key Insight |
+|----------|--------|-------------|
+| **Current State** | [01-Current Allocation](analytics/charts/01-current-allocation.png), [02-Target Allocation](analytics/charts/02-target-allocation.png) | 62.7% equity, 27.5% debt (EPF), migrating to 6 focused funds |
+| **Exposure** | [03-Market Cap](analytics/charts/03-market-cap-exposure.png), [04-Sector Heatmap](analytics/charts/04-sector-exposure.png) | 55% large, 25% mid, 20% small; no dangerous sector concentration |
+| **Projections** | [05-15 Year Trajectory](analytics/charts/05-future-projections.png), [06-Migration Waterfall](analytics/charts/06-migration-waterfall.png) | ₹1Cr at 29.6, FIRE at 38.1, legacy funds drain by Month 7 |
+| **Risk** | [07-Crash Simulation](analytics/charts/07-risk-drawdown.png), [08-Gold vs Silver](analytics/charts/08-gold-silver-analysis.png) | Max effective drawdown -35% (not -53%) thanks to EPF+Gold hedge |
+| **Growth Drivers** | [09-Step-Up Impact](analytics/charts/09-sip-stepup-impact.png), [10-FIRE Progress](analytics/charts/10-fire-progress.png) | 10% step-up adds ₹350L+ extra; on track for FIRE at 38 |
+| **Diversification** | [11-Correlation Matrix](analytics/charts/11-correlation-matrix.png) | Gold negatively correlated with equity — ideal hedge |
+| **Tax & Timing** | [12-Tax Calendar](analytics/charts/12-tax-harvest-calendar.png), [13-SIP Date Heatmap](analytics/charts/13-sip-date-heatmap.png) | Harvest LTCG in Jan, all SIPs on 1st (data-proven) |
+
+→ Full chart descriptions: [`analytics/charts/README.md`](analytics/charts/README.md)
+
+---
+
+## Key Schedule
+
+| Action | When | Automated? |
+|--------|------|-----------|
+| All SIPs execute | 1st of every month | Yes (Zerodha auto-debit) |
+| Quarterly rebalance check | Feb / May / Aug / Nov | Semi (say `rebalance check`) |
+| LTCG tax harvest | Every January | Manual (book ₹1.25L gains) |
+| SIP step-up (10%) | Every April | Manual (increase amounts) |
+| Annual deep review | Every May | Manual (update projections) |
 
 ---
 
 ## Migration Status (Jun 2026 → Feb 2027)
 
-Migrating from 14 scattered MFs to the 6-fund target portfolio via STPs:
+```
+KEEP:     Parag Parikh Flexi Cap, Bandhan Small Cap
+NEW:      UTI Nifty 50, Motilal Mid150, Gold FoF, Silver FoF
+STP-OUT:  HDFC Flexi, Nippon Large, ICICI Large, PGIM Mid, Motilal Mid
+HOLD:     SBI Tech (satellite), BOI Small (satellite)
+LOCKED:   5 ELSS funds (rolling unlock till Aug 2028)
+```
 
-- **KEEP:** Parag Parikh Flexi Cap, Bandhan Small Cap
-- **NEW:** UTI Nifty 50 Index, Motilal Midcap 150 Index, SBI Gold FoF, Nippon Silver FoF
-- **STP-OUT:** HDFC Flexi, Nippon Large, ICICI Large, PGIM Midcap, Motilal Midcap, SBI Tech, BOI Small Cap
-- **ELSS (locked):** 5 funds — rolling unlock till Aug 2028, no action needed
-
-See [plan/final-investment-plan.md](plan/final-investment-plan.md) for full migration timeline.
+See [`plan/action-plan.md`](plan/action-plan.md) for execution steps.
 
 ---
 
-*Built with data from Zerodha Kite, NSE India, and a lot of analysis. All SIP recommendations are backed by 5.5 years of historical price data across 6 benchmarks.*
+## For AI Agents
+
+If you're an AI managing this portfolio:
+1. Read [`PROFILE.md`](PROFILE.md) for investor context and constraints
+2. Read [`plan/investment-plan.md`](plan/investment-plan.md) for the strategy
+3. Read [`plan/rebalancing-sop.md`](plan/rebalancing-sop.md) for operational rules
+4. Use `rebalance check` trigger for automated quarterly analysis
+5. Log all actions in `logs/`
+6. Never recommend stocks, F&O, or sector bets (except existing SBI Tech satellite)
+
+---
+
+*Built with: Zerodha Kite MCP (live data), NSE India (5.5Y historical), 180-month Python simulation.*
+*All analysis is data-backed and reproducible via `scripts/generate-all-charts.py`.*
