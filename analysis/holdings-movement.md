@@ -1,210 +1,186 @@
-# Holdings Movement — Month-by-Month Detail
+# Holdings Movement — Month-by-Month Detail (Updated)
 
-> **Period:** June 2026 → June 2029 (36 months — full migration + 1 year steady state)
-> **Chart:** [`scripts/holdings-movement-36months.png`](../scripts/holdings-movement-36months.png)
-> **Assumptions:** 12% equity CAGR, 10% gold CAGR, 8.25% EPF, 8% stocks (passive hold)
-
----
-
-## How To Read This
-
-Each month shows CLOSING values after:
-1. SIP invested (₹1L into 6 target funds)
-2. STP transferred (from legacy → target)
-3. ELSS unlocked (₹16K/month → UTI Nifty 50)
-4. Market growth applied
-
-**Color coding:**
-- 🟢 Target fund values (growing)
-- 🔴 Legacy fund values (draining via STP)
-- 🔵 EPF (steady auto-growth)
-- ⚪ Cash/Stocks/SGBs (passive)
+> **Period:** June 2026 → June 2041 (180 months = 15 years, Age 27 → 42)
+> **Updated:** May 17, 2026 (reflects 7K/3K gold-silver split + SBI Tech satellite hold)
+> **Charts:** `scripts/holdings-movement-36months.png`, `scripts/future-projections-v2.png`, `scripts/risk-analysis.png`
+> **Assumptions:** 12% equity CAGR, 14% tech CAGR, 10% gold CAGR, 12% silver CAGR, 8.25% EPF, 10% annual SIP step-up
 
 ---
 
-## Phase 1: The Big Switch + Batch 1 STP (Months 0–6)
+## Key Changes From Previous Model
 
-**What happens:** Stop 11 SIPs, start 6 new SIPs, initiate 4 STPs
-
-| Month | Date | UTI Nifty 50 | PPFAS Flexi | Motilal Mid150 | Bandhan Sml | Gold FoF | Silver FoF | **Target** | **Legacy** | ELSS | EPF | **NW** |
-|-------|------|-------------|-------------|----------------|-------------|----------|------------|-----------|-----------|------|-----|--------|
-| 0 | Jun 2026 | ₹0.00L | ₹2.24L | ₹0.00L | ₹1.99L | ₹0.00L | ₹0.00L | **₹4.23L** | ₹11.23L | ₹4.12L | ₹10.57L | **₹38.5L** |
-| 1 | Jul 2026 | ₹1.22L | ₹2.54L | ₹0.83L | ₹2.11L | ₹0.05L | ₹0.05L | **₹6.81L** | ₹9.97L | ₹4.00L | ₹10.91L | **₹41.1L** |
-| 2 | Aug 2026 | ₹2.44L | ₹2.85L | ₹1.68L | ₹2.23L | ₹0.10L | ₹0.10L | **₹9.41L** | ₹8.70L | ₹3.87L | ₹11.26L | **₹43.7L** |
-| 3 | Sep 2026 | ₹3.99L | ₹3.38L | ₹2.53L | ₹2.35L | ₹0.15L | ₹0.15L | **₹12.56L** | ₹6.89L | ₹3.75L | ₹11.60L | **₹46.3L** |
-| 4 | Oct 2026 | ₹5.54L | ₹3.92L | ₹3.39L | ₹2.48L | ₹0.20L | ₹0.20L | **₹15.73L** | ₹5.07L | ₹3.62L | ₹11.95L | **₹48.9L** |
-| 5 | Nov 2026 | ₹7.12L | ₹4.46L | ₹4.25L | ₹2.60L | ₹0.26L | ₹0.26L | **₹18.94L** | ₹3.23L | ₹3.50L | ₹12.30L | **₹50.5L** |
-| 6 | Dec 2026 | ₹8.70L | ₹5.01L | ₹5.13L | ₹2.73L | ₹0.31L | ₹0.31L | **₹22.18L** | ₹1.37L | ₹3.37L | ₹12.66L | **₹52.2L** |
-
-**Month 6 milestone:** Batch 1 STPs complete → HDFC Flexi, Nippon Large, Motilal Active, PGIM = EMPTY ✓
+| Parameter | Old Model | New Model | Impact |
+|-----------|-----------|-----------|--------|
+| Gold FoF SIP | ₹5,000 (5%) | ₹7,000 (7%) | Stronger crash hedge |
+| Silver FoF SIP | ₹5,000 (5%) | ₹3,000 (3%) | Reduced volatility drag |
+| SBI Tech | STP out in Month 3-9 | HOLD as satellite | Adds ₹9.3L by Year 15 |
+| SBI Tech STP to PPFAS | ₹22K/month × 6 | Removed | PPFAS builds slower |
+| Total commodity hedge | 10% (equal) | 10% (70-30 gold-heavy) | Better crash protection |
 
 ---
 
-## Phase 2: Batch 2 STP Completion (Months 7–9)
-
-**What happens:** ICICI and SBI Tech STPs complete
-
-| Month | Date | UTI Nifty 50 | PPFAS Flexi | Motilal Mid150 | Bandhan Sml | Gold FoF | Silver FoF | **Target** | **Legacy** | ELSS | EPF | **NW** |
-|-------|------|-------------|-------------|----------------|-------------|----------|------------|-----------|-----------|------|-----|--------|
-| 7 | Jan 2027 | ₹9.60L | ₹5.56L | ₹5.35L | ₹2.85L | ₹0.36L | ₹0.36L | **₹24.09L** | ₹0.86L | ₹3.24L | ₹13.01L | **₹53.9L** |
-| 8 | Feb 2027 | ₹10.51L | ₹6.12L | ₹5.57L | ₹2.98L | ₹0.41L | ₹0.41L | **₹26.01L** | ₹0.34L | ₹3.11L | ₹13.37L | **₹55.5L** |
-| 9 | Mar 2027 | ₹11.13L | ₹6.46L | ₹5.80L | ₹3.11L | ₹0.47L | ₹0.47L | **₹27.43L** | ₹0.34L | ₹2.98L | ₹13.73L | **₹57.2L** |
-
-**Month 9 milestone:** ALL STPs complete. Portfolio = 6 target funds + BOI (hold) + ELSS (shrinking)
-
----
-
-## Phase 3: Pure SIP Growth + ELSS Drain (Months 10–26)
-
-**What happens:** Only SIPs running. ELSS unlocks monthly (₹16K → Nifty 50). No active management.
-
-| Month | Date | UTI Nifty 50 | PPFAS Flexi | Motilal Mid150 | Bandhan Sml | Gold FoF | Silver FoF | **Target** | ELSS left | EPF | **NW** |
-|-------|------|-------------|-------------|----------------|-------------|----------|------------|-----------|-----------|-----|--------|
-| 10 | Apr 2027 | ₹11.75L | ₹6.80L | ₹6.02L | ₹3.24L | ₹0.52L | ₹0.52L | **₹28.86L** | ₹2.84L | ₹14.09L | **₹59.0L** |
-| 12 | Jun 2027 | ₹13.01L | ₹7.50L | ₹6.48L | ₹3.51L | ₹0.63L | ₹0.63L | **₹31.76L** | ₹2.57L | ₹14.83L | **₹62.4L** |
-| 15 | Sep 2027 | ₹14.94L | ₹8.57L | ₹7.19L | ₹3.91L | ₹0.80L | ₹0.80L | **₹36.21L** | ₹2.16L | ₹15.94L | **₹67.8L** |
-| 18 | Dec 2027 | ₹16.93L | ₹9.67L | ₹7.92L | ₹4.33L | ₹0.97L | ₹0.97L | **₹40.79L** | ₹1.73L | ₹17.08L | **₹73.2L** |
-| 21 | Mar 2028 | ₹18.97L | ₹10.81L | ₹8.66L | ₹4.76L | ₹1.15L | ₹1.15L | **₹45.50L** | ₹1.29L | ₹18.25L | **₹78.8L** |
-| 24 | Jun 2028 | ₹21.08L | ₹11.98L | ₹9.43L | ₹5.20L | ₹1.33L | ₹1.33L | **₹50.34L** | ₹0.84L | ₹19.43L | **₹84.6L** |
-| 26 | Aug 2028 | ₹22.51L | ₹12.77L | ₹9.96L | ₹5.50L | ₹1.45L | ₹1.45L | **₹53.64L** | ₹0.53L | ₹20.23L | **₹88.5L** |
-
-**Month 26 milestone:** Last ELSS unit unlocks → All legacy fully redeemed. Portfolio = CLEAN 6 funds only.
-
----
-
-## Phase 4: Steady State (Months 27–36)
-
-**What happens:** Pure autopilot. Only 6 SIPs running on 1st of every month. Zero management.
-
-| Month | Date | UTI Nifty 50 | PPFAS Flexi | Motilal Mid150 | Bandhan Sml | Gold FoF | Silver FoF | **Target** | EPF | **NW** |
-|-------|------|-------------|-------------|----------------|-------------|----------|------------|-----------|-----|--------|
-| 27 | Sep 2028 | ₹23.08L | ₹13.18L | ₹10.22L | ₹5.66L | ₹1.51L | ₹1.51L | **₹55.16L** | ₹20.64L | **₹90.5L** |
-| 30 | Dec 2028 | ₹24.81L | ₹14.41L | ₹11.04L | ₹6.13L | ₹1.70L | ₹1.70L | **₹59.79L** | ₹21.87L | **₹96.6L** |
-| 33 | Mar 2029 | ₹26.60L | ₹15.68L | ₹11.87L | ₹6.61L | ₹1.89L | ₹1.89L | **₹64.55L** | ₹23.13L | **₹102.8L** |
-| 36 | Jun 2029 | ₹28.43L | ₹16.99L | ₹12.73L | ₹7.10L | ₹2.09L | ₹2.09L | **₹69.44L** | ₹24.42L | **₹109.2L** |
-
-**Month 32 (Feb 2029): NET WORTH CROSSES ₹1 CRORE 🎉**
-
----
-
-## Fund-wise Growth Summary
-
-| Fund | Start (Jun 2026) | Month 12 | Month 24 | Month 36 | Total Inflow | Growth |
-|------|-------------------|----------|----------|----------|-------------|--------|
-| UTI Nifty 50 Index | ₹0 | ₹13.01L | ₹21.08L | ₹28.43L | SIP ₹35K + STP ~₹1L/mo (6mo) + ELSS ₹16K/mo | 🚀 |
-| Parag Parikh Flexi | ₹2.24L | ₹7.50L | ₹11.98L | ₹16.99L | SIP ₹28K + STP ₹22K (6mo) | 📈 |
-| Motilal Midcap 150 | ₹0 | ₹6.48L | ₹9.43L | ₹12.73L | SIP ₹17K + STP ~₹65K/mo (6mo) | 📈 |
-| Bandhan Small Cap | ₹1.99L | ₹3.51L | ₹5.20L | ₹7.10L | SIP ₹10K only | Steady |
-| SBI Gold FoF | ₹0 | ₹0.63L | ₹1.33L | ₹2.09L | SIP ₹5K only | Hedge |
-| Nippon Silver FoF | ₹0 | ₹0.63L | ₹1.33L | ₹2.09L | SIP ₹5K only | Hedge |
-
----
-
-## Legacy Fund Drain Schedule
-
-| Fund | Start Value | Empty By | Where It Goes |
-|------|-------------|----------|---------------|
-| HDFC Flexi Cap | ₹2.17L | Month 6 (Nov 2026) | → UTI Nifty 50 |
-| Nippon Large Cap | ₹2.01L | Month 6 (Nov 2026) | → UTI Nifty 50 |
-| Motilal Midcap Active | ₹2.32L | Month 6 (Nov 2026) | → Motilal Midcap 150 Index |
-| PGIM Midcap | ₹1.62L | Month 6 (Nov 2026) | → Motilal Midcap 150 Index |
-| ICICI Pru Large Cap | ₹1.81L | Month 9 (Feb 2027) | → UTI Nifty 50 |
-| SBI Tech | ₹1.30L | Month 9 (Feb 2027) | → Parag Parikh Flexi Cap |
-| ELSS (5 funds) | ₹4.12L | Month 26 (Aug 2028) | → UTI Nifty 50 (₹16K/month) |
-| BOI Small Cap | ₹1.79L | HOLD indefinitely | Stays (review Dec 2026) |
-
----
-
-## Monthly Inflows Into Target Funds (During Migration)
-
-This shows how much is flowing INTO each target fund per month (SIP + STP + ELSS combined):
-
-### Months 1–2 (Jun–Jul 2026): Batch 1 STPs active
-
-| Fund | SIP | STP In | ELSS In | Total Inflow |
-|------|-----|--------|---------|--------------|
-| UTI Nifty 50 | ₹35K | ₹69.5K (HDFC+Nippon) | ₹16K | **₹1.21L** |
-| Parag Parikh | ₹28K | — | — | **₹28K** |
-| Motilal Mid150 | ₹17K | ₹65.7K (Motilal+PGIM) | — | **₹82.7K** |
-| Bandhan Small | ₹10K | — | — | **₹10K** |
-| Gold FoF | ₹5K | — | — | **₹5K** |
-| Silver FoF | ₹5K | — | — | **₹5K** |
-
-### Months 3–6 (Aug–Nov 2026): Both batches active
-
-| Fund | SIP | STP In | ELSS In | Total Inflow |
-|------|-----|--------|---------|--------------|
-| UTI Nifty 50 | ₹35K | ₹99.5K (HDFC+Nippon+ICICI) | ₹16K | **₹1.51L** |
-| Parag Parikh | ₹28K | ₹22K (SBI Tech) | — | **₹50K** |
-| Motilal Mid150 | ₹17K | ₹65.7K (Motilal+PGIM) | — | **₹82.7K** |
-| Bandhan Small | ₹10K | — | — | **₹10K** |
-| Gold FoF | ₹5K | — | — | **₹5K** |
-| Silver FoF | ₹5K | — | — | **₹5K** |
-
-### Months 7–9 (Dec 2026 – Feb 2027): Only Batch 2 STPs remaining
-
-| Fund | SIP | STP In | ELSS In | Total Inflow |
-|------|-----|--------|---------|--------------|
-| UTI Nifty 50 | ₹35K | ₹30K (ICICI only) | ₹16K | **₹81K** |
-| Parag Parikh | ₹28K | ₹22K (SBI Tech only) | — | **₹50K** |
-| Motilal Mid150 | ₹17K | — | — | **₹17K** |
-| Bandhan Small | ₹10K | — | — | **₹10K** |
-| Gold FoF | ₹5K | — | — | **₹5K** |
-| Silver FoF | ₹5K | — | — | **₹5K** |
-
-### Months 10+ (Mar 2027 onwards): Pure SIP only
-
-| Fund | SIP | ELSS In | Total Inflow |
-|------|-----|---------|--------------|
-| UTI Nifty 50 | ₹35K | ₹16K (till Aug 2028) | **₹51K** |
-| Parag Parikh | ₹28K | — | **₹28K** |
-| Motilal Mid150 | ₹17K | — | **₹17K** |
-| Bandhan Small | ₹10K | — | **₹10K** |
-| Gold FoF | ₹5K | — | **₹5K** |
-| Silver FoF | ₹5K | — | **₹5K** |
-
----
-
-## Key Numbers
+## Key Milestones (Updated)
 
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-NW MILESTONES (at 12% equity CAGR):
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-₹40 Lakhs:  Month 1  (Jul 2026)  — SIPs start flowing
-₹50 Lakhs:  Month 5  (Nov 2026)  — Batch 1 STP complete
-₹60 Lakhs:  Month 11 (May 2027)  — 1 year into new plan
-₹75 Lakhs:  Month 19 (Jan 2028)  — Pure SIP compounding
-₹1 CRORE:   Month 32 (Feb 2029)  — 🎉 FIRST CRORE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+MILESTONE              MONTH    AGE      NET WORTH
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+₹50 Lakhs              5       27.4     Migration halfway
+₹1 Crore               31      29.6     🎉 FIRST CRORE
+₹2 Crore               60      32.0     Compounding visible
+₹3 Crore               84      34.0     Money working hard
+₹5 Crore               120     37.0     Almost FIRE
+₹5.8 Crore (FIRE)      133     38.1     🔥 FINANCIALLY FREE
+₹7 Crore               156     40.0     Milestone
+₹11 Crore              180     42.0     Final state at 42
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-MONEY DEPLOYED IN 36 MONTHS:
-  SIP: ₹1,00,000 × 36 = ₹36,00,000
-  EPF: ₹27,000 × 36 = ₹9,72,000
-  TOTAL NEW MONEY: ₹45,72,000
-
-STARTING NW: ₹38,46,000
-ENDING NW:   ₹1,09,21,000
-TOTAL GAIN:  ₹70,75,000
-  Of which new money: ₹45,72,000
-  Of which returns:   ₹25,03,000 (market gave you ₹25L for free)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SBI Tech Satellite (if held entire 15 years):
+  Start: ₹1.30L → End: ₹9.3L (+615% at 14% CAGR)
+  Contribution to NW: ~0.8% (small but meaningful free alpha)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
 ---
 
-## Allocation % Shift Over Time
+## Migration Phase (Months 0–36)
 
-| Month | Target MF % | Legacy MF % | EPF % | Other % |
-|-------|-------------|-------------|-------|---------|
-| 0 (Start) | 11% | 45% | 27% | 17% |
-| 6 (Batch 1 done) | 43% | 13% | 24% | 20% |
-| 12 (Year 1) | 51% | 8% | 24% | 17% |
-| 24 (Year 2) | 60% | 4% | 23% | 13% |
-| 36 (Year 3) | 64% | 3% | 22% | 11% |
+| Month | Date | UTI N50 | PPFAS | Mid150 | B.Small | Gold | Silver | **Target** | Legacy | SBI Tech | BOI | EPF | **NW** |
+|-------|------|---------|-------|--------|---------|------|--------|-----------|--------|----------|-----|-----|--------|
+| 0 | Jun 2026 | ₹0.0L | ₹2.2L | ₹0.0L | ₹2.0L | ₹0.00L | ₹0.00L | **₹4.2L** | ₹9.9L | ₹1.3L | ₹1.8L | ₹10.6L | **₹38.5L** |
+| 1 | Jul 2026 | ₹1.2L | ₹2.5L | ₹0.8L | ₹2.1L | ₹0.07L | ₹0.03L | **₹6.8L** | ₹8.7L | ₹1.3L | ₹1.8L | ₹10.9L | **₹41.0L** |
+| 2 | Aug 2026 | ₹2.4L | ₹2.9L | ₹1.7L | ₹2.2L | ₹0.14L | ₹0.06L | **₹9.4L** | ₹7.4L | ₹1.3L | ₹1.8L | ₹11.3L | **₹43.6L** |
+| 3 | Sep 2026 | ₹4.0L | ₹3.2L | ₹2.5L | ₹2.4L | ₹0.21L | ₹0.09L | **₹12.3L** | ₹5.8L | ₹1.3L | ₹1.8L | ₹11.6L | **₹46.3L** |
+| 4 | Oct 2026 | ₹5.5L | ₹3.5L | ₹3.4L | ₹2.5L | ₹0.29L | ₹0.12L | **₹15.3L** | ₹4.2L | ₹1.4L | ₹1.9L | ₹12.0L | **₹48.9L** |
+| 5 | Nov 2026 | ₹7.1L | ₹3.8L | ₹4.3L | ₹2.6L | ₹0.36L | ₹0.15L | **₹18.3L** | ₹2.5L | ₹1.4L | ₹1.9L | ₹12.3L | **₹50.5L** |
+| 6 | Dec 2026 | ₹8.7L | ₹4.1L | ₹5.1L | ₹2.7L | ₹0.43L | ₹0.19L | **₹21.3L** | ₹0.9L | ₹1.4L | ₹1.9L | ₹12.7L | **₹52.2L** |
+| 7 | Jan 2027 | ₹9.6L | ₹4.4L | ₹5.3L | ₹2.9L | ₹0.51L | ₹0.22L | **₹23.0L** | ₹0.6L | ₹1.4L | ₹1.9L | ₹13.0L | **₹53.9L** |
+| 8 | Feb 2027 | ₹10.5L | ₹4.8L | ₹5.6L | ₹3.0L | ₹0.58L | ₹0.25L | **₹24.6L** | ₹0.3L | ₹1.4L | ₹1.9L | ₹13.4L | **₹55.6L** |
+| 9 | Mar 2027 | ₹11.1L | ₹5.1L | ₹5.8L | ₹3.1L | ₹0.66L | ₹0.28L | **₹26.1L** | ₹0.3L | ₹1.4L | ₹1.9L | ₹13.7L | **₹57.3L** |
+| 10 | Apr 2027 | ₹11.7L | ₹5.4L | ₹6.0L | ₹3.2L | ₹0.73L | ₹0.32L | **₹27.5L** | ₹0.3L | ₹1.4L | ₹2.0L | ₹14.1L | **₹59.0L** |
+| 11 | May 2027 | ₹12.4L | ₹5.8L | ₹6.3L | ₹3.4L | ₹0.81L | ₹0.35L | **₹29.0L** | ₹0.3L | ₹1.5L | ₹2.0L | ₹14.5L | **₹60.8L** |
+| 12 | Jun 2027 | ₹13.1L | ₹6.1L | ₹6.5L | ₹3.5L | ₹0.90L | ₹0.39L | **₹30.5L** | ₹0.3L | ₹1.5L | ₹2.0L | ₹14.8L | **₹62.7L** |
+| 15 | Sep 2027 | ₹15.1L | ₹7.3L | ₹7.3L | ₹4.0L | ₹1.16L | ₹0.50L | **₹35.3L** | ₹0.3L | ₹1.5L | ₹2.1L | ₹15.9L | **₹68.3L** |
+| 18 | Dec 2027 | ₹17.2L | ₹8.4L | ₹8.1L | ₹4.4L | ₹1.42L | ₹0.62L | **₹40.1L** | ₹0.3L | ₹1.6L | ₹2.1L | ₹17.1L | **₹74.1L** |
+| 21 | Mar 2028 | ₹19.4L | ₹9.6L | ₹8.9L | ₹4.9L | ₹1.69L | ₹0.74L | **₹45.1L** | ₹0.3L | ₹1.6L | ₹2.2L | ₹18.2L | **₹80.1L** |
+| 24 | Jun 2028 | ₹21.7L | ₹10.9L | ₹9.7L | ₹5.4L | ₹1.98L | ₹0.86L | **₹50.5L** | ₹0.4L | ₹1.7L | ₹2.2L | ₹19.4L | **₹86.4L** |
+| 27 | Sep 2028 | ₹23.9L | ₹12.2L | ₹10.6L | ₹5.9L | ₹2.28L | ₹1.00L | **₹56.0L** | ₹0.4L | ₹1.7L | ₹2.3L | ₹20.6L | **₹93.0L** |
+| 30 | Dec 2028 | ₹25.9L | ₹13.6L | ₹11.6L | ₹6.4L | ₹2.60L | ₹1.14L | **₹61.3L** | ₹0.4L | ₹1.8L | ₹2.4L | ₹21.9L | **₹99.8L** |
+| 33 | Mar 2029 | ₹27.9L | ₹15.0L | ₹12.5L | ₹7.0L | ₹2.92L | ₹1.28L | **₹66.7L** | ₹0.4L | ₹1.9L | ₹2.4L | ₹23.1L | **₹106.8L** |
+| 36 | Jun 2029 | ₹30.1L | ₹16.6L | ₹13.6L | ₹7.6L | ₹3.26L | ₹1.44L | **₹72.6L** | ₹0.4L | ₹1.9L | ₹2.5L | ₹24.4L | **₹114.2L** |
 
 ---
 
-*Data file: `scripts/monthly_holdings_data.json` — use for custom analysis or charting.*
-*Chart: `scripts/holdings-movement-36months.png` — 3-panel visual of the transition.*
-*Derived from: `plan/final-investment-plan.md` migration timeline and `plan/action-plan.md` STP schedule.*
+## Growth Phase (Months 36–180)
+
+| Month | Age | Date | UTI N50 | PPFAS | Mid150 | B.Small | Gold | Silver | **Target** | SBI Tech | EPF | **NW** |
+|-------|-----|------|---------|-------|--------|---------|------|--------|-----------|----------|-----|--------|
+| 36 | 30.0 | Jun 2029 | ₹30L | ₹17L | ₹14L | ₹8L | ₹3L | ₹1L | **₹73L** | ₹1.9L | ₹24L | **₹114L** |
+| 48 | 31.0 | Jun 2030 | ₹40L | ₹23L | ₹18L | ₹10L | ₹5L | ₹2L | **₹98L** | ₹2.2L | ₹30L | **₹147L** |
+| 60 | 32.0 | Jun 2031 | ₹53L | ₹32L | ₹24L | ₹13L | ₹7L | ₹3L | **₹131L** | ₹2.5L | ₹36L | **₹185L** |
+| 72 | 33.0 | Jun 2032 | ₹68L | ₹41L | ₹30L | ₹17L | ₹9L | ₹4L | **₹169L** | ₹2.9L | ₹42L | **₹229L** |
+| 84 | 34.0 | Jun 2033 | ₹84L | ₹53L | ₹37L | ₹21L | ₹11L | ₹5L | **₹212L** | ₹3.3L | ₹49L | **₹280L** |
+| 96 | 35.0 | Jun 2034 | ₹103L | ₹66L | ₹46L | ₹26L | ₹14L | ₹6L | **₹262L** | ₹3.7L | ₹56L | **₹339L** |
+| 108 | 36.0 | Jun 2035 | ₹125L | ₹82L | ₹56L | ₹32L | ₹17L | ₹8L | **₹321L** | ₹4.2L | ₹64L | **₹408L** |
+| 120 | 37.0 | Jun 2036 | ₹151L | ₹100L | ₹68L | ₹39L | ₹21L | ₹10L | **₹390L** | ₹4.8L | ₹73L | **₹487L** |
+| 132 | 38.0 | Jun 2037 | ₹181L | ₹121L | ₹82L | ₹47L | ₹26L | ₹12L | **₹470L** | ₹5.5L | ₹82L | **₹579L** |
+| 133 | 38.1 | Jul 2037 | ₹183L | ₹123L | ₹84L | ₹48L | ₹26L | ₹12L | **₹477L** | ₹5.6L | ₹83L | **₹587L** |
+| 144 | 39.0 | Jun 2038 | ₹215L | ₹146L | ₹99L | ₹57L | ₹31L | ₹15L | **₹562L** | ₹6.3L | ₹93L | **₹684L** |
+| 150 | 39.5 | Dec 2038 | ₹235L | ₹160L | ₹108L | ₹62L | ₹34L | ₹16L | **₹614L** | ₹6.7L | ₹98L | **₹742L** |
+| 156 | 40.0 | Jun 2039 | ₹255L | ₹175L | ₹117L | ₹68L | ₹37L | ₹18L | **₹670L** | ₹7.1L | ₹104L | **₹805L** |
+| 168 | 41.0 | Jun 2040 | ₹302L | ₹209L | ₹139L | ₹80L | ₹43L | ₹21L | **₹794L** | ₹8.1L | ₹115L | **₹944L** |
+| 180 | 42.0 | Jun 2041 | ₹355L | ₹248L | ₹164L | ₹95L | ₹51L | ₹25L | **₹938L** | ₹9.3L | ₹128L | **₹1104L** |
+
+---
+
+## Gold vs Silver — 7K/3K Split Projection
+
+| Year | Age | Gold FoF (₹7K/mo) | Silver FoF (₹3K/mo) | Combined | % of NW |
+|------|-----|-------------------|---------------------|----------|---------|
+| 1 | 28.0 | ₹0.9L | ₹0.4L | ₹1.3L | 2.1% |
+| 2 | 29.0 | ₹2.0L | ₹0.9L | ₹2.8L | 3.3% |
+| 3 | 30.0 | ₹3.3L | ₹1.4L | ₹4.7L | 4.1% |
+| 4 | 31.0 | ₹4.8L | ₹2.1L | ₹6.9L | 4.7% |
+| 5 | 32.0 | ₹6.6L | ₹3.0L | ₹9.5L | 5.2% |
+| 6 | 33.0 | ₹8.7L | ₹3.9L | ₹12.6L | 5.5% |
+| 7 | 34.0 | ₹11.1L | ₹5.1L | ₹16.2L | 5.8% |
+| 8 | 35.0 | ₹14.0L | ₹6.5L | ₹20.5L | 6.0% |
+| 9 | 36.0 | ₹17.3L | ₹8.1L | ₹25.4L | 6.2% |
+| 10 | 37.0 | ₹21.2L | ₹10.0L | ₹31.2L | 6.4% |
+| 11 | 38.0 | ₹25.6L | ₹12.2L | ₹37.8L | 6.5% |
+| 12 | 39.0 | ₹30.8L | ₹14.7L | ₹45.5L | 6.7% |
+| 13 | 40.0 | ₹36.7L | ₹17.7L | ₹54.4L | 6.8% |
+| 14 | 41.0 | ₹43.5L | ₹21.2L | ₹64.6L | 6.8% |
+| 15 | 42.0 | ₹51.2L | ₹25.2L | ₹76.4L | 6.9% |
+
+---
+
+## SBI Tech Satellite — Growth Projection
+
+| Year | Age | Value | Growth from Start | Quarterly Review |
+|------|-----|-------|-------------------|-----------------|
+| 0 | 27.0 | ₹1.30L | +0% | Baseline |
+| 1 | 28.0 | ₹1.48L | +14% | Check vs Nifty IT |
+| 2 | 29.0 | ₹1.69L | +30% | Check vs Nifty IT |
+| 3 | 30.0 | ₹1.93L | +48% | Check vs Nifty IT |
+| 4 | 31.0 | ₹2.20L | +69% | Check vs Nifty IT |
+| 5 | 32.0 | ₹2.50L | +93% | Check vs Nifty IT |
+| 6 | 33.0 | ₹2.85L | +119% | Check vs Nifty IT |
+| 7 | 34.0 | ₹3.25L | +150% | Check vs Nifty IT |
+| 8 | 35.0 | ₹3.71L | +185% | Check vs Nifty IT |
+| 9 | 36.0 | ₹4.23L | +225% | Check vs Nifty IT |
+| 10 | 37.0 | ₹4.82L | +271% | Check vs Nifty IT |
+| 11 | 38.0 | ₹5.49L | +323% | Check vs Nifty IT |
+| 12 | 39.0 | ₹6.26L | +382% | Check vs Nifty IT |
+| 13 | 40.0 | ₹7.14L | +449% | Check vs Nifty IT |
+| 14 | 41.0 | ₹8.14L | +526% | Check vs Nifty IT |
+| 15 | 42.0 | ₹9.28L | +614% | Check vs Nifty IT |
+
+**Exit Rules (checked every quarterly rebalancing):**
+- Compare SBI Tech 3-month return vs Nifty IT 3-month return
+- If SBI Tech < Nifty IT for 2 consecutive quarters → FULL EXIT → lump sum into UTI Nifty 50
+- If fund manager changes → EXIT regardless of performance
+- If AUM drops below ₹500Cr → EXIT (liquidity risk)
+
+---
+
+## Crash Simulation — Why 7K/3K Beats 5K/5K
+
+```
+SCENARIO: -35% equity crash at Year 3 (Age 30, NW ~₹1.14Cr)
+
+                    PRE-CRASH       POST-CRASH (7K/3K)    POST-CRASH (if 5K/5K)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Equity MFs:         ₹72.6L          ₹47.2L (-35%)         ₹47.2L (-35%)
+Gold FoF:           ₹3.26L          ₹3.91L (+20%)         ₹2.79L (+20%) [less gold]
+Silver FoF:         ₹1.44L          ₹1.30L (-10%)         ₹2.40L (-10%) [more silver hurt]
+EPF:                ₹24.4L          ₹24.4L (unchanged)    ₹24.4L (unchanged)
+Other:              ₹12.5L          ₹11.9L               ₹11.9L
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TOTAL:              ₹114.2L         ₹88.7L               ₹88.7L
+LOSS:               —               -22.3%               -22.4%
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+In a crash: Gold RISES 20%, Silver FALLS 10%.
+More gold (7K) = more of your hedge goes UP in a crash.
+Less silver (3K) = less of your hedge goes DOWN in a crash.
+NET BENEFIT: Small but directionally correct. More important:
+  → Behavioral benefit: seeing gold rise during panic prevents you from selling equity.
+  → ₹7K gold at +20% = ₹1,400 visible gain vs ₹5K gold at +20% = ₹1,000
+  → That extra ₹400/month of "green" during red markets = emotional anchor.
+```
+
+---
+
+## Charts
+
+| Chart | File | What It Shows |
+|-------|------|---------------|
+| 4-panel future projections | [`scripts/future-projections-v2.png`](../scripts/future-projections-v2.png) | NW trajectory, stacked area, fund curves, final pie |
+| 4-panel migration + satellite | [`scripts/holdings-movement-36months.png`](../scripts/holdings-movement-36months.png) | Fund build-up, satellite growth, legacy drain, NW composition |
+| 4-panel risk analysis | [`scripts/risk-analysis.png`](../scripts/risk-analysis.png) | Gold vs Silver split, allocation %, SBI Tech projection, crash test |
+
+---
+
+*Data: `scripts/monthly_holdings_data.json` (181 data points, full 15-year simulation)*
+*Model: 12% equity, 14% tech, 10% gold, 12% silver, 8.25% EPF, 10% annual step-up*
