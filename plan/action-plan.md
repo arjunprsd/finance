@@ -203,19 +203,74 @@ Cash (₹2L)                → Emergency fund shortfall (need ₹6L)
 
 ---
 
-### ✅ 2026-05-17 — PRE-MIGRATION (First Check)
+### ⬜ 2026-05-17 — PRE-MIGRATION (First Check)
 
 **Verdict:** ACTION REQUIRED — Portfolio not yet migrated
-**Max Drift:** N/A (4 of 6 target funds at ₹0)
+**Max Drift:** +37% Bandhan Small Cap (expected — 4 of 6 target funds at ₹0)
+**Net Worth:** ₹38.45L | MF P&L: +9.4% | Tax on STPs: ₹0
 
-**Actions:**
-- [ ] Execute Phase 1A: Stop 12 old SIPs (Week 1 of June)
-- [ ] Execute Phase 1B: Start 6 new SIPs on 1st
-- [ ] Execute Phase 1C: Set up 4 Batch 1 STPs
-- [ ] Verify first SIP debit on July 1, 2026
-- [ ] Satellite baseline: SBI Tech +8.2%, BOI +38.6% (first comparison in Aug/Dec)
-- [ ] Tax check: All STP units >12 months old → LTCG, gains ~₹30K (within exemption)
-- [ ] Next check: August 2026
+#### 🔴 Critical — Complete by June 1, 2026
+
+| # | Action | How | Done? |
+|---|--------|-----|-------|
+| 1 | Stop SIP: HDFC Flexi Cap (₹10K) | Coin → SIP → Cancel | - [ ] |
+| 2 | Stop SIP: Nippon Large Cap (₹10K) | Coin → SIP → Cancel | - [ ] |
+| 3 | Stop SIP: ICICI Pru Large (₹10K) | Coin → SIP → Cancel | - [ ] |
+| 4 | Stop SIP: Motilal Midcap Active (₹10K) | Coin → SIP → Cancel | - [ ] |
+| 5 | Stop SIP: PGIM Midcap (₹10K) | Coin → SIP → Cancel | - [ ] |
+| 6 | Stop SIP: BOI Small Cap (₹5K) | Coin → SIP → Cancel | - [ ] |
+| 7 | Stop SIP: Quant ELSS (₹2.5K) | Coin → SIP → Cancel | - [ ] |
+| 8 | Stop SIP: DSP ELSS (₹2.5K) | Coin → SIP → Cancel | - [ ] |
+| 9 | Stop SIP: Mirae ELSS (₹2.5K) | Coin → SIP → Cancel | - [ ] |
+| 10 | Stop SIP: Bandhan ELSS (₹2.5K) | Coin → SIP → Cancel | - [ ] |
+| 11 | Stop SIP: Axis ELSS (₹2.5K) | Coin → SIP → Cancel | - [ ] |
+| 12 | Stop SIP: SBI Tech (if active) | Coin → SIP → Cancel | - [ ] |
+
+#### 🔴 Critical — New SIPs (Start June 1 date)
+
+| # | Fund | Amount | Date | Folio | Done? |
+|---|------|--------|------|-------|-------|
+| 13 | UTI Nifty 50 Index (Growth-Direct) | ₹35,000 | 1st | New | - [ ] |
+| 14 | Parag Parikh Flexi Cap (Growth-Direct) | ₹28,000 | 1st | Existing | - [ ] |
+| 15 | Motilal Oswal Nifty Midcap 150 Index (Growth-Direct) | ₹17,000 | 1st | New | - [ ] |
+| 16 | Bandhan Small Cap (Growth-Direct) | ₹10,000 | 1st | Existing | - [ ] |
+| 17 | SBI Gold ETF FoF (Growth-Direct) | ₹7,000 | 1st | New | - [ ] |
+| 18 | Nippon Silver ETF FoF (Growth-Direct) | ₹3,000 | 1st | New | - [ ] |
+
+#### 🟡 Important — STPs (Set up June 1-7)
+
+| # | From → To | Monthly Amount | Duration | Done? |
+|---|-----------|---------------|----------|-------|
+| 19 | HDFC Flexi Cap → UTI Nifty 50 Index | ₹25,000/mo | ~9 months | - [ ] |
+| 20 | Nippon Large Cap → UTI Nifty 50 Index | ₹25,000/mo | ~8 months | - [ ] |
+| 21 | Motilal Midcap Active → Motilal Mid150 Index | ₹25,000/mo | ~9 months | - [ ] |
+| 22 | PGIM Midcap → Motilal Mid150 Index | ₹25,000/mo | ~6 months | - [ ] |
+
+#### 🟢 Verify — Post-setup checks
+
+| # | Check | When | Done? |
+|---|-------|------|-------|
+| 23 | Confirm all 12 old SIPs cancelled (no June 1 debit) | June 2 | - [ ] |
+| 24 | Confirm 6 new SIPs registered (pending status shows) | June 1 | - [ ] |
+| 25 | Confirm 4 STPs registered (pending/active) | June 7 | - [ ] |
+| 26 | Verify first SIP debit: 6 × ₹1L total debited | July 1 | - [ ] |
+| 27 | Verify first STP execution: 4 transfers processed | July 1 | - [ ] |
+| 28 | Check bank balance sufficient: ₹1L SIP + expenses | May 31 | - [ ] |
+
+#### 📊 Baseline Recorded (for future comparison)
+
+| Fund | Value | Return | Benchmark |
+|------|-------|--------|-----------|
+| SBI Tech (satellite) | ₹1,29,603 | +8.2% | vs Nifty IT — first review Aug 2026 |
+| BOI Small Cap (satellite) | ₹1,78,765 | +38.6% | vs Smallcap 250 — first review Dec 2026 |
+| Bandhan Small Cap (target) | ₹1,98,506 | +11.1% | Target: 10% allocation |
+| PPFAS Flexi (target) | ₹2,24,011 | +7.1% | Target: 28% allocation |
+
+#### ⏭️ Next Steps
+
+- [ ] Run `rebalance check` in August 2026
+- [ ] SBI Tech: Compare 3M return vs Nifty IT TRI (exit if 2Q underperformance)
+- [ ] After July 1 SIP confirms, update `analytics/portfolio-snapshot.md`
 
 ---
 
