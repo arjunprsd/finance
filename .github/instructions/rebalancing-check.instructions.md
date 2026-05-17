@@ -73,6 +73,18 @@ Next Scheduled Check: [current date + 3 months]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
+### Step 8: Log Results to Repo (MANDATORY)
+
+After generating the report, ALWAYS save a log file:
+
+1. Create a new file: `logs/rebalancing/YYYY-MM-DD.md` (using current date)
+2. Use the template from `logs/rebalancing/_template.md`
+3. Fill in ALL fields with live data from this check
+4. Git add, commit with message: `log: rebalancing check YYYY-MM-DD [VERDICT]`
+5. Push to origin
+
+This step is NON-OPTIONAL. Every rebalancing check must be persisted in the repo as a historical record.
+
 ## Additional Context
 
 - EPF (₹27K/month) is excluded from rebalancing — it's locked debt.
