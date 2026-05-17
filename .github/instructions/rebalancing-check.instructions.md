@@ -90,12 +90,32 @@ After generating the report, ALWAYS save a comprehensive log file:
    - **Section 5: Risk Assessment** — Current risk profile vs post-action risk profile
    - **Section 6: Migration Status** — Progress tracker (if still in migration phase)
    - **Section 7: Verdict** — Clear status with root cause and resolution
-   - **Section 8: Actions Required** — Prioritized action table with deadlines
+   - **Section 8: Trackable Action Plan** — MUST use `- [ ]` checkbox format (GitHub-compatible). Every single action must be individually trackable. Organize by priority (🔴 Critical → 🟡 Important → 🟢 Verify → ⏭️ Future). Include specific fund names, amounts, dates, and "how to do it" context.
    - **Section 9: Next Check** — Date, expected state, triggers to watch
 3. Git add, commit with message: `log: rebalancing check YYYY-MM-DD [VERDICT]`
 4. Push to origin
 
-This step is NON-OPTIONAL. Every rebalancing check must be persisted as a detailed historical record for self-study and audit trail.
+**Section 8 format (MANDATORY):**
+```markdown
+## Section 8: Trackable Action Plan
+
+> Mark each item as complete `[x]` when done.
+
+### 🔴 Critical — By [deadline]
+- [ ] [Specific action with fund name, amount, and how-to]
+- [ ] [Another specific action]
+
+### 🟡 Important — By [deadline]
+- [ ] [Action]
+
+### 🟢 Verify — Post-execution
+- [ ] [Date]: [What to check]
+
+### ⏭️ Future (no action now)
+- [ ] [Month]: [Deferred action]
+```
+
+This step is NON-OPTIONAL. Every rebalancing check must be persisted as a detailed historical record with trackable actions for self-study and audit trail.
 
 ## Additional Context
 
