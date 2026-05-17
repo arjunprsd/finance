@@ -7,15 +7,15 @@
 
 ## Identity
 
-| Field | Value |
-|-------|-------|
-| Name | Arjun Prasad |
-| Age | 27 (born ~1999) |
-| Location | India |
-| Marital Status | Single |
+| Field | Value                               |
+|-------|-------------------------------------|
+| Name | Arjun Prasad                        |
+| Age | 27 (born 25/11/1998)                |
+| Location | India                               |
+| Marital Status | Single                              |
 | Dependents | Parents (minimal financial support) |
 | Tax Regime | New Tax Regime (FY 2025-26 onwards) |
-| Risk Tolerance | Medium-High |
+| Risk Tolerance | Medium-High                         |
 | Investment Horizon | 15+ years (targeting FIRE at 38-42) |
 
 ---
