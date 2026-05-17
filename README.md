@@ -50,11 +50,11 @@ finance/
 │   ├── portfolio-snapshot.md     ← Current holdings & ratios (update quarterly)
 │   ├── projections.md            ← 15-year month-by-month movement tables
 │   ├── sip-date-analysis.md      ← Why all SIPs on 1st (5.5Y NSE data proof)
-│   └── charts/                   ← 13 comprehensive visual charts
+│   └── charts/                   ← 14 comprehensive visual charts
 │       └── README.md             ← Chart index with descriptions
 │
 ├── reference/                    ← LOOKUP GUIDES (stable, rarely change)
-│   ├── tax-rules.md              ← LTCG/STCG rules, harvesting strategy
+│   ├── tax-rules.md              ← LTCG/STCG/slab rates, harvesting calendar
 │   └── risk-management.md        ← Emergency fund, insurance, crash playbook
 │
 ├── data/                         ← RAW DATA (machine-readable)
@@ -62,8 +62,9 @@ finance/
 │   └── *_raw.json                ← NSE price data (5.5 years)
 │
 ├── scripts/                      ← CODE
-│   ├── generate-all-charts.py    ← Regenerate all 13 charts
-│   └── rebalance-check.py        ← Standalone rebalancing calculator
+│   ├── generate-all-charts.py    ← Regenerate all 14 charts
+│   ├── rebalance.py              ← Rebalancing calculator (buy/sell orders + LTCG cap)
+│   └── rebalance-check.py        ← Legacy standalone checker
 │
 ├── logs/                         ← HISTORY (append-only)
 │   ├── rebalancing/              ← Quarterly check logs (template + records)
