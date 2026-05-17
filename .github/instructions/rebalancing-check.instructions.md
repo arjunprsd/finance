@@ -73,17 +73,25 @@ Next Scheduled Check: [current date + 3 months]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-### Step 8: Log Results to Repo (MANDATORY)
+### Step 8: Log Results to Repo (MANDATORY — Detailed Analytical Log)
 
-After generating the report, ALWAYS save a log file:
+After generating the report, ALWAYS save a comprehensive log file:
 
 1. Create a new file: `logs/rebalancing/YYYY-MM-DD.md` (using current date)
-2. Use the template from `logs/rebalancing/_template.md`
-3. Fill in ALL fields with live data from this check
-4. Git add, commit with message: `log: rebalancing check YYYY-MM-DD [VERDICT]`
-5. Push to origin
+2. The log MUST include ALL of the following sections (reference `logs/rebalancing/2026-05-17.md` as the gold standard):
+   - **Section 1: Portfolio Overview** — Total invested, current, P&L, full NW breakdown
+   - **Section 2: Fund-by-Fund Analysis** — EVERY fund with NAV, units, return %, and WHY keep/STP/hold
+   - **Section 3: Drift Table** — Target allocation vs current with interpretation
+   - **Section 4: Tax Impact** — Complete LTCG/STCG analysis per fund, exemption utilization
+   - **Section 5: Risk Assessment** — Current risk profile vs post-action risk profile
+   - **Section 6: Migration Status** — Progress tracker (if still in migration phase)
+   - **Section 7: Verdict** — Clear status with root cause and resolution
+   - **Section 8: Actions Required** — Prioritized action table with deadlines
+   - **Section 9: Next Check** — Date, expected state, triggers to watch
+3. Git add, commit with message: `log: rebalancing check YYYY-MM-DD [VERDICT]`
+4. Push to origin
 
-This step is NON-OPTIONAL. Every rebalancing check must be persisted in the repo as a historical record.
+This step is NON-OPTIONAL. Every rebalancing check must be persisted as a detailed historical record for self-study and audit trail.
 
 ## Additional Context
 
