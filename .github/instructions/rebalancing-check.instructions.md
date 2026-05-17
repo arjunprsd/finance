@@ -86,6 +86,7 @@ After generating the report, ALWAYS save a comprehensive log file:
    - **Section 1: Portfolio Overview** — Total invested, current, P&L, full NW breakdown
    - **Section 2: Fund-by-Fund Analysis** — EVERY fund with NAV, units, return %, and WHY keep/STP/hold
    - **Section 2B: Performance Deep-Dive (XIRR/CAGR)** — Calculate XIRR and CAGR for every fund. Include: fund-level table (holding period, invested, current, abs return, CAGR, XIRR, grade A+/A/B+/B/C/D), portfolio-level metrics vs benchmarks, category performance table, "What's Working Well" list, "What Could Be Better" list with specific fix actions. Also regenerate `analytics/charts/14-performance-report.png` chart.
+   - **Section 2C: Fund Scorecard & Ratings** — Score every fund on 5 dimensions (Returns 0-20, Alpha vs benchmark 0-20, Cost efficiency 0-20, Consistency 0-20, Strategic Value 0-20). Total /100. Star rating (★★★★★ = 80+, ★★★ = 50-64, ☆☆☆☆☆ = 0-19). Calculate weighted portfolio score. Show distribution, root cause of low scores, and expected improvement trajectory. Compare to prior check's scores to track progress.
    - **Section 3: Drift Table** — Target allocation vs current with interpretation
    - **Section 4: Tax Impact** — Complete LTCG/STCG analysis per fund, exemption utilization
    - **Section 5: Risk Assessment** — Current risk profile vs post-action risk profile
