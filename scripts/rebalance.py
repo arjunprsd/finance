@@ -17,9 +17,9 @@ from datetime import datetime
 
 # ─── TARGET ALLOCATION ─────────────────────────────────────────────
 TARGET = {
-    "UTI Nifty 50 Index":            0.35,
+    "Navi Nifty 50 Index":           0.35,
     "Parag Parikh Flexi Cap":        0.28,
-    "Motilal Nifty Midcap 150 Index": 0.17,
+    "Edelweiss Mid Cap":             0.17,
     "Bandhan Small Cap":             0.10,
     "SBI Gold FoF":                  0.07,
     "Nippon Silver ETF FoF":         0.03,
@@ -32,12 +32,13 @@ STCG_RATE = 0.20
 
 # ─── FUND NAME MATCHING ────────────────────────────────────────────
 FUND_MAP = {
-    "UTI NIFTY 50 INDEX": "UTI Nifty 50 Index",
-    "UTI NIFTY": "UTI Nifty 50 Index",
+    "NAVI NIFTY 50 INDEX": "Navi Nifty 50 Index",
+    "NAVI NIFTY 50": "Navi Nifty 50 Index",
+    "NAVI NIFTY": "Navi Nifty 50 Index",
     "PARAG PARIKH": "Parag Parikh Flexi Cap",
     "PPFAS": "Parag Parikh Flexi Cap",
-    "MOTILAL OSWAL NIFTY MIDCAP 150": "Motilal Nifty Midcap 150 Index",
-    "MOTILAL OSWAL MIDCAP": None,  # Active fund, not target index
+    "EDELWEISS MID CAP": "Edelweiss Mid Cap",
+    "EDELWEISS MIDCAP": "Edelweiss Mid Cap",
     "BANDHAN SMALL CAP": "Bandhan Small Cap",
     "SBI GOLD": "SBI Gold FoF",
     "NIPPON INDIA SILVER": "Nippon Silver ETF FoF",

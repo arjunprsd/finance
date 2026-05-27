@@ -33,9 +33,9 @@ Cash                     ₹ 2.00L     5.2%  ██
 
 | Fund | Monthly SIP | % | Type | Status |
 |------|-------------|---|------|--------|
-| UTI Nifty 50 Index (Direct) | ₹35,000 | 35% | Large Cap Index | NEW — starting Jun 2026 |
+| Navi Nifty 50 Index (Direct) | ₹35,000 | 35% | Large Cap Index | NEW — starting Jun 2026 |
 | Parag Parikh Flexi Cap (Direct) | ₹28,000 | 28% | Multi-cap Active | KEEP — increase SIP |
-| Motilal Nifty Midcap 150 Index (Direct) | ₹17,000 | 17% | Mid Cap Index | NEW — starting Jun 2026 |
+| Edelweiss Mid Cap (Direct) | ₹17,000 | 17% | Mid Cap Index | NEW — starting Jun 2026 |
 | Bandhan Small Cap (Direct) | ₹10,000 | 10% | Small Cap Active | KEEP — continue |
 | SBI Gold ETF FoF (Direct) | ₹7,000 | 7% | Gold Commodity | NEW — starting Jun 2026 |
 | Nippon Silver ETF FoF (Direct) | ₹3,000 | 3% | Silver Commodity | NEW — starting Jun 2026 |

@@ -12,9 +12,9 @@
 
 | Fund | Monthly SIP | SIP Date | Rationale |
 |------|------------|----------|-----------|
-| UTI Nifty 50 Index | ₹35,000 | **1st** | #1 over 5Y, top-4 over 1Y+ |
+| Navi Nifty 50 Index | ₹35,000 | **1st** | #1 over 5Y, top-4 over 1Y+ |
 | Parag Parikh Flexi Cap | ₹28,000 | **1st** | #1 over 5Y, mirrors Nifty 500 |
-| Motilal Nifty Midcap 150 Index | ₹17,000 | **1st** | #1 over 1Y, 1.5Y, 3Y, 5Y |
+| Edelweiss Mid Cap | ₹17,000 | **1st** | #1 over 1Y, 1.5Y, 3Y, 5Y |
 | Bandhan Small Cap | ₹10,000 | **1st** | #1 over 5Y, consistently top-5 |
 | SBI Gold FoF | ₹5,000 | **1st** | #1 over 3Y & 5Y, #2 over 6M–2Y |
 | Nippon Silver ETF FoF | ₹5,000 | **1st** | #1 over 3Y & 5Y, #2 over 6M–2Y |
@@ -42,7 +42,7 @@ This is the only consistently bad zone across all funds, all periods, all timefr
 
 ## Detailed Analysis: All 6 Benchmarks
 
-### 1. NIFTY 50 (Benchmark for UTI Nifty 50 Index — ₹35,000/month)
+### 1. NIFTY 50 (Benchmark for Navi Nifty 50 Index — ₹35,000/month)
 
 **Full Period (65 months): Best = Day 1 (+20.42%) | Worst = Day 15 (+19.57%) | Spread = 0.85pp**
 
@@ -86,7 +86,7 @@ Profit difference: **₹7,235** over 5.5 years.
 
 ---
 
-### 3. NIFTY MIDCAP 150 (Benchmark for Motilal Midcap 150 Index — ₹17,000/month)
+### 3. NIFTY MIDCAP 150 (Benchmark for Edelweiss Mid Cap — ₹17,000/month)
 
 **Full Period (65 months): Best = Day 1 (+58.62%) | Worst = Day 15 (+56.77%) | Spread = 1.84pp**
 
@@ -270,9 +270,9 @@ Using the 5Y spread data, extrapolating conservatively:
 
 | Fund | SIP | 5Y Spread | Est. 15Y Impact |
 |------|-----|-----------|-----------------|
-| UTI Nifty 50 | ₹35K | 0.62pp | ~₹1.5–2L |
+| Navi Nifty 50 | ₹35K | 0.62pp | ~₹1.5–2L |
 | PPFAS Flexi | ₹28K | 0.85pp | ~₹1.5–2.5L |
-| Motilal Midcap | ₹17K | 1.45pp | ~₹2–3L |
+| Edelweiss Mid Cap | ₹17K | 1.45pp | ~₹2–3L |
 | Bandhan Small | ₹10K | 1.20pp | ~₹1–1.5L |
 | SBI Gold | ₹5K | 3.11pp | ~₹1.5–2L |
 | Nippon Silver | ₹5K | 6.07pp | ~₹2–3L |

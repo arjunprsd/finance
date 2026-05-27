@@ -9,9 +9,9 @@
 
 | Fund | Current ₹ | Current % | Target % | Drift | Status |
 |------|-----------|-----------|----------|-------|--------|
-| UTI Nifty 50 Index | | | 35% | | |
+| Navi Nifty 50 Index | | | 35% | | |
 | Parag Parikh Flexi Cap | | | 28% | | |
-| Motilal Midcap 150 Index | | | 17% | | |
+| Edelweiss Mid Cap | | | 17% | | |
 | Bandhan Small Cap | | | 10% | | |
 | SBI Gold FoF | | | 5% | | |
 | Nippon Silver ETF FoF | | | 5% | | |

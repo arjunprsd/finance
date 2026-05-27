@@ -17,12 +17,12 @@ from datetime import datetime, timedelta
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 TARGETS = {
-    "UTI Nifty 50 Index":           {"target_pct": 35, "sip": 35000},
+    "Navi Nifty 50 Index":           {"target_pct": 35, "sip": 35000},
     "Parag Parikh Flexi Cap":       {"target_pct": 28, "sip": 28000},
-    "Motilal Midcap 150 Index":     {"target_pct": 17, "sip": 17000},
+    "Edelweiss Mid Cap":            {"target_pct": 17, "sip": 17000},
     "Bandhan Small Cap":            {"target_pct": 10, "sip": 10000},
-    "SBI Gold FoF":                 {"target_pct":  5, "sip":  5000},
-    "Nippon Silver ETF FoF":        {"target_pct":  5, "sip":  5000},
+    "SBI Gold FoF":                 {"target_pct":  7, "sip":  7000},
+    "Nippon Silver ETF FoF":        {"target_pct":  3, "sip":  3000},
 }
 
 THRESHOLD_WATCH = 2.0    # % drift to flag as WATCH

@@ -26,8 +26,8 @@ Each fund scored on 5 dimensions (total 100 points):
 
 | # | Fund | Type | TER | 1Y% | 3Y% | 5Y% | Sharpe | MaxDD | Score | Rating |
 |---|------|------|-----|-----|-----|-----|--------|-------|-------|--------|
-| 1 | Navi Nifty 50 Index | Passive | 0.06% | 14.3 | 12.9 | 15.2 | 1.13 | -12.4% | 70 | ★★★★☆ |
-| **2** | **UTI Nifty 50 Index** ◄ | **Passive** | **0.18%** | **14.2** | **12.8** | **15.1** | **1.12** | **-12.5%** | **69** | **★★★★☆** |
+| **1** | **Navi Nifty 50 Index** ◄ | **Passive** | **0.06%** | **14.3** | **12.9** | **15.2** | **1.13** | **-12.4%** | **70** | **★★★★☆** |
+| 2 | UTI Nifty 50 Index | Passive | 0.18% | 14.2 | 12.8 | 15.1 | 1.12 | -12.5% | 69 | ★★★★☆ |
 | 3 | Canara Robeco Bluechip | Active | 0.42% | 15.1 | 13.8 | 15.5 | 1.15 | -11.5% | 69 | ★★★★☆ |
 | 4 | ICICI Pru Bluechip | Active | 0.87% | 15.8 | 14.5 | 16.2 | 1.18 | -11.8% | 65 | ★★★☆☆ |
 | 5 | Kotak Bluechip | Active | 0.58% | 14.8 | 13.5 | 15.4 | 1.13 | -12.2% | 64 | ★★★☆☆ |
@@ -37,7 +37,7 @@ Each fund scored on 5 dimensions (total 100 points):
 | 9 | Nippon India Large Cap | Active | 0.91% | 11.5 | 11.2 | 14.8 | 0.98 | -14.2% | 50 | ★★☆☆☆ |
 | 10 | Axis Bluechip | Active | 0.68% | 10.2 | 9.8 | 13.5 | 0.85 | -15.2% | 50 | ★★☆☆☆ |
 
-**Your pick: UTI Nifty 50 Index — Rank #2/10 ✅**
+**Your pick: Navi Nifty 50 Index — Rank #1/10 ✅**
 
 ---
 
@@ -45,9 +45,9 @@ Each fund scored on 5 dimensions (total 100 points):
 
 | # | Fund | Type | TER | 1Y% | 3Y% | 5Y% | Sharpe | MaxDD | Score | Rating |
 |---|------|------|-----|-----|-----|-----|--------|-------|-------|--------|
-| 1 | Edelweiss Mid Cap | Active | 0.42% | 25.5 | 21.8 | 24.2 | 1.35 | -19.5% | 76 | ★★★★☆ |
+| **1** | **Edelweiss Mid Cap** ◄ | **Active** | **0.42%** | **25.5** | **21.8** | **24.2** | **1.35** | **-19.5%** | **76** | **★★★★☆** |
 | 2 | Quant Mid Cap | Active | 0.57% | 28.5 | 24.2 | 28.5 | 1.42 | -22.5% | 74 | ★★★★☆ |
-| **3** | **Motilal Midcap 150 Index** ◄ | **Passive** | **0.15%** | **22.5** | **18.8** | **22.1** | **1.25** | **-18.5%** | **74** | **★★★★☆** |
+| 3 | Motilal Midcap 150 Index | Passive | 0.15% | 22.5 | 18.8 | 22.1 | 1.25 | -18.5% | 74 | ★★★★☆ |
 | 4 | Kotak Emerging Equity | Active | 0.46% | 21.8 | 19.2 | 22.5 | 1.22 | -18.2% | 70 | ★★★★☆ |
 | 5 | HDFC Mid-Cap Opportunities | Active | 0.72% | 24.2 | 20.5 | 23.8 | 1.28 | -19.8% | 68 | ★★★★☆ |
 | 6 | SBI Magnum Midcap | Active | 0.72% | 22.8 | 19.5 | 22.8 | 1.25 | -18.8% | 65 | ★★★☆☆ |
@@ -56,7 +56,7 @@ Each fund scored on 5 dimensions (total 100 points):
 | 9 | Axis Midcap | Active | 0.52% | 17.5 | 14.8 | 19.5 | 0.98 | -17.5% | 53 | ★★★☆☆ |
 | 10 | Motilal Oswal Midcap (Active) | Active | 1.04% | 18.2 | 15.2 | 20.2 | 1.02 | -21.5% | 45 | ★★☆☆☆ |
 
-**Your pick: Motilal Midcap 150 Index — Rank #3/10 ✅**
+**Your pick: Edelweiss Mid Cap — Rank #1/10 ✅**
 
 ---
 
@@ -81,29 +81,34 @@ Each fund scored on 5 dimensions (total 100 points):
 
 ## Why These Picks Work (Key Evidence)
 
-### 1. Large Cap: UTI Nifty 50 Index over Active Funds
+### 1. Large Cap: Navi Nifty 50 Index — Cheapest Access to India's Top 50
 
-| Factor | UTI Nifty 50 | ICICI Bluechip (Best Active) |
-|--------|-------------|------------------------------|
-| TER | 0.18% | 0.87% |
-| 15Y cost on ₹35K/mo | ₹1.8L | ₹8.7L |
-| % chance of beating index (5Y) | 100% (IS the index) | ~20% |
-| Fund manager risk | None | High |
-| Tracking error | <0.05% | N/A |
+| Factor | Navi Nifty 50 | UTI Nifty 50 | ICICI Bluechip (Best Active) |
+|--------|-------------|-------------|------------------------------|
+| TER | 0.06% | 0.18% | 0.87% |
+| 15Y cost on ₹35K/mo | ₹0.6L | ₹1.8L | ₹8.7L |
+| % chance of beating index (5Y) | 100% (IS the index) | 100% | ~20% |
+| Fund manager risk | None | None | High |
+| Tracking error | <0.03% | <0.05% | N/A |
+
+**Why Navi over UTI?** Identical returns, 3x cheaper. AUM ₹3500Cr is sufficient. If tracking error degrades, UTI is fallback.
 
 **SPIVA India 2025:** 82% of active large-cap funds underperformed Nifty 50 TRI over 5 years.
 
-### 2. Mid Cap: Motilal Mid150 Index over Active Funds
+### 2. Mid Cap: Edelweiss Mid Cap — Proven Alpha Generator
 
-| Factor | Motilal Mid150 | HDFC Mid-Cap (Popular Active) |
-|--------|---------------|-------------------------------|
-| TER | 0.15% | 0.72% |
-| 15Y cost on ₹17K/mo | ₹0.7L | ₹3.4L |
-| AUM concern | None (index) | ₹75K Cr (capacity constraints) |
-| Alpha decay risk | None | High as AUM grows |
-| Captures full mid-cap rally | Yes (150 stocks) | No (40-50 stocks) |
+| Factor | Edelweiss Mid Cap | Motilal Mid150 (Index) | HDFC Mid-Cap (Popular Active) |
+|--------|-------------------|------------------------|-------------------------------|
+| TER | 0.42% | 0.15% | 0.72% |
+| Alpha (3Y) | +2-3% | 0% | +1-2% |
+| Track record | 18 years ✅ | 5 years | 15 years |
+| Survived crashes | 2008, 2020, 2022 | 2020 | 2008, 2020, 2022 |
+| AUM | ₹8,800 Cr | ₹8,500 Cr | ₹75,000 Cr |
+| Net alpha (after fees) | +1.5-2.5% | 0% | +0.5-1% |
 
-**Key insight:** HDFC Mid-Cap at ₹75K Cr AUM is essentially becoming an index — but charging 5x more for it.
+**Why Edelweiss over Index?** — 18-year consistent alpha through multiple crashes. Only 0.27% extra cost for 2-3% extra returns. Small AUM still nimble. This is the RARE case where active justifies the fee.
+
+**Exit trigger:** If underperforms Midcap 150 TRI for 3 consecutive years → switch to Motilal Mid150 Index.
 
 ### 3. Small Cap: Bandhan over Quant/Tata
 
@@ -126,14 +131,14 @@ Each fund scored on 5 dimensions (total 100 points):
 
 | Fund | Category | Rank | Score | Rating |
 |------|----------|------|-------|--------|
-| UTI Nifty 50 Index | Large Cap | #2/10 | 69 | ★★★★☆ |
+| Navi Nifty 50 Index | Large Cap | #1/10 | 70 | ★★★★☆ |
 | Parag Parikh Flexi Cap | Flexi Cap | #1* | 78 | ★★★★☆ |
-| Motilal Midcap 150 Index | Mid Cap | #3/10 | 74 | ★★★★☆ |
+| Edelweiss Mid Cap | Mid Cap | #1/10 | 76 | ★★★★☆ |
 | Bandhan Small Cap | Small Cap | #4/10 | 71 | ★★★★☆ |
 | SBI Gold FoF | Gold | #1 | — | ✅ |
 | Nippon Silver ETF FoF | Silver | #1 | — | ✅ |
 
-**Weighted Portfolio Score: 72/100 (★★★★☆) — STRONG**
+**Weighted Portfolio Score: 74/100 (★★★★☆) — STRONG**
 
 *Note: Parag Parikh is uniquely positioned in Flexi Cap with US equity exposure. No pure comparison exists.*
 
@@ -143,8 +148,8 @@ Each fund scored on 5 dimensions (total 100 points):
 
 | Current Pick | Replace With | Trigger |
 |-------------|-------------|---------|
-| UTI Nifty 50 | Navi Nifty 50 | If Navi's AUM crosses ₹10K Cr and tracking error stays <0.03% |
-| Motilal Mid150 | Kotak Emerging Equity | Only if index underperforms Midcap TRI by >3% for 2 years |
+| Navi Nifty 50 | UTI Nifty 50 | If Navi tracking error exceeds 0.05% for 2 quarters |
+| Edelweiss Mid Cap | Motilal Midcap 150 Index | If Edelweiss underperforms Midcap 150 TRI for 3 consecutive years |
 | Bandhan Small Cap | Tata Small Cap | If Bandhan trails BSE250 for 2 consecutive quarters |
 
 ---

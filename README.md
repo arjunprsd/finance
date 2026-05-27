@@ -23,9 +23,9 @@ Savings Rate: 63% (incl EPF)    Step-Up:  10% every April
 
 | Fund | SIP | % | Type | Style |
 |------|-----|---|------|-------|
-| UTI Nifty 50 Index | ₹35,000 | 35% | Large Cap | Passive Index |
+| Navi Nifty 50 Index | ₹35,000 | 35% | Large Cap | Passive Index |
 | Parag Parikh Flexi Cap | ₹28,000 | 28% | Multi Cap + Intl | Active |
-| Motilal Nifty Midcap 150 Index | ₹17,000 | 17% | Mid Cap | Passive Index |
+| Edelweiss Mid Cap | ₹17,000 | 17% | Mid Cap | Active |
 | Bandhan Small Cap | ₹10,000 | 10% | Small Cap | Active |
 | SBI Gold ETF FoF | ₹7,000 | 7% | Gold | Commodity Hedge |
 | Nippon Silver ETF FoF | ₹3,000 | 3% | Silver | Commodity Growth |
@@ -111,7 +111,7 @@ finance/
 
 ```
 KEEP:     Parag Parikh Flexi Cap, Bandhan Small Cap
-NEW:      UTI Nifty 50, Motilal Mid150, Gold FoF, Silver FoF
+NEW:      Navi Nifty 50, Edelweiss Mid Cap, Gold FoF, Silver FoF
 STP-OUT:  HDFC Flexi, Nippon Large, ICICI Large, PGIM Mid, Motilal Mid
 HOLD:     SBI Tech (satellite), BOI Small (satellite)
 LOCKED:   5 ELSS funds (rolling unlock till Aug 2028)

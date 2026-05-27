@@ -45,7 +45,7 @@ SBI Tech Satellite (if held entire 15 years):
 
 ## Migration Phase (Months 0–36)
 
-| Month | Date | UTI N50 | PPFAS | Mid150 | B.Small | Gold | Silver | **Target** | Legacy | SBI Tech | BOI | EPF | **NW** |
+| Month | Date | Navi N50 | PPFAS | Edel Mid | B.Small | Gold | Silver | **Target** | Legacy | SBI Tech | BOI | EPF | **NW** |
 |-------|------|---------|-------|--------|---------|------|--------|-----------|--------|----------|-----|-----|--------|
 | 0 | Jun 2026 | ₹0.0L | ₹2.2L | ₹0.0L | ₹2.0L | ₹0.00L | ₹0.00L | **₹4.2L** | ₹9.9L | ₹1.3L | ₹1.8L | ₹10.6L | **₹38.5L** |
 | 1 | Jul 2026 | ₹1.2L | ₹2.5L | ₹0.8L | ₹2.1L | ₹0.07L | ₹0.03L | **₹6.8L** | ₹8.7L | ₹1.3L | ₹1.8L | ₹10.9L | **₹41.0L** |
@@ -73,7 +73,7 @@ SBI Tech Satellite (if held entire 15 years):
 
 ## Growth Phase (Months 36–180)
 
-| Month | Age | Date | UTI N50 | PPFAS | Mid150 | B.Small | Gold | Silver | **Target** | SBI Tech | EPF | **NW** |
+| Month | Age | Date | Navi N50 | PPFAS | Edel Mid | B.Small | Gold | Silver | **Target** | SBI Tech | EPF | **NW** |
 |-------|-----|------|---------|-------|--------|---------|------|--------|-----------|----------|-----|--------|
 | 36 | 30.0 | Jun 2029 | ₹30L | ₹17L | ₹14L | ₹8L | ₹3L | ₹1L | **₹73L** | ₹1.9L | ₹24L | **₹114L** |
 | 48 | 31.0 | Jun 2030 | ₹40L | ₹23L | ₹18L | ₹10L | ₹5L | ₹2L | **₹98L** | ₹2.2L | ₹30L | **₹147L** |
@@ -138,7 +138,7 @@ SBI Tech Satellite (if held entire 15 years):
 
 **Exit Rules (checked every quarterly rebalancing):**
 - Compare SBI Tech 3-month return vs Nifty IT 3-month return
-- If SBI Tech < Nifty IT for 2 consecutive quarters → FULL EXIT → lump sum into UTI Nifty 50
+- If SBI Tech < Nifty IT for 2 consecutive quarters → FULL EXIT → lump sum into Navi Nifty 50
 - If fund manager changes → EXIT regardless of performance
 - If AUM drops below ₹500Cr → EXIT (liquidity risk)
 

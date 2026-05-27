@@ -11,9 +11,9 @@
 ```
 COMPONENT              TARGET %    TOLERANCE BAND    HARD FLOOR / CEILING
 ─────────────────────────────────────────────────────────────────────────
-UTI Nifty 50 Index      35%        30% – 40%        Never below 25%
+Navi Nifty 50 Index     35%        30% – 40%        Never below 25%
 Parag Parikh Flexi      28%        23% – 33%        Never below 20%
-Motilal Midcap 150 Idx  17%        12% – 22%        Never above 25%
+Edelweiss Mid Cap       17%        12% – 22%        Never above 25%
 Bandhan Small Cap       10%         7% – 13%        Never above 15%
 SBI Gold FoF             7%         4% – 10%        Never below 3%
 Nippon Silver ETF FoF    3%         1% –  6%        Never above 8%
@@ -42,7 +42,7 @@ They are reviewed quarterly using their own criteria:
 | Benchmark | Nifty IT Index |
 | SIP | NONE (stopped, no new money) |
 | EXIT trigger | Underperforms Nifty IT for 2 consecutive quarters |
-| EXIT method | Full redemption → lump sum into UTI Nifty 50 |
+| EXIT method | Full redemption → lump sum into Navi Nifty 50 |
 | STAY trigger | Matches or beats Nifty IT → hold indefinitely |
 | Review | Every quarterly rebalancing check |
 
@@ -127,7 +127,7 @@ TAX IMPACT:   LTCG 12.5% (after ₹1.25L exemption) or STCG 20%.
 RULE:         Execute PRE-SELL CHECKLIST (Section 4) before ANY redemption.
 EXAMPLE:      Small cap at 16% (target 10%, drift = 6 points).
               → Sell ₹X from Bandhan Small Cap (LTCG-eligible units ONLY).
-              → Deploy proceeds into UTI Nifty 50.
+              → Deploy proceeds into Navi Nifty 50.
               → Limit total LTCG realization to ₹1.25L in that FY.
 ```
 
@@ -212,9 +212,9 @@ Copy this template into your journal/notion for each rebalancing event:
 
 | Fund                     | Current ₹ | Current % | Target % | Drift |
 |--------------------------|-----------|-----------|----------|-------|
-| UTI Nifty 50 Index       |           |           | 35%      |       |
+| Navi Nifty 50 Index      |           |           | 35%      |       |
 | Parag Parikh Flexi Cap   |           |           | 28%      |       |
-| Motilal Midcap 150 Index |           |           | 17%      |       |
+| Edelweiss Mid Cap        |           |           | 17%      |       |
 | Bandhan Small Cap        |           |           | 10%      |       |
 | SBI Gold FoF             |           |           |  5%      |       |
 | Nippon Silver ETF FoF    |           |           |  5%      |       |

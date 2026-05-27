@@ -38,9 +38,9 @@ Cash (₹2L)                → Emergency fund shortfall (need ₹6L)
 
 ### 1B. Start 6 New SIPs (All on 1st)
 
-- [ ] Start: UTI Nifty 50 Index (Direct) — ₹35,000/month
+- [ ] Start: Navi Nifty 50 Index (Direct) — ₹35,000/month
 - [ ] Start: Parag Parikh Flexi Cap (Direct) — ₹28,000/month
-- [ ] Start: Motilal Nifty Midcap 150 Index (Direct) — ₹17,000/month
+- [ ] Start: Edelweiss Mid Cap (Direct) — ₹17,000/month
 - [ ] Start: Bandhan Small Cap (Direct) — ₹10,000/month
 - [ ] Start: SBI Gold ETF FoF (Direct) — ₹7,000/month
 - [ ] Start: Nippon Silver ETF FoF (Direct) — ₹3,000/month
@@ -50,10 +50,10 @@ Cash (₹2L)                → Emergency fund shortfall (need ₹6L)
 
 > ⚠️ Only STP units held >12 months (check "Since" date on Coin)
 
-- [ ] STP: HDFC Flexi Cap → UTI Nifty 50 — ₹36,000/mo × 6 months
-- [ ] STP: Nippon India Large → UTI Nifty 50 — ₹33,500/mo × 6 months
-- [ ] STP: Motilal Midcap (Active) → Motilal Mid150 Index — ₹38,700/mo × 6 months
-- [ ] STP: PGIM India Midcap → Motilal Mid150 Index — ₹27,000/mo × 6 months
+- [ ] STP: HDFC Flexi Cap → Navi Nifty 50 — ₹36,000/mo × 6 months
+- [ ] STP: Nippon India Large → Navi Nifty 50 — ₹33,500/mo × 6 months
+- [ ] STP: Motilal Midcap (Active) → Edelweiss Mid Cap — ₹38,700/mo × 6 months
+- [ ] STP: PGIM India Midcap → Edelweiss Mid Cap — ₹27,000/mo × 6 months
 - [ ] Verify: All 4 STPs confirmed in Zerodha Coin
 
 > TAX: ~₹30K total gain → within ₹1.25L exemption → **ZERO TAX**
@@ -62,7 +62,7 @@ Cash (₹2L)                → Emergency fund shortfall (need ₹6L)
 
 ## PHASE 2: BATCH 2 STP — August 2026
 
-- [ ] STP: ICICI Pru Large Cap → UTI Nifty 50 — ₹30,000/mo × 6 months
+- [ ] STP: ICICI Pru Large Cap → Navi Nifty 50 — ₹30,000/mo × 6 months
 - [ ] Verify: STP confirmed, first installment processed
 
 ---
@@ -135,7 +135,7 @@ Cash (₹2L)                → Emergency fund shortfall (need ₹6L)
 - [ ] Q4 2026 (Nov): Second comparison
 - [ ] Q1 2027 (Feb): Third comparison
 - [ ] Q2 2027 (May): Fourth comparison
-- [ ] _If 2 consecutive Qs underperform → FULL EXIT → lump sum UTI N50_
+- [ ] _If 2 consecutive Qs underperform → FULL EXIT → lump sum Navi N50_
 - [ ] _Also exit if: fund manager change / AUM < ₹500Cr_
 
 ---
@@ -192,8 +192,8 @@ Cash (₹2L)                → Emergency fund shortfall (need ₹6L)
 - [ ] Apr 2027: First SIP step-up (+10%)
 - [ ] Apr 2028: Second step-up
 - [ ] Aug 2028: Last ELSS unlocks — portfolio clean
-- [ ] Jun 2030: SGB 1 matures → lump sum UTI N50
-- [ ] Dec 2031: SGB 2 matures → lump sum UTI N50
+- [ ] Jun 2030: SGB 1 matures → lump sum Navi N50
+- [ ] Dec 2031: SGB 2 matures → lump sum Navi N50
 
 ---
 
@@ -230,9 +230,9 @@ Cash (₹2L)                → Emergency fund shortfall (need ₹6L)
 
 | # | Fund | Amount | Date | Folio | Done? |
 |---|------|--------|------|-------|-------|
-| 13 | UTI Nifty 50 Index (Growth-Direct) | ₹35,000 | 1st | New | - [ ] |
+| 13 | Navi Nifty 50 Index (Growth-Direct) | ₹35,000 | 1st | New | - [ ] |
 | 14 | Parag Parikh Flexi Cap (Growth-Direct) | ₹28,000 | 1st | Existing | - [ ] |
-| 15 | Motilal Oswal Nifty Midcap 150 Index (Growth-Direct) | ₹17,000 | 1st | New | - [ ] |
+| 15 | Edelweiss Mid Cap (Growth-Direct) | ₹17,000 | 1st | New | - [ ] |
 | 16 | Bandhan Small Cap (Growth-Direct) | ₹10,000 | 1st | Existing | - [ ] |
 | 17 | SBI Gold ETF FoF (Growth-Direct) | ₹7,000 | 1st | New | - [ ] |
 | 18 | Nippon Silver ETF FoF (Growth-Direct) | ₹3,000 | 1st | New | - [ ] |
@@ -241,10 +241,10 @@ Cash (₹2L)                → Emergency fund shortfall (need ₹6L)
 
 | # | From → To | Monthly Amount | Duration | Done? |
 |---|-----------|---------------|----------|-------|
-| 19 | HDFC Flexi Cap → UTI Nifty 50 Index | ₹25,000/mo | ~9 months | - [ ] |
-| 20 | Nippon Large Cap → UTI Nifty 50 Index | ₹25,000/mo | ~8 months | - [ ] |
-| 21 | Motilal Midcap Active → Motilal Mid150 Index | ₹25,000/mo | ~9 months | - [ ] |
-| 22 | PGIM Midcap → Motilal Mid150 Index | ₹25,000/mo | ~6 months | - [ ] |
+| 19 | HDFC Flexi Cap → Navi Nifty 50 Index | ₹25,000/mo | ~9 months | - [ ] |
+| 20 | Nippon Large Cap → Navi Nifty 50 Index | ₹25,000/mo | ~8 months | - [ ] |
+| 21 | Motilal Midcap Active → Edelweiss Mid Cap | ₹25,000/mo | ~9 months | - [ ] |
+| 22 | PGIM Midcap → Edelweiss Mid Cap | ₹25,000/mo | ~6 months | - [ ] |
 
 #### 🟢 Verify — Post-setup checks
 
