@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prasad Family — Financial Dashboard</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          colors: {
+            brand: { 50: '#eef2ff', 100: '#e0e7ff', 400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 900: '#312e81' },
+            surface: { 950: '#0a0f1e', 900: '#0f172a', 800: '#1e293b', 700: '#334155', 600: '#475569' }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+
+  <!-- Google Fonts — Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    * { scrollbar-width: thin; scrollbar-color: #334155 transparent; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+
+    body { background: #0a0f1e; color: #f1f5f9; font-family: 'Inter', system-ui, sans-serif; }
+
+    .glass-card {
+      background: rgba(30, 41, 59, 0.6);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(99, 102, 241, 0.1);
+      border-radius: 16px;
+      transition: all 0.3s ease;
+    }
+    .glass-card:hover {
+      border-color: rgba(99, 102, 241, 0.25);
+      box-shadow: 0 8px 32px rgba(99, 102, 241, 0.08);
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.12) 0%, rgba(30, 41, 59, 0.8) 100%);
+      border: 1px solid rgba(99, 102, 241, 0.15);
+    }
+
+    .sidebar-link {
+      transition: all 0.2s ease;
+      border-left: 3px solid transparent;
+    }
+    .sidebar-link:hover { background: rgba(99, 102, 241, 0.08); }
+    .sidebar-link.active {
+      background: rgba(99, 102, 241, 0.12);
+      border-left-color: #6366f1;
+      color: #a5b4fc;
+    }
+
+    .glow-text {
+      text-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+    }
+
+    .tag-core      { background: #065f46; color: #6ee7b7; }
+    .tag-legacy-stp { background: #92400e; color: #fcd34d; }
+    .tag-elss      { background: #581c87; color: #d8b4fe; }
+    .tag-satellite { background: #1e3a5f; color: #7dd3fc; }
+    .tag-watch     { background: #78350f; color: #fbbf24; }
+    .tag-exit      { background: #7f1d1d; color: #fca5a5; }
+    .tag-hold      { background: #14532d; color: #86efac; }
+    .tag-review    { background: #713f12; color: #fde68a; }
+    .tag-partial-exit { background: #6b2121; color: #fdba74; }
+
+    .priority-critical { border-left: 3px solid #ef4444; }
+    .priority-high     { border-left: 3px solid #f59e0b; }
+    .priority-medium   { border-left: 3px solid #3b82f6; }
+    .priority-low      { border-left: 3px solid #6b7280; }
+
+    .pill { display: inline-flex; align-items: center; gap: 4px; padding: 4px 12px; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; }
+    .pill-warn  { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+    .pill-danger { background: rgba(239, 68, 68, 0.15); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.3); }
+    .pill-success { background: rgba(16, 185, 129, 0.15); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .pill-info { background: rgba(99, 102, 241, 0.15); color: #a5b4fc; border: 1px solid rgba(99, 102, 241, 0.3); }
+
+    .progress-bar { height: 8px; border-radius: 4px; overflow: hidden; background: #1e293b; }
+    .progress-fill { height: 100%; border-radius: 4px; transition: width 1s ease-out; }
+
+    .fade-in { animation: fadeIn 0.4s ease-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    .chart-container { position: relative; }
+
+    @media (max-width: 768px) {
+      #sidebar { display: none; }
+      #mobile-nav { display: flex !important; }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen">
+  <div class="flex h-screen overflow-hidden">
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside id="sidebar" class="w-64 flex-shrink-0 bg-surface-900/80 border-r border-slate-800/60 flex flex-col">
+      <!-- Logo -->
+      <div class="p-6 border-b border-slate-800/60">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-brand-600 flex items-center justify-center text-lg font-bold">₹</div>
+          <div>
+            <div class="font-bold text-sm text-slate-100">Prasad Family</div>
+            <div class="text-xs text-slate-500">Financial Dashboard</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="flex-1 py-4 px-3 space-y-1" id="sidebar-nav">
+        <a href="#" data-view="family" class="sidebar-link active flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-300">
+          <span class="text-lg">🏠</span> Family Overview
+        </a>
+        <!-- Member links injected by JS -->
+      </nav>
+
+      <!-- Footer -->
+      <div class="p-4 border-t border-slate-800/60">
+        <div class="text-xs text-slate-600 text-center">
+          Last updated: <span id="last-updated">—</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ============ MAIN CONTENT ============ -->
+    <main class="flex-1 overflow-y-auto" id="main-content">
+
+      <!-- Top Bar -->
+      <header class="sticky top-0 z-30 bg-surface-950/80 backdrop-blur-xl border-b border-slate-800/40 px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h1 class="text-lg font-bold text-slate-100" id="page-title">Family Overview</h1>
+            <p class="text-xs text-slate-500 mt-0.5" id="page-subtitle">Consolidated portfolio across all members</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div id="alerts-badge" class="hidden">
+              <span class="pill pill-warn">⚠ <span id="alerts-count">0</span> Alerts</span>
+            </div>
+            <div class="text-right">
+              <div class="text-xs text-slate-500">Total Net Worth</div>
+              <div class="text-sm font-bold text-emerald-400" id="header-nw">—</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content Area -->
+      <div class="p-6 space-y-6 pb-24">
+
+        <!-- ===== FAMILY VIEW ===== -->
+        <div id="family-view" class="fade-in">
+
+          <!-- Hero Stats Row -->
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+            <div class="stat-card glass-card p-5 md:col-span-2">
+              <div class="text-xs text-slate-400 uppercase tracking-wider mb-1">Combined Net Worth</div>
+              <div class="text-3xl font-extrabold glow-text text-white" id="family-nw">—</div>
+              <div class="text-sm mt-1" id="family-nw-change">—</div>
+            </div>
+            <div class="glass-card p-5">
+              <div class="text-xs text-slate-400 uppercase tracking-wider mb-1">Monthly SIPs</div>
+              <div class="text-2xl font-bold text-brand-400" id="family-sip">—</div>
+              <div class="text-xs text-slate-500 mt-1">Across all members</div>
+            </div>
+            <div class="glass-card p-5">
+              <div class="text-xs text-slate-400 uppercase tracking-wider mb-1">Family Members</div>
+              <div class="text-2xl font-bold text-brand-400" id="family-count">—</div>
+              <div class="text-xs text-slate-500 mt-1">Active portfolios</div>
+            </div>
+          </div>
+
+          <!-- Charts Row -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+            <!-- Asset Allocation Pie -->
+            <div class="glass-card p-6">
+              <h3 class="text-sm font-semibold text-slate-300 mb-4">Aggregate Asset Allocation</h3>
+              <div class="chart-container" style="height: 280px;">
+                <canvas id="chart-family-allocation"></canvas>
+              </div>
+            </div>
+            <!-- Growth Line Chart -->
+            <div class="glass-card p-6">
+              <h3 class="text-sm font-semibold text-slate-300 mb-4">6-Month Net Worth Growth</h3>
+              <div class="chart-container" style="height: 280px;">
+                <canvas id="chart-family-growth"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <!-- Member Cards -->
+          <h3 class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-3">Family Members</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6" id="member-cards"></div>
+
+          <!-- Alerts Section -->
+          <div id="alerts-section" class="space-y-3"></div>
+        </div>
+
+        <!-- ===== MEMBER VIEW ===== -->
+        <div id="member-view" class="hidden fade-in">
+
+          <!-- Member Hero -->
+          <div class="stat-card glass-card p-6 mb-6">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="text-4xl" id="member-avatar">—</div>
+              <div>
+                <h2 class="text-xl font-bold text-white" id="member-name">—</h2>
+                <div class="flex items-center gap-2 mt-1">
+                  <span class="text-xs text-slate-400" id="member-info">—</span>
+                  <span class="pill pill-info" id="member-risk">—</span>
+                </div>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div>
+                <div class="text-xs text-slate-400">Net Worth</div>
+                <div class="text-2xl font-bold text-white" id="member-nw">—</div>
+              </div>
+              <div>
+                <div class="text-xs text-slate-400">Monthly SIP</div>
+                <div class="text-xl font-semibold text-brand-400" id="member-sip">—</div>
+              </div>
+              <div>
+                <div class="text-xs text-slate-400">Monthly Income</div>
+                <div class="text-xl font-semibold text-slate-300" id="member-income">—</div>
+              </div>
+              <div>
+                <div class="text-xs text-slate-400">Savings Rate</div>
+                <div class="text-xl font-semibold text-emerald-400" id="member-savings-rate">—</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Charts Row -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+            <div class="glass-card p-6">
+              <h3 class="text-sm font-semibold text-slate-300 mb-4">Asset Allocation</h3>
+              <div class="chart-container" style="height: 260px;">
+                <canvas id="chart-member-allocation"></canvas>
+              </div>
+            </div>
+            <div class="glass-card p-6">
+              <h3 class="text-sm font-semibold text-slate-300 mb-4">Projected Growth</h3>
+              <div class="chart-container" style="height: 260px;">
+                <canvas id="chart-member-projection"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <!-- Holdings Table -->
+          <div class="glass-card p-6 mb-6">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-sm font-semibold text-slate-300">Holdings</h3>
+              <div class="flex gap-2" id="holdings-filter">
+                <button class="pill pill-info text-xs cursor-pointer holdings-filter-btn active" data-filter="all">All</button>
+                <button class="pill text-xs cursor-pointer holdings-filter-btn" data-filter="mf">Mutual Funds</button>
+                <button class="pill text-xs cursor-pointer holdings-filter-btn" data-filter="stocks">Stocks</button>
+              </div>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="text-xs text-slate-500 uppercase border-b border-slate-700/50">
+                    <th class="text-left py-3 px-2">Name</th>
+                    <th class="text-right py-3 px-2">Value</th>
+                    <th class="text-right py-3 px-2">Invested</th>
+                    <th class="text-right py-3 px-2">Return %</th>
+                    <th class="text-center py-3 px-2">Tag</th>
+                  </tr>
+                </thead>
+                <tbody id="holdings-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Goals -->
+          <div class="glass-card p-6 mb-6">
+            <h3 class="text-sm font-semibold text-slate-300 mb-4">🎯 Goals & Progress</h3>
+            <div class="space-y-4" id="goals-container"></div>
+          </div>
+
+          <!-- Action Plan -->
+          <div class="glass-card p-6 mb-6">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-sm font-semibold text-slate-300">📋 Action Plan</h3>
+              <span class="text-xs text-slate-500" id="action-progress">—</span>
+            </div>
+            <div class="space-y-2" id="action-plan-container"></div>
+          </div>
+
+          <!-- Member Alerts -->
+          <div id="member-alerts" class="space-y-3"></div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Mobile Bottom Nav -->
+  <nav id="mobile-nav" class="fixed bottom-0 left-0 right-0 bg-surface-900/95 backdrop-blur-xl border-t border-slate-800/60 py-2 px-4 hidden z-50">
+    <div class="flex justify-around" id="mobile-nav-items">
+      <a href="#" data-view="family" class="flex flex-col items-center gap-1 text-xs text-slate-400 py-1 mobile-link active">
+        <span class="text-lg">🏠</span> Family
+      </a>
+    </div>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>
