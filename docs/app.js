@@ -85,33 +85,61 @@ const App = {
       mobileNav.appendChild(mobileLink);
     });
 
-    // Update header NW
-    const totalNW = this.calculateFamilyNW();
-    document.getElementById('header-nw').textContent = this.formatINR(totalNW);
-    document.getElementById('family-count').textContent = this.data.members.length;
+    // Update header NW (debt-adjusted)
+    const totalGross = this.calculateFamilyNW();
+    const totalLoans = this.data.members.reduce((s, m) => {
+      if (!m.liabilities) return s;
+      return s + Object.values(m.liabilities).reduce((ls, l) => ls + (l.value || 0), 0);
+    }, 0);
+    const realNW = totalGross - totalLoans;
+    const headerEl = document.getElementById('header-nw');
+    headerEl.textContent = this.formatINR(realNW);
+    headerEl.className = `text-sm font-bold ${realNW >= 0 ? 'text-emerald-400' : 'text-red-400'}`;
   },
 
   // ─── FAMILY DASHBOARD ────────────────────────────────────
   renderFamilyView() {
     const members = this.data.members;
-    const totalNW = this.calculateFamilyNW();
+    const totalGross = this.calculateFamilyNW();
+    const totalLoans = members.reduce((s, m) => {
+      if (!m.liabilities) return s;
+      return s + Object.values(m.liabilities).reduce((ls, l) => ls + (l.value || 0), 0);
+    }, 0);
+    const realNW = totalGross - totalLoans;
     const totalSIP = members.reduce((sum, m) => sum + (m.monthlySIP || 0), 0);
 
-    // Hero stats
-    this.animateValue('family-nw', 0, totalNW, 1200, true);
+    // Hero stats — show debt-adjusted NW
+    this.animateValue('family-nw', 0, realNW, 1200, true);
     document.getElementById('family-sip').textContent = this.formatINR(totalSIP) + '/mo';
-    document.getElementById('family-count').textContent = members.length;
+    document.getElementById('family-total-debt').textContent = totalLoans > 0 ? this.formatINR(totalLoans) : '₹0';
+
+    // Debt summary below NW
+    const debtSummaryEl = document.getElementById('family-debt-summary');
+    debtSummaryEl.innerHTML = `
+      <span class="text-slate-500">Gross: <span class="text-white font-medium">${this.formatCompact(totalGross)}</span></span>
+      <span class="text-slate-500">Loans: <span class="text-red-400 font-medium">${totalLoans > 0 ? this.formatCompact(totalLoans) : '₹0'}</span></span>
+    `;
+
+    // Debt detail label
+    const debtDetailEl = document.getElementById('family-debt-detail');
+    const loanLabels = [];
+    members.forEach(m => {
+      if (m.liabilities) {
+        Object.values(m.liabilities).forEach(l => loanLabels.push(`${m.name.split(' ')[0]}: ${l.label}`));
+      }
+    });
+    debtDetailEl.textContent = loanLabels.length > 0 ? loanLabels.join(' · ') : 'No loans';
 
     // Calculate 6-month change
     const firstMonth = members.reduce((sum, m) => sum + (m.historical[0]?.netWorth || 0), 0);
-    const growthPct = ((totalNW - firstMonth) / firstMonth * 100).toFixed(1);
+    const growthPct = firstMonth > 0 ? ((realNW - firstMonth) / firstMonth * 100).toFixed(1) : '0.0';
     const changeEl = document.getElementById('family-nw-change');
     changeEl.innerHTML = `<span class="${growthPct >= 0 ? 'text-emerald-400' : 'text-red-400'}">
       ${growthPct >= 0 ? '▲' : '▼'} ${growthPct >= 0 ? '+' : ''}${growthPct}% in 6 months</span>
-      <span class="text-slate-500 text-xs ml-1">(${this.formatINR(totalNW - firstMonth)})</span>`;
+      <span class="text-slate-500 text-xs ml-1">(${this.formatINR(realNW - firstMonth)})</span>`;
 
     // Member cards
-    this.renderMemberCards(members, totalNW);
+    this.renderMemberCards(members, realNW);
 
     // Charts
     this.renderFamilyAllocationChart(members);
@@ -123,9 +151,12 @@ const App = {
 
   renderMemberCards(members, totalNW) {
     const container = document.getElementById('member-cards');
+    const totalRealNW = members.reduce((s, m) => s + this.getMemberDebtAdjustedNW(m), 0);
     container.innerHTML = members.map(m => {
-      const nw = this.getMemberNW(m);
-      const pct = (nw / totalNW * 100).toFixed(1);
+      const gross = this.getMemberNW(m);
+      const loans = m.liabilities ? Object.values(m.liabilities).reduce((s, l) => s + (l.value || 0), 0) : 0;
+      const realNW = gross - loans;
+      const pct = totalRealNW !== 0 ? (realNW / totalRealNW * 100).toFixed(1) : '0.0';
       const hist = m.historical;
       const growth = hist.length >= 2
         ? ((hist[hist.length-1].netWorth - hist[0].netWorth) / hist[0].netWorth * 100).toFixed(1)
@@ -139,15 +170,18 @@ const App = {
               <div class="text-xs text-slate-500">${m.role}</div>
             </div>
           </div>
-          <div class="text-xl font-bold text-white mb-1">${this.formatINR(nw)}</div>
+          <div class="text-xl font-bold ${realNW >= 0 ? 'text-white' : 'text-red-400'} mb-1">${this.formatINR(realNW)}</div>
+          <div class="text-xs text-slate-500 mb-2">
+            Assets: ${this.formatCompact(gross)}${loans > 0 ? ` · <span class="text-red-400">Loans: ${this.formatCompact(loans)}</span>` : ''}
+          </div>
           <div class="flex items-center justify-between">
             <span class="text-xs ${growth >= 0 ? 'text-emerald-400' : 'text-red-400'}">
               ${growth >= 0 ? '▲' : '▼'} ${growth >= 0 ? '+' : ''}${growth}% (6M)
             </span>
-            <span class="text-xs text-slate-500">${pct}% of total</span>
+            <span class="text-xs text-slate-500">${pct}% of family</span>
           </div>
           <div class="progress-bar mt-3">
-            <div class="progress-fill bg-brand-500" style="width: ${pct}%"></div>
+            <div class="progress-fill ${realNW >= 0 ? 'bg-brand-500' : 'bg-red-500'}" style="width: ${Math.abs(parseFloat(pct))}%"></div>
           </div>
         </a>`;
     }).join('');
@@ -277,17 +311,51 @@ const App = {
     const m = this.data.members.find(x => x.id === memberId);
     if (!m) return;
 
-    const nw = this.getMemberNW(m);
+    const gross = this.getMemberNW(m);
+    const loans = m.liabilities ? Object.values(m.liabilities).reduce((s, l) => s + (l.value || 0), 0) : 0;
+    const realNW = gross - loans;
 
     // Hero
     document.getElementById('member-avatar').textContent = m.avatar;
     document.getElementById('member-name').textContent = m.name;
     document.getElementById('member-info').textContent = `Age ${m.age} · ${m.role}`;
     document.getElementById('member-risk').textContent = m.riskProfile;
-    this.animateValue('member-nw', 0, nw, 800, true);
+
+    // Gross assets
+    document.getElementById('member-gross-nw').textContent = this.formatINR(gross);
+
+    // Loans
+    const debtEl = document.getElementById('member-debt');
+    debtEl.textContent = loans > 0 ? this.formatINR(loans) : '₹0';
+    debtEl.className = `text-2xl font-bold ${loans > 0 ? 'text-red-400' : 'text-emerald-400'}`;
+
+    // Real NW (debt-adjusted)
+    const nwEl = document.getElementById('member-nw');
+    this.animateValue('member-nw', 0, realNW, 800, true);
+    nwEl.className = `text-2xl font-bold ${realNW >= 0 ? 'text-emerald-400' : 'text-red-400'}`;
+
     document.getElementById('member-sip').textContent = this.formatINR(m.monthlySIP) + '/mo';
-    document.getElementById('member-income').textContent = m.monthlyIncome > 0 ? this.formatINR(m.monthlyIncome) : 'N/A';
-    document.getElementById('member-savings-rate').textContent = m.savingsRate > 0 ? m.savingsRate + '%' : 'N/A';
+
+    // Debt details breakdown
+    const debtDetailsEl = document.getElementById('member-debt-details');
+    if (m.liabilities && Object.keys(m.liabilities).length > 0) {
+      debtDetailsEl.classList.remove('hidden');
+      debtDetailsEl.innerHTML = `
+        <div class="flex flex-wrap gap-3">
+          ${Object.values(m.liabilities).map(l => `
+            <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg" style="background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.2);">
+              <span class="text-red-400 text-xs font-semibold">🏦 ${l.label}</span>
+              <span class="text-white text-xs font-bold">${this.formatCompact(l.value)}</span>
+              ${l.emi ? `<span class="text-slate-500 text-xs">· EMI ${this.formatCompact(l.emi)}/mo</span>` : ''}
+              ${l.roi ? `<span class="text-slate-500 text-xs">· ${l.roi}%</span>` : ''}
+              ${l.monthsLeft ? `<span class="text-slate-500 text-xs">· ${Math.round(l.monthsLeft/12)}y left</span>` : ''}
+            </div>
+          `).join('')}
+        </div>`;
+    } else {
+      debtDetailsEl.classList.add('hidden');
+      debtDetailsEl.innerHTML = '';
+    }
 
     // Allocation chart
     this.renderMemberAllocationChart(m);
