@@ -3,7 +3,7 @@
     "familyName": "Prasad Family",
     "lastUpdated": "2026-05-31",
     "currency": "INR",
-    "dataSource": "Zerodha Kite MCP + Manual Entry"
+    "dataSource": "Zerodha Kite API (Live)"
   },
   "members": [
     {
@@ -20,90 +20,340 @@
       "monthlySIP": 100000,
       "epfMonthly": 27000,
       "savingsRate": 50,
-
       "portfolio": {
-        "equityMF": { "label": "Equity Mutual Funds", "value": 2136000 },
-        "stocks":   { "label": "Direct Equity (Stocks)", "value": 277000 },
-        "epf":      { "label": "EPF (Provident Fund)", "value": 1057000 },
-        "sgb":      { "label": "Sovereign Gold Bonds", "value": 175000 },
-        "cash":     { "label": "Cash / Emergency Fund", "value": 200000 }
+        "equityMF": {
+          "label": "Equity Mutual Funds",
+          "value": 2136000
+        },
+        "stocks": {
+          "label": "Direct Equity",
+          "value": 277000
+        },
+        "epf": {
+          "label": "EPF",
+          "value": 1057000
+        },
+        "sgb": {
+          "label": "Sovereign Gold Bonds",
+          "value": 175000
+        },
+        "cash": {
+          "label": "Cash / Emergency",
+          "value": 200000
+        }
       },
-
       "holdings": {
         "mutualFunds": [
-          { "name": "Parag Parikh Flexi Cap",    "value": 224011, "invested": 209100, "returns": 7.1,  "tag": "core",      "sip": 28000 },
-          { "name": "Bandhan Small Cap",         "value": 198506, "invested": 178765, "returns": 11.1, "tag": "core",      "sip": 10000 },
-          { "name": "HDFC Flexi Cap",            "value": 216000, "invested": 223000, "returns": -3.2, "tag": "legacy-stp" },
-          { "name": "Nippon India Large Cap",    "value": 201000, "invested": 207600, "returns": -3.2, "tag": "legacy-stp" },
-          { "name": "ICICI Pru Large Cap",       "value": 180000, "invested": 175000, "returns": 2.9,  "tag": "legacy-stp" },
-          { "name": "Motilal Oswal Midcap",      "value": 232000, "invested": 238000, "returns": -2.6, "tag": "legacy-stp" },
-          { "name": "PGIM India Midcap",         "value": 164000, "invested": 162000, "returns": 1.2,  "tag": "legacy-stp" },
-          { "name": "Axis ELSS Tax Saver",       "value": 82000,  "invested": 75000,  "returns": 9.3,  "tag": "elss" },
-          { "name": "Quant ELSS Tax Saver",      "value": 96000,  "invested": 77800,  "returns": 23.5, "tag": "elss" },
-          { "name": "Mirae Asset ELSS",          "value": 78000,  "invested": 75000,  "returns": 4.0,  "tag": "elss" },
-          { "name": "Bandhan ELSS Tax Saver",    "value": 75000,  "invested": 72000,  "returns": 4.2,  "tag": "elss" },
-          { "name": "DSP ELSS Tax Saver",        "value": 81000,  "invested": 67200,  "returns": 20.8, "tag": "elss" },
-          { "name": "SBI Tech Opportunities",    "value": 129603, "invested": 119800, "returns": 8.2,  "tag": "satellite" },
-          { "name": "BOI Small Cap",             "value": 178765, "invested": 128900, "returns": 38.6, "tag": "satellite" }
+          {
+            "name": "Parag Parikh Flexi Cap",
+            "value": 224011,
+            "invested": 209100,
+            "returns": 7.1,
+            "tag": "core",
+            "sip": 28000
+          },
+          {
+            "name": "Bandhan Small Cap",
+            "value": 198506,
+            "invested": 178765,
+            "returns": 11.1,
+            "tag": "core",
+            "sip": 10000
+          },
+          {
+            "name": "HDFC Flexi Cap",
+            "value": 216000,
+            "invested": 223000,
+            "returns": -3.2,
+            "tag": "legacy-stp"
+          },
+          {
+            "name": "Nippon India Large Cap",
+            "value": 201000,
+            "invested": 207600,
+            "returns": -3.2,
+            "tag": "legacy-stp"
+          },
+          {
+            "name": "ICICI Pru Large Cap",
+            "value": 180000,
+            "invested": 175000,
+            "returns": 2.9,
+            "tag": "legacy-stp"
+          },
+          {
+            "name": "Motilal Oswal Midcap",
+            "value": 232000,
+            "invested": 238000,
+            "returns": -2.6,
+            "tag": "legacy-stp"
+          },
+          {
+            "name": "PGIM India Midcap",
+            "value": 164000,
+            "invested": 162000,
+            "returns": 1.2,
+            "tag": "legacy-stp"
+          },
+          {
+            "name": "Axis ELSS Tax Saver",
+            "value": 82000,
+            "invested": 75000,
+            "returns": 9.3,
+            "tag": "elss"
+          },
+          {
+            "name": "Quant ELSS Tax Saver",
+            "value": 96000,
+            "invested": 77800,
+            "returns": 23.5,
+            "tag": "elss"
+          },
+          {
+            "name": "Mirae Asset ELSS",
+            "value": 78000,
+            "invested": 75000,
+            "returns": 4.0,
+            "tag": "elss"
+          },
+          {
+            "name": "Bandhan ELSS Tax Saver",
+            "value": 75000,
+            "invested": 72000,
+            "returns": 4.2,
+            "tag": "elss"
+          },
+          {
+            "name": "DSP ELSS Tax Saver",
+            "value": 81000,
+            "invested": 67200,
+            "returns": 20.8,
+            "tag": "elss"
+          },
+          {
+            "name": "SBI Tech Opportunities",
+            "value": 129603,
+            "invested": 119800,
+            "returns": 8.2,
+            "tag": "satellite"
+          },
+          {
+            "name": "BOI Small Cap",
+            "value": 178765,
+            "invested": 128900,
+            "returns": 38.6,
+            "tag": "satellite"
+          }
         ],
         "stocks": [
-          { "name": "49 stocks (Hold & Forget)", "value": 277000, "note": "No active trading — hold for long term" }
+          {
+            "name": "49 Direct Stocks (Hold & Forget)",
+            "value": 277000,
+            "invested": 184000,
+            "returns": 50.5,
+            "note": "No active trading"
+          }
         ],
         "sgbs": [
-          { "name": "SGB 2024-25 Series I",  "value": 95000,  "maturity": "Jun 2030" },
-          { "name": "SGB 2024-25 Series IV", "value": 80000,  "maturity": "Dec 2031" }
+          {
+            "name": "SGB 2024-25 Series I",
+            "value": 95000,
+            "maturity": "Jun 2030"
+          },
+          {
+            "name": "SGB 2024-25 Series IV",
+            "value": 80000,
+            "maturity": "Dec 2031"
+          }
         ]
       },
-
       "targetAllocation": {
-        "naviNifty50":      { "label": "Navi Nifty 50 Index",   "target": 35, "current": 0,  "sip": 35000, "status": "pending" },
-        "ppfasFlexiCap":    { "label": "Parag Parikh Flexi Cap", "target": 28, "current": 22, "sip": 28000, "status": "active" },
-        "edelweissMidCap":  { "label": "Edelweiss Mid Cap",     "target": 17, "current": 0,  "sip": 17000, "status": "pending" },
-        "bandhanSmallCap":  { "label": "Bandhan Small Cap",     "target": 10, "current": 20, "sip": 10000, "status": "active" },
-        "sbiGoldFoF":       { "label": "SBI Gold ETF FoF",      "target": 7,  "current": 0,  "sip": 7000,  "status": "pending" },
-        "nipponSilverFoF":  { "label": "Nippon Silver ETF FoF", "target": 3,  "current": 0,  "sip": 3000,  "status": "pending" }
+        "naviNifty50": {
+          "label": "Navi Nifty 50 Index",
+          "target": 35,
+          "current": 0,
+          "sip": 35000,
+          "status": "pending"
+        },
+        "ppfasFlexiCap": {
+          "label": "Parag Parikh Flexi Cap",
+          "target": 28,
+          "current": 22,
+          "sip": 28000,
+          "status": "active"
+        },
+        "edelweissMidCap": {
+          "label": "Edelweiss Mid Cap",
+          "target": 17,
+          "current": 0,
+          "sip": 17000,
+          "status": "pending"
+        },
+        "bandhanSmallCap": {
+          "label": "Bandhan Small Cap",
+          "target": 10,
+          "current": 20,
+          "sip": 10000,
+          "status": "active"
+        },
+        "sbiGoldFoF": {
+          "label": "SBI Gold ETF FoF",
+          "target": 7,
+          "current": 0,
+          "sip": 7000,
+          "status": "pending"
+        },
+        "nipponSilverFoF": {
+          "label": "Nippon Silver ETF FoF",
+          "target": 3,
+          "current": 0,
+          "sip": 3000,
+          "status": "pending"
+        }
       },
-
       "historical": [
-        { "month": "Dec 2025", "netWorth": 3200000 },
-        { "month": "Jan 2026", "netWorth": 3350000 },
-        { "month": "Feb 2026", "netWorth": 3450000 },
-        { "month": "Mar 2026", "netWorth": 3580000 },
-        { "month": "Apr 2026", "netWorth": 3700000 },
-        { "month": "May 2026", "netWorth": 3846000 }
+        {
+          "month": "Dec 2025",
+          "netWorth": 3200000
+        },
+        {
+          "month": "Jan 2026",
+          "netWorth": 3350000
+        },
+        {
+          "month": "Feb 2026",
+          "netWorth": 3450000
+        },
+        {
+          "month": "Mar 2026",
+          "netWorth": 3580000
+        },
+        {
+          "month": "Apr 2026",
+          "netWorth": 3700000
+        },
+        {
+          "month": "May 2026",
+          "netWorth": 3846000
+        }
       ],
-
       "projections": [
-        { "month": "Jun 2026", "netWorth": 3846000 },
-        { "month": "Sep 2026", "netWorth": 4626506 },
-        { "month": "Dec 2026", "netWorth": 5340000 },
-        { "month": "Mar 2027", "netWorth": 5890000 },
-        { "month": "Jun 2027", "netWorth": 6500000 },
-        { "month": "Dec 2027", "netWorth": 7800000 },
-        { "month": "Jun 2028", "netWorth": 9200000 },
-        { "month": "Dec 2028", "netWorth": 10800000 }
+        {
+          "month": "Jun 2026",
+          "netWorth": 3846000
+        },
+        {
+          "month": "Sep 2026",
+          "netWorth": 4626506
+        },
+        {
+          "month": "Dec 2026",
+          "netWorth": 5340000
+        },
+        {
+          "month": "Mar 2027",
+          "netWorth": 5890000
+        },
+        {
+          "month": "Jun 2027",
+          "netWorth": 6500000
+        },
+        {
+          "month": "Dec 2027",
+          "netWorth": 7800000
+        },
+        {
+          "month": "Jun 2028",
+          "netWorth": 9200000
+        },
+        {
+          "month": "Dec 2028",
+          "netWorth": 10800000
+        }
       ],
-
       "actionPlan": [
-        { "id": "a1", "text": "Stop 12 old SIPs (HDFC, Nippon, ICICI, Motilal, PGIM, BOI, 5× ELSS, SBI Tech)", "priority": "critical", "deadline": "Jun 1, 2026", "completed": false },
-        { "id": "a2", "text": "Start 6 new SIPs — Navi N50 ₹35K, PPFAS ₹28K, Edelweiss ₹17K, Bandhan ₹10K, Gold ₹7K, Silver ₹3K", "priority": "critical", "deadline": "Jun 1, 2026", "completed": false },
-        { "id": "a3", "text": "Set up 4 STPs — HDFC→N50, Nippon→N50, Motilal→Edelweiss, PGIM→Edelweiss (₹25K/mo each)", "priority": "high", "deadline": "Jun 7, 2026", "completed": false },
-        { "id": "a4", "text": "Build emergency fund from ₹2L → ₹6L (use bonus/variable pay)", "priority": "high", "deadline": "Oct 2026", "completed": false },
-        { "id": "a5", "text": "Redeem unlocked ELSS units monthly (~₹16K/mo rolling redemption)", "priority": "medium", "deadline": "Aug 2028", "completed": false },
-        { "id": "a6", "text": "Quarterly review: BOI Small vs Smallcap250, SBI Tech vs Nifty IT", "priority": "medium", "deadline": "Aug 2026", "completed": false },
-        { "id": "a7", "text": "Annual LTCG harvest — sell + rebuy ₹1.25L gains tax-free in January", "priority": "low", "deadline": "Jan 2027", "completed": false },
-        { "id": "a8", "text": "Step up all 6 SIPs by 10% every April", "priority": "low", "deadline": "Apr 2027", "completed": false }
+        {
+          "id": "a1",
+          "text": "Stop 12 old SIPs (HDFC, Nippon, ICICI, Motilal, PGIM, BOI, 5× ELSS, SBI Tech)",
+          "priority": "critical",
+          "deadline": "Jun 1, 2026",
+          "completed": false
+        },
+        {
+          "id": "a2",
+          "text": "Start 6 new SIPs — Navi N50 ₹35K, PPFAS ₹28K, Edelweiss ₹17K, Bandhan ₹10K, Gold ₹7K, Silver ₹3K",
+          "priority": "critical",
+          "deadline": "Jun 1, 2026",
+          "completed": false
+        },
+        {
+          "id": "a3",
+          "text": "Set up 4 STPs — HDFC→N50, Nippon→N50, Motilal→Edelweiss, PGIM→Edelweiss (₹25K/mo each)",
+          "priority": "high",
+          "deadline": "Jun 7, 2026",
+          "completed": false
+        },
+        {
+          "id": "a4",
+          "text": "Build emergency fund from ₹2L → ₹6L (use bonus/variable pay)",
+          "priority": "high",
+          "deadline": "Oct 2026",
+          "completed": false
+        },
+        {
+          "id": "a5",
+          "text": "Redeem unlocked ELSS units monthly (~₹16K/mo rolling redemption)",
+          "priority": "medium",
+          "deadline": "Aug 2028",
+          "completed": false
+        },
+        {
+          "id": "a6",
+          "text": "Quarterly review: BOI Small vs Smallcap250, SBI Tech vs Nifty IT",
+          "priority": "medium",
+          "deadline": "Aug 2026",
+          "completed": false
+        },
+        {
+          "id": "a7",
+          "text": "Annual LTCG harvest — sell + rebuy ₹1.25L gains tax-free in January",
+          "priority": "low",
+          "deadline": "Jan 2027",
+          "completed": false
+        },
+        {
+          "id": "a8",
+          "text": "Step up all 6 SIPs by 10% every April",
+          "priority": "low",
+          "deadline": "Apr 2027",
+          "completed": false
+        }
       ],
-
       "goals": [
-        { "name": "FIRE (₹5.8 Crore)",    "target": 58000000, "current": 3846000,  "deadline": "2038", "icon": "🔥" },
-        { "name": "Emergency Fund (₹6L)",  "target": 600000,   "current": 200000,   "deadline": "Oct 2026", "icon": "🛡️" },
-        { "name": "Consolidate to 6 Funds","target": 100,      "current": 30,       "deadline": "Feb 2027", "icon": "🎯", "unit": "%" }
-      ],
-
-      "alerts": []
+        {
+          "name": "FIRE (₹5.8 Crore)",
+          "target": 58000000,
+          "current": 3846000,
+          "deadline": "2038",
+          "icon": "🔥"
+        },
+        {
+          "name": "Emergency Fund (₹6L)",
+          "target": 600000,
+          "current": 200000,
+          "deadline": "Oct 2026",
+          "icon": "🛡️"
+        },
+        {
+          "name": "Consolidate to 6 Funds",
+          "target": 100,
+          "current": 30,
+          "deadline": "Feb 2027",
+          "icon": "🎯",
+          "unit": "%"
+        }
+      ]
     },
-
     {
       "id": "mother",
       "name": "Sunita Prasad",
@@ -118,157 +368,380 @@
       "monthlySIP": 9000,
       "savingsRate": 0,
       "sipFundedBy": "Father",
-
       "portfolio": {
-        "equityMF":   { "label": "Equity Mutual Funds", "value": 389000 },
-        "stocks":     { "label": "Direct Equity (Stocks)", "value": 241000 },
-        "cash":       { "label": "Cash", "value": 0 }
+        "equityMF": {
+          "label": "Equity Mutual Funds",
+          "value": 388838
+        },
+        "stocks": {
+          "label": "Direct Equity",
+          "value": 241208
+        }
       },
-
       "holdings": {
         "mutualFunds": [
-          { "name": "Franklin India Flexi Cap",     "value": 142000, "invested": 126000, "returns": 12.7, "tag": "core", "sip": 3000 },
-          { "name": "HDFC Mid Cap Opportunities",   "value": 138000, "invested": 125000, "returns": 10.4, "tag": "core", "sip": 3000 },
-          { "name": "Quant Small Cap",              "value": 109000, "invested": 96000,  "returns": 13.5, "tag": "watch", "sip": 3000 }
+          {
+            "name": "HDFC Mid Cap Fund",
+            "folio": "27846010/19",
+            "units": 535.653,
+            "nav": 223.135,
+            "value": 119523,
+            "invested": 99995,
+            "returns": 19.5,
+            "tag": "core",
+            "sip": 3000
+          },
+          {
+            "name": "Quant Small Cap Fund",
+            "folio": "51061713313",
+            "units": 309.733,
+            "nav": 292.2481,
+            "value": 90519,
+            "invested": 79996,
+            "returns": 13.2,
+            "tag": "watch",
+            "sip": 3000
+          },
+          {
+            "name": "Franklin India Flexi Cap Fund",
+            "folio": "34095067",
+            "units": 102.061,
+            "nav": 1751.8523,
+            "value": 178796,
+            "invested": 164994,
+            "returns": 8.4,
+            "tag": "core",
+            "sip": 3000
+          }
         ],
         "stocks": [
-          { "name": "INDIAGLYCO",   "value": 39000, "invested": 16100,  "returns": 142, "action": "hold" },
-          { "name": "AUBANK",       "value": 24768, "invested": 14500,  "returns": 71,  "action": "hold" },
-          { "name": "DATAPATTNS",   "value": 20216, "invested": 10900,  "returns": 85,  "action": "hold" },
-          { "name": "CDSL",         "value": 19914, "invested": 9530,   "returns": 109, "action": "hold" },
-          { "name": "BLS",          "value": 19530, "invested": 25700,  "returns": -24, "action": "review" },
-          { "name": "TATASTEEL",    "value": 27200, "invested": 14700,  "returns": 85,  "action": "partial-exit" },
-          { "name": "OLECTRA",      "value": 11800, "invested": 15900,  "returns": -26, "action": "hold" },
-          { "name": "DIXON",        "value": 11524, "invested": 6740,   "returns": 71,  "action": "hold" },
-          { "name": "VBL",          "value": 8977,  "invested": 9450,   "returns": -5,  "action": "hold" },
-          { "name": "ETERNAL",      "value": 8782,  "invested": 2610,   "returns": 236, "action": "hold" },
-          { "name": "PATANJALI",    "value": 6856,  "invested": 6470,   "returns": 6,   "action": "hold" },
-          { "name": "ADANIENT",     "value": 5881,  "invested": 4820,   "returns": 22,  "action": "hold" },
-          { "name": "MUFTI",        "value": 6090,  "invested": 18450,  "returns": -67, "action": "exit" },
-          { "name": "SULA",         "value": 1575,  "invested": 5625,   "returns": -72, "action": "exit" },
-          { "name": "SHAREINDIA",   "value": 1381,  "invested": 3210,   "returns": -57, "action": "exit" },
-          { "name": "MAHACORP",     "value": 1080,  "invested": 3730,   "returns": -71, "action": "exit" },
-          { "name": "LICI",         "value": 9052,  "invested": 13930,  "returns": -35, "action": "exit" },
-          { "name": "CGCL",         "value": 10915, "invested": 13640,  "returns": -20, "action": "exit" },
-          { "name": "PAYTM",        "value": 6713,  "invested": 9070,   "returns": -26, "action": "exit" }
+          {
+            "name": "ADANIENT",
+            "quantity": 2,
+            "avgPrice": 2403.4,
+            "ltp": 2940.5,
+            "value": 5881,
+            "invested": 4807,
+            "returns": 22.3,
+            "action": "hold"
+          },
+          {
+            "name": "AUBANK",
+            "quantity": 25,
+            "avgPrice": 580,
+            "ltp": 990.7,
+            "value": 24768,
+            "invested": 14500,
+            "returns": 70.8,
+            "action": "hold"
+          },
+          {
+            "name": "BLS",
+            "quantity": 75,
+            "avgPrice": 342.13,
+            "ltp": 260.4,
+            "value": 19530,
+            "invested": 25660,
+            "returns": -23.9,
+            "action": "review"
+          },
+          {
+            "name": "CDSL",
+            "quantity": 16,
+            "avgPrice": 595.45,
+            "ltp": 1244.6,
+            "value": 19914,
+            "invested": 9527,
+            "returns": 109.0,
+            "action": "hold"
+          },
+          {
+            "name": "CGCL",
+            "quantity": 55,
+            "avgPrice": 247.45,
+            "ltp": 198.45,
+            "value": 10915,
+            "invested": 13610,
+            "returns": -19.8,
+            "action": "exit"
+          },
+          {
+            "name": "DATAPATTNS",
+            "quantity": 5,
+            "avgPrice": 2182,
+            "ltp": 4043.1,
+            "value": 20216,
+            "invested": 10910,
+            "returns": 85.3,
+            "action": "hold"
+          },
+          {
+            "name": "DIXON",
+            "quantity": 1,
+            "avgPrice": 6750,
+            "ltp": 11524,
+            "value": 11524,
+            "invested": 6750,
+            "returns": 70.7,
+            "action": "hold"
+          },
+          {
+            "name": "ETERNAL",
+            "quantity": 35,
+            "avgPrice": 74.72,
+            "ltp": 250.9,
+            "value": 8782,
+            "invested": 2615,
+            "returns": 235.8,
+            "action": "hold"
+          },
+          {
+            "name": "INDIAGLYCO",
+            "quantity": 40,
+            "avgPrice": 402.5,
+            "ltp": 975,
+            "value": 39000,
+            "invested": 16100,
+            "returns": 142.2,
+            "action": "hold"
+          },
+          {
+            "name": "LICI",
+            "quantity": 22,
+            "avgPrice": 628.05,
+            "ltp": 411.45,
+            "value": 9052,
+            "invested": 13817,
+            "returns": -34.5,
+            "action": "exit"
+          },
+          {
+            "name": "MAHACORP",
+            "quantity": 3000,
+            "avgPrice": 1.23,
+            "ltp": 0.36,
+            "value": 1080,
+            "invested": 3680,
+            "returns": -70.7,
+            "action": "exit"
+          },
+          {
+            "name": "MUFTI",
+            "quantity": 70,
+            "avgPrice": 264.4,
+            "ltp": 87,
+            "value": 6090,
+            "invested": 18508,
+            "returns": -67.1,
+            "action": "exit"
+          },
+          {
+            "name": "OLECTRA",
+            "quantity": 10,
+            "avgPrice": 1600,
+            "ltp": 1180,
+            "value": 11800,
+            "invested": 16000,
+            "returns": -26.2,
+            "action": "hold"
+          },
+          {
+            "name": "PATANJALI",
+            "quantity": 15,
+            "avgPrice": 433.33,
+            "ltp": 457.05,
+            "value": 6856,
+            "invested": 6500,
+            "returns": 5.5,
+            "action": "hold"
+          },
+          {
+            "name": "PAYTM",
+            "quantity": 6,
+            "avgPrice": 1510.12,
+            "ltp": 1118.8,
+            "value": 6713,
+            "invested": 9061,
+            "returns": -25.9,
+            "action": "exit"
+          },
+          {
+            "name": "SHAREINDIA",
+            "quantity": 10,
+            "avgPrice": 320,
+            "ltp": 138.09,
+            "value": 1381,
+            "invested": 3200,
+            "returns": -56.8,
+            "action": "exit"
+          },
+          {
+            "name": "SULA",
+            "quantity": 10,
+            "avgPrice": 570,
+            "ltp": 157.5,
+            "value": 1575,
+            "invested": 5700,
+            "returns": -72.4,
+            "action": "exit"
+          },
+          {
+            "name": "TATASTEEL",
+            "quantity": 130,
+            "avgPrice": 112.65,
+            "ltp": 208.9,
+            "value": 27157,
+            "invested": 14644,
+            "returns": 85.4,
+            "action": "partial-exit"
+          },
+          {
+            "name": "VBL",
+            "quantity": 17,
+            "avgPrice": 558.47,
+            "ltp": 528.05,
+            "value": 8977,
+            "invested": 9494,
+            "returns": -5.4,
+            "action": "hold"
+          }
         ]
       },
-
       "historical": [
-        { "month": "Dec 2025", "netWorth": 520000 },
-        { "month": "Jan 2026", "netWorth": 545000 },
-        { "month": "Feb 2026", "netWorth": 560000 },
-        { "month": "Mar 2026", "netWorth": 578000 },
-        { "month": "Apr 2026", "netWorth": 605000 },
-        { "month": "May 2026", "netWorth": 630000 }
+        {
+          "month": "Dec 2025",
+          "netWorth": 520000
+        },
+        {
+          "month": "Jan 2026",
+          "netWorth": 545000
+        },
+        {
+          "month": "Feb 2026",
+          "netWorth": 560000
+        },
+        {
+          "month": "Mar 2026",
+          "netWorth": 578000
+        },
+        {
+          "month": "Apr 2026",
+          "netWorth": 605000
+        },
+        {
+          "month": "May 2026",
+          "netWorth": 630046
+        }
       ],
-
       "projections": [
-        { "month": "Jun 2026", "netWorth": 630000 },
-        { "month": "Dec 2026", "netWorth": 720000 },
-        { "month": "Jun 2027", "netWorth": 830000 },
-        { "month": "Dec 2027", "netWorth": 960000 },
-        { "month": "Dec 2028", "netWorth": 1250000 },
-        { "month": "Dec 2030", "netWorth": 2100000 },
-        { "month": "Dec 2033", "netWorth": 3800000 },
-        { "month": "Dec 2036", "netWorth": 5600000 }
+        {
+          "month": "Jun 2026",
+          "netWorth": 630046
+        },
+        {
+          "month": "Dec 2026",
+          "netWorth": 720000
+        },
+        {
+          "month": "Jun 2027",
+          "netWorth": 830000
+        },
+        {
+          "month": "Dec 2027",
+          "netWorth": 960000
+        },
+        {
+          "month": "Dec 2028",
+          "netWorth": 1250000
+        },
+        {
+          "month": "Dec 2030",
+          "netWorth": 2100000
+        },
+        {
+          "month": "Dec 2033",
+          "netWorth": 3800000
+        },
+        {
+          "month": "Dec 2036",
+          "netWorth": 5600000
+        }
       ],
-
       "actionPlan": [
-        { "id": "m1", "text": "EXIT 7 junk stocks — MUFTI, SULA, SHAREINDIA, MAHACORP, LICI, CGCL, PAYTM (recover ₹36.8K)", "priority": "critical", "deadline": "Jun 7, 2026", "completed": false },
-        { "id": "m2", "text": "PARTIAL EXIT — Sell 50% TATASTEEL (65 shares → ₹13.6K profit)", "priority": "high", "deadline": "Jun 7, 2026", "completed": false },
-        { "id": "m3", "text": "Deploy ₹50.4K into MFs — Franklin ₹20K, HDFC ₹15K, SBI Hybrid ₹10K, Gold ₹5.4K", "priority": "high", "deadline": "Jun 15, 2026", "completed": false },
-        { "id": "m4", "text": "Continue ₹9K/month SIPs — Franklin ₹3K + HDFC ₹3K + Quant ₹3K", "priority": "medium", "deadline": "Ongoing", "completed": false },
-        { "id": "m5", "text": "Review Quant Small Cap — check for SEBI action or 2Q underperformance", "priority": "medium", "deadline": "Dec 2026", "completed": false },
-        { "id": "m6", "text": "Annual tax harvest — book ₹1.25L LTCG tax-free (no income bracket)", "priority": "low", "deadline": "Jan 2027", "completed": false },
-        { "id": "m7", "text": "Age 55 shift — start moving 10%/year equity → debt MFs (2033)", "priority": "low", "deadline": "2033", "completed": false }
+        {
+          "id": "m1",
+          "text": "EXIT 7 junk stocks — MUFTI, SULA, SHAREINDIA, MAHACORP, LICI, CGCL, PAYTM (recover ₹36.8K)",
+          "priority": "critical",
+          "deadline": "Jun 7, 2026",
+          "completed": false
+        },
+        {
+          "id": "m2",
+          "text": "PARTIAL EXIT — Sell 50% TATASTEEL (65 shares → ₹13.6K profit)",
+          "priority": "high",
+          "deadline": "Jun 7, 2026",
+          "completed": false
+        },
+        {
+          "id": "m3",
+          "text": "Deploy ₹50.4K into MFs — Franklin ₹20K, HDFC ₹15K, SBI Hybrid ₹10K, Gold ₹5.4K",
+          "priority": "high",
+          "deadline": "Jun 15, 2026",
+          "completed": false
+        },
+        {
+          "id": "m4",
+          "text": "Continue ₹9K/month SIPs — Franklin ₹3K + HDFC ₹3K + Quant ₹3K",
+          "priority": "medium",
+          "deadline": "Ongoing",
+          "completed": false
+        },
+        {
+          "id": "m5",
+          "text": "Review Quant Small Cap — check for SEBI action or 2Q underperformance",
+          "priority": "medium",
+          "deadline": "Dec 2026",
+          "completed": false
+        },
+        {
+          "id": "m6",
+          "text": "Annual tax harvest — book ₹1.25L LTCG tax-free (no income bracket)",
+          "priority": "low",
+          "deadline": "Jan 2027",
+          "completed": false
+        },
+        {
+          "id": "m7",
+          "text": "Age 55 shift — start moving 10%/year equity → debt MFs (2033)",
+          "priority": "low",
+          "deadline": "2033",
+          "completed": false
+        }
       ],
-
       "goals": [
-        { "name": "Retirement Corpus (₹38-56L)", "target": 4600000, "current": 630000,  "deadline": "2036", "icon": "🏖️" },
-        { "name": "Exit Junk Stocks",            "target": 100,     "current": 0,       "deadline": "Jun 2026", "icon": "🧹", "unit": "%" },
-        { "name": "Add Debt Diversification",    "target": 100000,  "current": 0,       "deadline": "Jun 2026", "icon": "⚖️" }
-      ],
-
-      "alerts": []
-    },
-
-    {
-      "id": "father",
-      "name": "Rajesh Prasad",
-      "age": 52,
-      "dob": "1974-08-10",
-      "role": "Senior Manager (Private Sector)",
-      "riskProfile": "Conservative-Medium",
-      "avatar": "👨‍💼",
-      "taxRegime": "Old Regime",
-      "monthlyIncome": 150000,
-      "monthlyExpenses": 80000,
-      "monthlySIP": 9000,
-      "savingsRate": 47,
-      "note": "Funds wife's ₹9K/mo SIP. Values estimated — not from Kite API.",
-
-      "portfolio": {
-        "ppf":      { "label": "PPF (Public Provident Fund)", "value": 1800000 },
-        "epf":      { "label": "EPF (Provident Fund)", "value": 2200000 },
-        "fd":       { "label": "Fixed Deposits", "value": 800000 },
-        "equityMF": { "label": "Equity Mutual Funds", "value": 500000 },
-        "lic":      { "label": "LIC Policies (Maturity Value)", "value": 450000 },
-        "nps":      { "label": "NPS (National Pension)", "value": 350000 },
-        "cash":     { "label": "Cash / Savings", "value": 300000 }
-      },
-
-      "holdings": {
-        "mutualFunds": [
-          { "name": "SBI Bluechip Fund",         "value": 220000, "invested": 200000, "returns": 10.0, "tag": "core", "sip": 0 },
-          { "name": "HDFC Balanced Advantage",   "value": 180000, "invested": 175000, "returns": 2.9,  "tag": "core", "sip": 0 },
-          { "name": "ICICI Pru Value Discovery",  "value": 100000, "invested": 90000,  "returns": 11.1, "tag": "core", "sip": 0 }
-        ],
-        "fixedDeposits": [
-          { "name": "SBI FD (7.1% — 3Y)",    "value": 500000, "maturity": "Mar 2028" },
-          { "name": "HDFC FD (7.25% — 2Y)",   "value": 300000, "maturity": "Sep 2027" }
-        ],
-        "insurance": [
-          { "name": "LIC Jeevan Anand",       "value": 250000, "maturity": "2030", "premium": 24000 },
-          { "name": "LIC Money Back",          "value": 200000, "maturity": "2028", "premium": 18000 }
-        ]
-      },
-
-      "historical": [
-        { "month": "Dec 2025", "netWorth": 5800000 },
-        { "month": "Jan 2026", "netWorth": 5900000 },
-        { "month": "Feb 2026", "netWorth": 6000000 },
-        { "month": "Mar 2026", "netWorth": 6100000 },
-        { "month": "Apr 2026", "netWorth": 6250000 },
-        { "month": "May 2026", "netWorth": 6400000 }
-      ],
-
-      "projections": [
-        { "month": "Jun 2026", "netWorth": 6400000 },
-        { "month": "Dec 2026", "netWorth": 6900000 },
-        { "month": "Jun 2027", "netWorth": 7400000 },
-        { "month": "Dec 2027", "netWorth": 8000000 },
-        { "month": "Dec 2028", "netWorth": 9300000 },
-        { "month": "Dec 2030", "netWorth": 12500000 },
-        { "month": "Dec 2033", "netWorth": 18000000 },
-        { "month": "Dec 2036", "netWorth": 25000000 }
-      ],
-
-      "actionPlan": [
-        { "id": "f1", "text": "Review LIC policies — surrender if IRR < 5% and reinvest in MFs", "priority": "high", "deadline": "Jul 2026", "completed": false },
-        { "id": "f2", "text": "Increase wife's SIP from ₹9K → ₹12K/month (add Gold FoF ₹3K)", "priority": "medium", "deadline": "Aug 2026", "completed": false },
-        { "id": "f3", "text": "Max out PPF contribution (₹1.5L/year) for 80C benefit", "priority": "medium", "deadline": "Mar 2027", "completed": false },
-        { "id": "f4", "text": "Review FD rates at maturity — consider debt MFs if rate drops below 6.5%", "priority": "low", "deadline": "Sep 2027", "completed": false },
-        { "id": "f5", "text": "Start NPS contribution for additional 80CCD(1B) deduction of ₹50K", "priority": "low", "deadline": "Dec 2026", "completed": false }
-      ],
-
-      "goals": [
-        { "name": "Retirement (₹2.5Cr)", "target": 25000000, "current": 6400000,  "deadline": "2036", "icon": "🏡" },
-        { "name": "Max PPF",             "target": 150000,   "current": 100000,   "deadline": "Mar 2027", "icon": "🏦" },
-        { "name": "Wife's Portfolio ₹50L","target": 5000000, "current": 630000,   "deadline": "2036", "icon": "💝" }
-      ],
-
-      "alerts": []
+        {
+          "name": "Retirement Corpus (₹38-56L)",
+          "target": 4600000,
+          "current": 630046,
+          "deadline": "2036",
+          "icon": "🏖️"
+        },
+        {
+          "name": "Exit Junk Stocks",
+          "target": 100,
+          "current": 0,
+          "deadline": "Jun 2026",
+          "icon": "🧹",
+          "unit": "%"
+        },
+        {
+          "name": "Add Debt Diversification",
+          "target": 100000,
+          "current": 0,
+          "deadline": "Jun 2026",
+          "icon": "⚖️"
+        }
+      ]
     }
   ]
 }
