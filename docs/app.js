@@ -38,19 +38,25 @@ const App = {
 
   navigateTo(view) {
     this.currentView = view;
-    // Update active states
     document.querySelectorAll('.sidebar-link, .mobile-link').forEach(el => {
       el.classList.toggle('active', el.dataset.view === view);
     });
 
+    document.getElementById('family-view').classList.add('hidden');
+    document.getElementById('member-view').classList.add('hidden');
+    document.getElementById('crorepati-view').classList.add('hidden');
+
     if (view === 'family') {
       document.getElementById('family-view').classList.remove('hidden');
-      document.getElementById('member-view').classList.add('hidden');
       document.getElementById('page-title').textContent = 'Family Overview';
       document.getElementById('page-subtitle').textContent = 'Consolidated portfolio across all members';
       this.renderFamilyView();
+    } else if (view === 'crorepati') {
+      document.getElementById('crorepati-view').classList.remove('hidden');
+      document.getElementById('page-title').textContent = 'Crorepati Timeline';
+      document.getElementById('page-subtitle').textContent = 'Debt-adjusted wealth projection — when will you hit ₹1 Crore?';
+      this.renderCrorepatiView();
     } else {
-      document.getElementById('family-view').classList.add('hidden');
       document.getElementById('member-view').classList.remove('hidden');
       const member = this.data.members.find(m => m.id === view);
       document.getElementById('page-title').textContent = member.name;
@@ -675,9 +681,537 @@ const App = {
     `;
   },
 
-  // ─── UTILITIES ────────────────────────────────────────────
+  // ─── CROREPATI TIMELINE ──────────────────────────────────
+  renderCrorepatiView() {
+    const sim = this.runSimulation();
+    this.renderPositionCards(sim);
+    this.renderDebtTable(sim);
+    this.renderDebtSplitChart(sim);
+    this.renderArjunTimelineChart(sim);
+    this.renderFamilyTimelineChart(sim);
+    this.renderStackedMembersChart(sim);
+    this.renderMilestones(sim);
+    this.renderAssumptions(sim);
+  },
+
+  runSimulation() {
+    // === CONFIG ===
+    const EQUITY_CAGR = 0.12;
+    const EPF_RATE = 0.0815;
+    const GOLD_RATE = 0.08;
+    const STOCK_CAGR = 0.10;
+    const SIP_STEP_UP = 0.10;
+    const YEARS = 16;
+
+    // === ARJUN ===
+    const arjun = this.data.members.find(m => m.id === 'arjun');
+    const arjunPortfolio = arjun.portfolio;
+    let a_mf = arjunPortfolio.equityMF.value;
+    let a_stock = arjunPortfolio.stocks.value;
+    let a_epf = (arjunPortfolio.epf && arjunPortfolio.epf.value) || 1057000;
+    let a_sgb = (arjunPortfolio.sgb && arjunPortfolio.sgb.value) || 175000;
+    let a_cash = (arjunPortfolio.cash && arjunPortfolio.cash.value) || 200000;
+    let a_loan = 4656108;
+    let a_sip = arjun.monthlySIP || 100000;
+    let a_epf_mo = 27000;
+    const a_emi = 43076;
+    const a_roi = 0.0715 / 12;
+    let a_months_left = 174;
+
+    // === MOTHER ===
+    const mother = this.data.members.find(m => m.id === 'mother');
+    let m_assets = this.getMemberNW(mother);
+    const m_sip = mother.monthlySIP || 9000;
+
+    // === FATHER ===
+    const father = this.data.members.find(m => m.id === 'father');
+    let f_mf = 1108184;
+    let f_stocks = (father && father.portfolio.stocks) ? father.portfolio.stocks.value : 441088;
+    let f_gold = (father && father.portfolio.gold) ? father.portfolio.gold.value : 950000;
+    let f_lic = (father && father.portfolio.insurance) ? father.portfolio.insurance.value : 750000;
+    let f_cash = (father && father.portfolio.cash) ? father.portfolio.cash.value : 75000;
+    let f_loan = (father && father.liabilities && father.liabilities.loans) ? father.liabilities.loans.value : 1400000;
+    let f_sip = 5000;
+
+    const arjunGross0 = a_mf + a_stock + a_epf + a_sgb + a_cash;
+    const motherGross0 = m_assets;
+    const fatherGross0 = f_mf + f_stocks + f_gold + f_lic + f_cash;
+
+    // === SIMULATE ===
+    const timeline = [];
+    const arjunCroreMonth = { month: null };
+    const familyCroreMonth = { month: null };
+
+    for (let year = 0; year <= YEARS; year++) {
+      const age = 27 + year;
+
+      if (year > 0) {
+        // Arjun
+        a_mf = a_mf * (1 + EQUITY_CAGR) + a_sip * 12;
+        a_stock = a_stock * (1 + STOCK_CAGR);
+        a_epf = a_epf * (1 + EPF_RATE) + a_epf_mo * 12;
+        a_sgb = a_sgb * (1 + GOLD_RATE);
+        for (let m = 0; m < 12; m++) {
+          if (a_loan > 0 && a_months_left > 0) {
+            const interest = a_loan * a_roi;
+            a_loan = Math.max(0, a_loan - (a_emi - interest));
+            a_months_left--;
+          }
+        }
+        a_sip = Math.round(a_sip * (1 + SIP_STEP_UP));
+
+        // Mother
+        m_assets = m_assets * (1 + EQUITY_CAGR) + m_sip * 12;
+
+        // Father
+        f_mf = f_mf * (1 + EQUITY_CAGR) + f_sip * 12;
+        if (year === 1) {
+          f_mf += f_stocks * 0.7;
+          f_stocks = f_stocks * 0.15;
+        } else {
+          f_stocks = f_stocks * (1 + STOCK_CAGR) * 0.95;
+        }
+        f_gold = f_gold * (1 + GOLD_RATE);
+        if (year >= 5 && f_lic > 0) { f_mf += f_lic; f_lic = 0; }
+        if (f_loan > 0) { f_loan = Math.max(0, f_loan - 300000); }
+        f_sip = Math.round(f_sip * (1 + SIP_STEP_UP));
+      }
+
+      const aGross = a_mf + a_stock + a_epf + a_sgb + a_cash;
+      const aNW = aGross - a_loan;
+      const mNW = m_assets;
+      const fGross = f_mf + f_stocks + f_gold + f_lic + f_cash;
+      const fNW = fGross - f_loan;
+      const famNW = aNW + mNW + fNW;
+
+      if (aNW >= 10000000 && !arjunCroreMonth.month) arjunCroreMonth.month = 2026 + year;
+      if (famNW >= 10000000 && !familyCroreMonth.month) familyCroreMonth.month = 2026 + year;
+
+      timeline.push({
+        year: 2026 + year, age,
+        arjun: { gross: aGross, loan: a_loan, nw: aNW, mf: a_mf, epf: a_epf, stock: a_stock, sgb: a_sgb },
+        mother: { nw: mNW },
+        father: { gross: fGross, loan: f_loan, nw: fNW },
+        family: { nw: famNW }
+      });
+    }
+
+    // Monthly sim for exact arjun crorepati month
+    let am_mf = arjunPortfolio.equityMF.value;
+    let am_stock = arjunPortfolio.stocks.value;
+    let am_epf = a_epf_mo > 0 ? ((arjunPortfolio.epf && arjunPortfolio.epf.value) || 1057000) : 0;
+    let am_sgb = (arjunPortfolio.sgb && arjunPortfolio.sgb.value) || 175000;
+    let am_cash = (arjunPortfolio.cash && arjunPortfolio.cash.value) || 200000;
+    let am_loan = 4656108;
+    let am_sip = arjun.monthlySIP || 100000;
+    let am_epf_m = 27000;
+    let am_ml = 174;
+    const mEq = Math.pow(1 + EQUITY_CAGR, 1 / 12) - 1;
+    const mEpf = Math.pow(1 + EPF_RATE, 1 / 12) - 1;
+    const mSgb = Math.pow(1 + GOLD_RATE, 1 / 12) - 1;
+    const mSt = Math.pow(1 + STOCK_CAGR, 1 / 12) - 1;
+
+    let exactMonth = null;
+    const months = ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May'];
+    for (let mo = 1; mo <= 180; mo++) {
+      am_mf = am_mf * (1 + mEq) + am_sip;
+      am_stock *= (1 + mSt);
+      am_epf = am_epf * (1 + mEpf) + am_epf_m;
+      am_sgb *= (1 + mSgb);
+      if (am_loan > 0 && am_ml > 0) {
+        am_loan = Math.max(0, am_loan - (a_emi - am_loan * a_roi));
+        am_ml--;
+      }
+      if (mo % 12 === 0) am_sip = Math.round(am_sip * (1 + SIP_STEP_UP));
+      const nw = am_mf + am_stock + am_epf + am_sgb + am_cash - am_loan;
+      if (nw >= 10000000 && !exactMonth) {
+        const mIdx = (mo - 1) % 12;
+        const yr = 2026 + Math.floor((5 + mo - 1) / 12);
+        exactMonth = `${months[mIdx]} ${yr}`;
+        break;
+      }
+    }
+
+    return {
+      timeline,
+      arjunCroreYear: arjunCroreMonth.month,
+      familyCroreYear: familyCroreMonth.month,
+      exactCroreMonth: exactMonth || `~${arjunCroreMonth.month}`,
+      current: {
+        arjun: { gross: arjunGross0, loan: 4656108, nw: arjunGross0 - 4656108 },
+        mother: { nw: motherGross0 },
+        father: { gross: fatherGross0, loan: 1400000, nw: fatherGross0 - 1400000 },
+        family: { gross: arjunGross0 + motherGross0 + fatherGross0, loans: 4656108 + 1400000 }
+      },
+      config: { EQUITY_CAGR, EPF_RATE, GOLD_RATE, SIP_STEP_UP }
+    };
+  },
+
+  renderPositionCards(sim) {
+    const c = sim.current;
+    const famNW = c.arjun.nw + c.mother.nw + c.father.nw;
+    const container = document.getElementById('crore-position-cards');
+    container.innerHTML = `
+      <div class="glass-card p-5" style="border-left: 4px solid ${c.arjun.nw >= 0 ? '#10b981' : '#ef4444'};">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-xl">👨‍💻</span>
+          <span class="text-sm font-semibold text-slate-200">Arjun (Personal)</span>
+        </div>
+        <div class="text-2xl font-extrabold ${c.arjun.nw >= 0 ? 'text-emerald-400' : 'text-red-400'}">${this.formatINR(c.arjun.nw)}</div>
+        <div class="text-xs text-slate-500 mt-1">Gross: ${this.formatCompact(c.arjun.gross)} · Loan: ${this.formatCompact(c.arjun.loan)}</div>
+        <div class="mt-3 pill ${c.arjun.nw >= 0 ? 'pill-success' : 'pill-danger'}">${c.arjun.nw >= 0 ? '✅ Positive NW' : '🔴 Negative NW (loan > assets)'}</div>
+        <div class="text-xs text-slate-400 mt-2">🎯 Crorepati by <span class="text-amber-400 font-bold">${sim.exactCroreMonth}</span></div>
+      </div>
+      <div class="glass-card p-5" style="border-left: 4px solid ${famNW >= 0 ? '#6366f1' : '#ef4444'};">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-xl">👨‍👩‍👦</span>
+          <span class="text-sm font-semibold text-slate-200">Family Combined</span>
+        </div>
+        <div class="text-2xl font-extrabold text-brand-400">${this.formatINR(famNW)}</div>
+        <div class="text-xs text-slate-500 mt-1">Gross: ${this.formatCompact(c.family.gross)} · Loans: ${this.formatCompact(c.family.loans)}</div>
+        <div class="mt-3 pill pill-info">Total debt: ${this.formatCompact(c.family.loans)}</div>
+        <div class="text-xs text-slate-400 mt-2">🎯 Family ₹1Cr by <span class="text-amber-400 font-bold">~${sim.familyCroreYear}</span></div>
+      </div>
+      <div class="glass-card p-5" style="border-left: 4px solid #f59e0b;">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="text-xl">⚠️</span>
+          <span class="text-sm font-semibold text-slate-200">Reality Check</span>
+        </div>
+        <div class="text-sm text-slate-300 space-y-2 mt-2">
+          <div>• Home loan wipes <span class="text-red-400 font-semibold">${(c.arjun.loan / c.arjun.gross * 100).toFixed(0)}%</span> of Arjun's assets</div>
+          <div>• Total family debt: <span class="text-red-400 font-semibold">${this.formatCompact(c.family.loans)}</span></div>
+          <div>• But home = unlisted asset <span class="text-emerald-400">(NW is higher)</span></div>
+          <div>• Loan shrinks ₹3-4L/yr, assets grow ₹15L+/yr</div>
+        </div>
+      </div>
+    `;
+  },
+
+  renderDebtTable(sim) {
+    const c = sim.current;
+    const tbody = document.getElementById('debt-tbody');
+    const rows = [
+      { name: 'Arjun (27)', avatar: '👨‍💻', gross: c.arjun.gross, loan: c.arjun.loan, nw: c.arjun.nw },
+      { name: 'Sangeeta (48)', avatar: '👩', gross: c.mother.nw, loan: 0, nw: c.mother.nw },
+      { name: 'Awadhesh (50)', avatar: '👨‍💼', gross: c.father.gross, loan: c.father.loan, nw: c.father.nw }
+    ];
+    const totGross = rows.reduce((s, r) => s + r.gross, 0);
+    const totLoan = rows.reduce((s, r) => s + r.loan, 0);
+    const totNW = rows.reduce((s, r) => s + r.nw, 0);
+
+    tbody.innerHTML = rows.map(r => `
+      <tr class="border-b border-slate-800/40">
+        <td class="py-2 px-2 text-xs">${r.avatar} ${r.name}</td>
+        <td class="text-right py-2 px-2 text-xs text-slate-300">${this.formatCompact(r.gross)}</td>
+        <td class="text-right py-2 px-2 text-xs ${r.loan > 0 ? 'text-red-400' : 'text-slate-500'}">${r.loan > 0 ? this.formatCompact(r.loan) : '—'}</td>
+        <td class="text-right py-2 px-2 text-xs font-semibold ${r.nw >= 0 ? 'text-emerald-400' : 'text-red-400'}">${this.formatCompact(r.nw)}</td>
+      </tr>
+    `).join('') + `
+      <tr class="border-t-2 border-slate-600/50 font-bold">
+        <td class="py-2 px-2 text-xs text-slate-300">FAMILY TOTAL</td>
+        <td class="text-right py-2 px-2 text-xs text-white">${this.formatCompact(totGross)}</td>
+        <td class="text-right py-2 px-2 text-xs text-red-400">${this.formatCompact(totLoan)}</td>
+        <td class="text-right py-2 px-2 text-xs font-bold ${totNW >= 0 ? 'text-emerald-400' : 'text-red-400'}">${this.formatCompact(totNW)}</td>
+      </tr>`;
+  },
+
+  renderDebtSplitChart(sim) {
+    const c = sim.current;
+    this.destroyChart('debtSplit');
+    const ctx = document.getElementById('chart-debt-split').getContext('2d');
+    this.charts.debtSplit = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Arjun', 'Sangeeta', 'Awadhesh'],
+        datasets: [
+          { label: 'Assets', data: [c.arjun.gross, c.mother.nw, c.father.gross], backgroundColor: '#6366f1', borderRadius: 6 },
+          { label: 'Loans', data: [c.arjun.loan, 0, c.father.loan], backgroundColor: '#ef4444', borderRadius: 6 }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+        scales: {
+          x: { stacked: false, grid: { color: 'rgba(51,65,85,0.3)' }, ticks: { color: '#64748b', font: { size: 10 }, callback: v => this.formatCompact(v) } },
+          y: { grid: { display: false }, ticks: { color: '#94a3b8', font: { size: 11 } } }
+        },
+        plugins: {
+          legend: { labels: { color: '#94a3b8', font: { size: 11 }, usePointStyle: true } },
+          tooltip: { backgroundColor: '#1e293b', borderColor: '#334155', borderWidth: 1, callbacks: { label: ctx => ` ${ctx.dataset.label}: ${App.formatINR(ctx.raw)}` } }
+        }
+      }
+    });
+  },
+
+  renderArjunTimelineChart(sim) {
+    const labels = sim.timeline.map(t => `${t.year} (${t.age})`);
+    const grossData = sim.timeline.map(t => t.arjun.gross);
+    const loanData = sim.timeline.map(t => t.arjun.loan);
+    const nwData = sim.timeline.map(t => t.arjun.nw);
+
+    this.destroyChart('arjunTimeline');
+    const ctx = document.getElementById('chart-arjun-timeline').getContext('2d');
+    this.charts.arjunTimeline = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [
+          {
+            label: 'Gross Assets',
+            data: grossData,
+            borderColor: '#6366f1', backgroundColor: 'rgba(99,102,241,0.06)',
+            borderWidth: 2, fill: true, tension: 0.4, pointRadius: 3
+          },
+          {
+            label: 'Net Worth (debt-adjusted)',
+            data: nwData,
+            borderColor: '#10b981', backgroundColor: 'rgba(16,185,129,0.06)',
+            borderWidth: 2.5, fill: true, tension: 0.4, pointRadius: 4, pointBackgroundColor: '#10b981'
+          },
+          {
+            label: 'Home Loan Outstanding',
+            data: loanData,
+            borderColor: '#ef4444', backgroundColor: 'rgba(239,68,68,0.06)',
+            borderWidth: 2, fill: true, tension: 0.4, pointRadius: 3, borderDash: [6, 3]
+          }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        interaction: { mode: 'index', intersect: false },
+        scales: {
+          x: { grid: { color: 'rgba(51,65,85,0.3)' }, ticks: { color: '#64748b', font: { size: 9 }, maxRotation: 45 } },
+          y: {
+            grid: { color: 'rgba(51,65,85,0.3)' },
+            ticks: { color: '#64748b', font: { size: 10 }, callback: v => this.formatCompact(v) }
+          }
+        },
+        plugins: {
+          legend: { labels: { color: '#94a3b8', font: { size: 11 }, usePointStyle: true } },
+          tooltip: {
+            backgroundColor: '#1e293b', titleColor: '#f1f5f9', bodyColor: '#94a3b8', borderColor: '#334155', borderWidth: 1,
+            callbacks: { label: ctx => ` ${ctx.dataset.label}: ${App.formatINR(ctx.raw)}` }
+          },
+          annotation: undefined
+        }
+      },
+      plugins: [{
+        id: 'croreLine',
+        afterDraw(chart) {
+          const yScale = chart.scales.y;
+          const xScale = chart.scales.x;
+          if (!yScale || !xScale) return;
+          const y = yScale.getPixelForValue(10000000);
+          if (y < yScale.top || y > yScale.bottom) return;
+          const ctx = chart.ctx;
+          ctx.save();
+          ctx.setLineDash([8, 4]);
+          ctx.strokeStyle = '#fbbf24';
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.moveTo(xScale.left, y);
+          ctx.lineTo(xScale.right, y);
+          ctx.stroke();
+          ctx.setLineDash([]);
+          ctx.fillStyle = '#fbbf24';
+          ctx.font = 'bold 11px Inter, sans-serif';
+          ctx.fillText('₹1 CRORE 🎯', xScale.left + 8, y - 6);
+          ctx.restore();
+        }
+      }]
+    });
+  },
+
+  renderFamilyTimelineChart(sim) {
+    const labels = sim.timeline.map(t => `${t.year}`);
+    const famData = sim.timeline.map(t => t.family.nw);
+    const arjunData = sim.timeline.map(t => t.arjun.nw);
+
+    this.destroyChart('familyTimeline');
+    const ctx = document.getElementById('chart-family-timeline').getContext('2d');
+    this.charts.familyTimeline = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [
+          {
+            label: 'Family NW (debt-adjusted)',
+            data: famData,
+            borderColor: '#8b5cf6', backgroundColor: 'rgba(139,92,246,0.08)',
+            borderWidth: 3, fill: true, tension: 0.4, pointRadius: 4, pointBackgroundColor: '#8b5cf6'
+          },
+          {
+            label: 'Arjun NW',
+            data: arjunData,
+            borderColor: '#10b981',
+            borderWidth: 1.5, fill: false, tension: 0.4, pointRadius: 2, borderDash: [4, 3]
+          }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        interaction: { mode: 'index', intersect: false },
+        scales: {
+          x: { grid: { color: 'rgba(51,65,85,0.3)' }, ticks: { color: '#64748b', font: { size: 10 } } },
+          y: { grid: { color: 'rgba(51,65,85,0.3)' }, ticks: { color: '#64748b', font: { size: 10 }, callback: v => this.formatCompact(v) } }
+        },
+        plugins: {
+          legend: { labels: { color: '#94a3b8', font: { size: 11 }, usePointStyle: true } },
+          tooltip: {
+            backgroundColor: '#1e293b', titleColor: '#f1f5f9', bodyColor: '#94a3b8', borderColor: '#334155', borderWidth: 1,
+            callbacks: { label: ctx => ` ${ctx.dataset.label}: ${App.formatINR(ctx.raw)}` }
+          }
+        }
+      },
+      plugins: [{
+        id: 'croreLineFamily',
+        afterDraw(chart) {
+          const yScale = chart.scales.y;
+          const xScale = chart.scales.x;
+          if (!yScale || !xScale) return;
+          [10000000, 50000000, 100000000].forEach((val, i) => {
+            const y = yScale.getPixelForValue(val);
+            if (y < yScale.top || y > yScale.bottom) return;
+            const colors = ['#fbbf24', '#f97316', '#ef4444'];
+            const labels = ['₹1 Cr', '₹5 Cr', '₹10 Cr'];
+            const ctx2 = chart.ctx;
+            ctx2.save();
+            ctx2.setLineDash([6, 4]);
+            ctx2.strokeStyle = colors[i];
+            ctx2.lineWidth = 1.5;
+            ctx2.globalAlpha = 0.6;
+            ctx2.beginPath();
+            ctx2.moveTo(xScale.left, y);
+            ctx2.lineTo(xScale.right, y);
+            ctx2.stroke();
+            ctx2.globalAlpha = 1;
+            ctx2.setLineDash([]);
+            ctx2.fillStyle = colors[i];
+            ctx2.font = 'bold 10px Inter, sans-serif';
+            ctx2.fillText(labels[i], xScale.right - 40, y - 4);
+            ctx2.restore();
+          });
+        }
+      }]
+    });
+  },
+
+  renderStackedMembersChart(sim) {
+    const labels = sim.timeline.map(t => `${t.year}`);
+
+    this.destroyChart('stackedMembers');
+    const ctx = document.getElementById('chart-stacked-members').getContext('2d');
+    this.charts.stackedMembers = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels,
+        datasets: [
+          {
+            label: 'Arjun',
+            data: sim.timeline.map(t => Math.max(0, t.arjun.nw)),
+            backgroundColor: '#6366f1', borderRadius: 2
+          },
+          {
+            label: 'Sangeeta',
+            data: sim.timeline.map(t => t.mother.nw),
+            backgroundColor: '#10b981', borderRadius: 2
+          },
+          {
+            label: 'Awadhesh',
+            data: sim.timeline.map(t => Math.max(0, t.father.nw)),
+            backgroundColor: '#f59e0b', borderRadius: 2
+          }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        scales: {
+          x: { stacked: true, grid: { display: false }, ticks: { color: '#64748b', font: { size: 10 } } },
+          y: { stacked: true, grid: { color: 'rgba(51,65,85,0.3)' }, ticks: { color: '#64748b', font: { size: 10 }, callback: v => this.formatCompact(v) } }
+        },
+        plugins: {
+          legend: { labels: { color: '#94a3b8', font: { size: 11 }, usePointStyle: true } },
+          tooltip: {
+            backgroundColor: '#1e293b', titleColor: '#f1f5f9', bodyColor: '#94a3b8', borderColor: '#334155', borderWidth: 1,
+            callbacks: { label: ctx => ` ${ctx.dataset.label}: ${App.formatINR(ctx.raw)}` }
+          }
+        }
+      }
+    });
+  },
+
+  renderMilestones(sim) {
+    const container = document.getElementById('milestones-container');
+    const milestones = [
+      { icon: '🔓', label: 'Arjun crosses ₹0 NW (debt-free on paper)', check: t => t.arjun.nw >= 0, type: 'personal' },
+      { icon: '⭐', label: 'Arjun hits ₹50L net worth', check: t => t.arjun.nw >= 5000000, type: 'personal' },
+      { icon: '🔥', label: 'Arjun hits ₹1 CRORE net worth', check: t => t.arjun.nw >= 10000000, type: 'personal' },
+      { icon: '🏦', label: 'Home loan fully paid off', check: t => t.arjun.loan <= 0, type: 'personal' },
+      { icon: '🌟', label: 'Arjun hits ₹5 CRORE net worth', check: t => t.arjun.nw >= 50000000, type: 'personal' },
+      { icon: '👨‍👩‍👦', label: 'Family hits ₹1 CRORE combined NW', check: t => t.family.nw >= 10000000, type: 'family' },
+      { icon: '💎', label: 'Family hits ₹5 CRORE combined NW', check: t => t.family.nw >= 50000000, type: 'family' },
+      { icon: '🏆', label: 'Family hits ₹10 CRORE combined NW', check: t => t.family.nw >= 100000000, type: 'family' },
+    ];
+
+    container.innerHTML = milestones.map(ms => {
+      const hit = sim.timeline.find(t => ms.check(t));
+      const reached = !!hit;
+      const yearText = reached ? `${hit.year} (age ${hit.age})` : 'Beyond projection';
+      const dotColor = reached ? (ms.type === 'personal' ? '#10b981' : '#8b5cf6') : '#475569';
+      return `
+        <div class="milestone-line">
+          <div class="milestone-dot" style="border-color: ${dotColor}; background: ${reached ? dotColor : 'transparent'};"></div>
+          <div class="${reached ? 'milestone-reached' : 'milestone-pending'} rounded-xl p-4 ml-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="text-xl">${ms.icon}</span>
+                <div>
+                  <div class="text-sm font-medium ${reached ? 'text-white' : 'text-slate-400'}">${ms.label}</div>
+                  <div class="text-xs ${reached ? 'text-emerald-400' : 'text-slate-600'} mt-0.5">${yearText}</div>
+                </div>
+              </div>
+              ${reached
+                ? `<span class="pill pill-success text-xs">${hit.year}</span>`
+                : '<span class="pill text-xs" style="background:rgba(71,85,105,0.3);color:#94a3b8;border:1px solid #475569;">Pending</span>'}
+            </div>
+          </div>
+        </div>`;
+    }).join('');
+  },
+
+  renderAssumptions(sim) {
+    const container = document.getElementById('assumptions-container');
+    container.innerHTML = `
+      <div class="space-y-2">
+        <div class="text-xs text-slate-400 uppercase font-semibold mb-2">Growth Rates</div>
+        <div class="flex justify-between text-xs"><span class="text-slate-400">Equity MF CAGR</span><span class="text-emerald-400">12%</span></div>
+        <div class="flex justify-between text-xs"><span class="text-slate-400">EPF Rate</span><span class="text-emerald-400">8.15%</span></div>
+        <div class="flex justify-between text-xs"><span class="text-slate-400">Gold / SGB</span><span class="text-emerald-400">8%</span></div>
+        <div class="flex justify-between text-xs"><span class="text-slate-400">Direct Stocks</span><span class="text-emerald-400">10%</span></div>
+        <div class="flex justify-between text-xs"><span class="text-slate-400">SIP Step-up</span><span class="text-amber-400">10%/year</span></div>
+      </div>
+      <div class="space-y-2">
+        <div class="text-xs text-slate-400 uppercase font-semibold mb-2">Loan & Cash Flows</div>
+        <div class="flex justify-between text-xs"><span class="text-slate-400">Arjun Home Loan</span><span class="text-red-400">₹46.56L @ 7.15%</span></div>
+        <div class="flex justify-between text-xs"><span class="text-slate-400">Home EMI</span><span class="text-slate-300">₹43,076/mo</span></div>
+        <div class="flex justify-between text-xs"><span class="text-slate-400">Loan Tenure Left</span><span class="text-slate-300">174 months (~14.5 yrs)</span></div>
+        <div class="flex justify-between text-xs"><span class="text-slate-400">Father's Loans</span><span class="text-red-400">₹14L (gold + car)</span></div>
+        <div class="flex justify-between text-xs"><span class="text-slate-400">Arjun Monthly SIP</span><span class="text-brand-400">₹1L (10% step-up)</span></div>
+        <div class="flex justify-between text-xs"><span class="text-slate-400">Mother Monthly SIP</span><span class="text-brand-400">₹9K</span></div>
+        <div class="flex justify-between text-xs"><span class="text-slate-400">Father Monthly SIP</span><span class="text-brand-400">₹5K (planned)</span></div>
+        <div class="flex justify-between text-xs mt-4"><span class="text-slate-500 italic">⚠ Home value not counted as asset</span><span></span></div>
+      </div>
+    `;
+  },
   getMemberNW(member) {
     return Object.values(member.portfolio).reduce((sum, cat) => sum + (cat.value || 0), 0);
+  },
+
+  getMemberDebtAdjustedNW(member) {
+    const gross = this.getMemberNW(member);
+    const loans = member.liabilities
+      ? Object.values(member.liabilities).reduce((s, l) => s + (l.value || 0), 0)
+      : 0;
+    return gross - loans;
   },
 
   calculateFamilyNW() {

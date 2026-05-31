@@ -97,6 +97,13 @@
     .fade-in { animation: fadeIn 0.4s ease-out; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
+    .milestone-reached { background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(30, 41, 59, 0.8) 100%); border: 1px solid rgba(16, 185, 129, 0.3); }
+    .milestone-pending { background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(30, 41, 59, 0.6) 100%); border: 1px solid rgba(99, 102, 241, 0.15); }
+    .milestone-line { position: relative; padding-left: 2rem; }
+    .milestone-line::before { content: ''; position: absolute; left: 0.6rem; top: 0; bottom: 0; width: 2px; background: #334155; }
+    .milestone-dot { position: absolute; left: 0.25rem; top: 0.75rem; width: 12px; height: 12px; border-radius: 50%; border: 2px solid; }
+    .crore-line-annotation { color: #fbbf24; font-weight: 700; }
+
     .chart-container { position: relative; }
 
     @media (max-width: 768px) {
@@ -126,6 +133,9 @@
       <nav class="flex-1 py-4 px-3 space-y-1" id="sidebar-nav">
         <a href="#" data-view="family" class="sidebar-link active flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-300">
           <span class="text-lg">🏠</span> Family Overview
+        </a>
+        <a href="#" data-view="crorepati" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-300">
+          <span class="text-lg">🎯</span> Crorepati Timeline
         </a>
         <!-- Member links injected by JS -->
       </nav>
@@ -307,6 +317,85 @@
           <div id="member-alerts" class="space-y-3"></div>
         </div>
 
+        <!-- ===== CROREPATI TIMELINE VIEW ===== -->
+        <div id="crorepati-view" class="hidden fade-in">
+
+          <!-- Hero Banner -->
+          <div class="stat-card glass-card p-6 mb-6 text-center">
+            <div class="text-5xl mb-3">🎯</div>
+            <h2 class="text-2xl font-extrabold glow-text text-white mb-2">Crorepati Timeline</h2>
+            <p class="text-sm text-slate-400">Debt-adjusted net worth projection — the real picture</p>
+          </div>
+
+          <!-- Current Position Cards -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6" id="crore-position-cards"></div>
+
+          <!-- Debt Breakdown -->
+          <div class="glass-card p-6 mb-6">
+            <h3 class="text-sm font-semibold text-slate-300 mb-4">💳 Liabilities & Debt Breakdown</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <div class="overflow-x-auto">
+                  <table class="w-full text-sm" id="debt-table">
+                    <thead>
+                      <tr class="text-xs text-slate-500 uppercase border-b border-slate-700/50">
+                        <th class="text-left py-2 px-2">Member</th>
+                        <th class="text-right py-2 px-2">Gross Assets</th>
+                        <th class="text-right py-2 px-2">Loans</th>
+                        <th class="text-right py-2 px-2">Real NW</th>
+                      </tr>
+                    </thead>
+                    <tbody id="debt-tbody"></tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="chart-container" style="height: 220px;">
+                <canvas id="chart-debt-split"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Timeline Chart -->
+          <div class="glass-card p-6 mb-6">
+            <h3 class="text-sm font-semibold text-slate-300 mb-2">📈 Arjun — Personal Crorepati Journey</h3>
+            <p class="text-xs text-slate-500 mb-4">Gross assets vs loan vs net worth over time</p>
+            <div class="chart-container" style="height: 350px;">
+              <canvas id="chart-arjun-timeline"></canvas>
+            </div>
+          </div>
+
+          <!-- Family Timeline Chart -->
+          <div class="glass-card p-6 mb-6">
+            <h3 class="text-sm font-semibold text-slate-300 mb-2">👨‍👩‍👦 Family — Combined Crorepati Journey</h3>
+            <p class="text-xs text-slate-500 mb-4">All three members combined, debt-adjusted</p>
+            <div class="chart-container" style="height: 350px;">
+              <canvas id="chart-family-timeline"></canvas>
+            </div>
+          </div>
+
+          <!-- Individual Stacked Area -->
+          <div class="glass-card p-6 mb-6">
+            <h3 class="text-sm font-semibold text-slate-300 mb-2">🧩 Who Contributes What?</h3>
+            <p class="text-xs text-slate-500 mb-4">Individual NW stacked to show family total</p>
+            <div class="chart-container" style="height: 320px;">
+              <canvas id="chart-stacked-members"></canvas>
+            </div>
+          </div>
+
+          <!-- Milestones -->
+          <div class="glass-card p-6 mb-6">
+            <h3 class="text-sm font-semibold text-slate-300 mb-4">🏆 Wealth Milestones</h3>
+            <div class="space-y-3" id="milestones-container"></div>
+          </div>
+
+          <!-- Assumptions -->
+          <div class="glass-card p-6 mb-6">
+            <h3 class="text-sm font-semibold text-slate-300 mb-4">📋 Assumptions Used</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm" id="assumptions-container"></div>
+          </div>
+
+        </div>
+
       </div>
     </main>
   </div>
@@ -316,6 +405,9 @@
     <div class="flex justify-around" id="mobile-nav-items">
       <a href="#" data-view="family" class="flex flex-col items-center gap-1 text-xs text-slate-400 py-1 mobile-link active">
         <span class="text-lg">🏠</span> Family
+      </a>
+      <a href="#" data-view="crorepati" class="flex flex-col items-center gap-1 text-xs text-slate-400 py-1 mobile-link">
+        <span class="text-lg">🎯</span> Timeline
       </a>
     </div>
   </nav>

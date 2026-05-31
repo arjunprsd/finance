@@ -42,6 +42,15 @@
           "value": 200000
         }
       },
+      "liabilities": {
+        "homeLoan": {
+          "label": "Home Loan",
+          "value": 4656108,
+          "emi": 43076,
+          "roi": 7.15,
+          "monthsLeft": 174
+        }
+      },
       "holdings": {
         "mutualFunds": [
           {
